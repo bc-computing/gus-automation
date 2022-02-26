@@ -34,17 +34,23 @@ from setup_nodes import setup_nodes
 #         exit()
 
 def run_experiment(server_names_to_internal_ips, config, timestamp, executor):
+    print("killing machines for safety")
     kill_machines(config, executor)
 
+    print("starting machines")
     master_thread = start_master(config, timestamp)
     server_threads = start_servers(config, timestamp, server_names_to_internal_ips)
     client_thread = start_clients(config, timestamp, server_names_to_internal_ips)
 
+    print('waiting for client to finish')
     client_thread.wait()
+
+    print("terminating master and server")
     for server_thread in server_threads:
         server_thread.terminate()
     master_thread.terminate()
 
+    print("collecting experiment data")
     path_to_client_data = collect_exp_data(config, timestamp, executor)
     # calculate_exp_data(config, path_to_client_data)
 
