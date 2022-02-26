@@ -1,0 +1,24 @@
+- Communication Parameters (used for ssh communication from control machine to remote machines)
+  - server_names: names of servers in cloudlab
+  - cloudlab_user: the username of the cloudlab account connecting to the cluster
+  - experiment_name: the name of the cloudlab experiment
+  - project_name: the name of the cloudlab project that the experiment is run under
+  - host_format_str: the ssh url for cloudlab machines of a specific cluster, can be found in the manifest section of a cloudlab experiment
+- Network Delay Parameters
+  - emulate_wan_latency: boolean that determines if artificial latency will be added between the machines to simulate wan latency
+  - server_ping_latencies: a dictionary of dictionaries. The first key identifies a specific machine i. The second keys identify the desired latency between i and the other machines.
+  - max_bandwidth: The maximum bandwidth between machines. Check the PARAMETERS section of the tc (traffic control) man page to see available units of transfer rates. 
+- Folder Location Parameters (control locations are by default in the root folder, this is because disk image data can not be stored in standard user home directories. for convenient sshing, remote locations are in the user's home folder)
+  - gus_epaxos_control_src_directory: path to a directory on the control machine that contains the gus-epaxos git repository
+  - gryff_control_src_directory: path to a directory on the control machine that contains the gryff git repository
+  - base_control_experiment_directory: path to a directory on the control machine where experiment result subfolders will be stored
+  - base_remote_experiment_directory: path to a directory on the remote machines where experiment result subfolders will be stored
+  - remote_bin_directory: path to a directory on remote machines where server/client binaries will be stored
+- Replication Protocol Parameters
+  - replication_protocol: gus, gryff, or epaxos
+  - number_of_replicas: 3 or 5
+- Client Parameters
+  - experiment_length: in seconds
+  - write_percentage: Floating point number between 0 and 1
+  - conflict_percentage: Integer between 0 and 100. 
+  - clients_per_replica

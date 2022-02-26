@@ -1,0 +1,17 @@
+set datafile separator ','
+set terminal pngcairo size 300,200 enhanced font 'Helvetica,12'
+set key center tmargin
+set key horizontal
+set xlabel 'Data Size (MB)'
+set ylabel 'Latency (ms)'
+set ytics 50
+set logscale x 10
+set output '/Users/zhouaea/Desktop/plotFigs/plots/data_size-latencies.png'
+set style line 1 linecolor "orange" linewidth 6 pointtype 20 pointsize 1 dashtype 1
+set style line 2 linecolor "orange" linewidth 6 pointtype 20 pointsize 1 dashtype 3
+set style line 3 linecolor "dark-yellow" linewidth 6 pointtype 13 pointsize 1 dashtype 1
+set style line 4 linecolor "dark-yellow" linewidth 6 pointtype 13 pointsize 1 dashtype 3
+plot '/Users/zhouaea/Desktop/plotFigs/data_size-latencies/gus-data_size-latencies.csv' using 1:2 title 'Gus-p50' with linespoints linestyle 1, \
+'/Users/zhouaea/Desktop/plotFigs/data_size-latencies/gus-data_size-latencies.csv' using 1:3 title 'Gus-p99' with linespoints linestyle 2, \
+'/Users/zhouaea/Desktop/plotFigs/data_size-latencies/giza-data_size-latencies.csv' using 1:2 title 'Giza-p50' with linespoints linestyle 3, \
+'/Users/zhouaea/Desktop/plotFigs/data_size-latencies/giza-data_size-latencies.csv' using 1:3 title 'Giza-p99' with linespoints linestyle 4, \
