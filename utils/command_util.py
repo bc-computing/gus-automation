@@ -1,6 +1,6 @@
 import os
 
-from remote_util import *
+from utils.remote_util import *
 
 
 def get_master_cmd(config, timestamp):
