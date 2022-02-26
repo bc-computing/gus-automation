@@ -10,7 +10,7 @@ from setup_nodes import setup_nodes
 
 # def run_multiple_experiments(experiment_type, config, timestamp, executor):
 #     # server name to internal ip mapping is used for easy execution of binaries when running an experiment
-#     server_names_to_internal_ips = setup_delays(config, executor)
+#     server_names_to_internal_ips = get_server_name_to_internal_ip_map(config, executor)
 #
 #     if experiment_type == "single":
 #         run_experiment(server_names_to_internal_ips, config, timestamp, executor)
