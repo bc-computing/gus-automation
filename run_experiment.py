@@ -58,10 +58,17 @@ def start_master(config, timestamp):
 def start_servers(config, timestamp, server_names_to_internal_ips):
     server_threads = []
 
+    servers_started = 0
+
     for server_name in config['server_names']:
+        if servers_started >= config['number_of_replicas']:
+            break
+
         server_url = get_machine_url(config, server_name)
         server_command = get_server_cmd(config, timestamp, server_names_to_internal_ips, server_name)
         server_threads.append(run_remote_command_async(server_command, server_url))
+
+        servers_started += 1
 
     # I assume there is no way we can detect when the servers are initialized.
     time.sleep(2)

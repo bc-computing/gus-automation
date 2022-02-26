@@ -10,7 +10,7 @@ def get_master_cmd(config, timestamp):
     else:
         path_to_master_bin = os.path.join(config['remote_bin_directory'], 'gus-epaxos', 'master')
 
-    master_command = ' '.join([str(x) for x in [path_to_master_bin, '-N', len(config['server_names'])]])
+    master_command = ' '.join([str(x) for x in [path_to_master_bin, '-N', config['number_of_replicas']]])
 
     stdout_file = os.path.join(exp_directory, 'master-stdout.log')
     stderr_file = os.path.join(exp_directory, 'master-stderr.log')
@@ -68,7 +68,7 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
         '-maddr', master_addr,
         '-writes', config['write_percentage'],
         '-c', config['conflict_percentage'],
-        '-T', int(config['clients_per_replica']) * len(config['server_names'])
+        '-T', int(config['clients_per_replica']) * config['number_of_replicas']
     ]])
 
     # Only run client for 3 minutes.
