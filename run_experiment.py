@@ -46,7 +46,7 @@ def run_experiment(server_names_to_internal_ips, config, timestamp, executor):
     master_thread.terminate()
 
     path_to_client_data = collect_exp_data(config, timestamp, executor)
-    calculate_exp_data(config, path_to_client_data)
+    # calculate_exp_data(config, path_to_client_data)
 
 def start_master(config, timestamp):
     master_command = get_master_cmd(config, timestamp)
