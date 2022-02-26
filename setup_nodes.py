@@ -8,8 +8,8 @@ import os
 import subprocess
 import time
 
-from remote_util import *
-from git_util import *
+from utils.remote_util import *
+from utils.git_util import *
 
 
 def setup_nodes(config, executor):

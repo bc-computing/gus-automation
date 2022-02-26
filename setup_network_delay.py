@@ -1,7 +1,7 @@
 import concurrent
 import sys
 
-import remote_util
+import utils.remote_util
 
 # You may see the error message "RTNETLINK answers: No such file or directory" while this script is running. This
 # occurs because we always try to delete any existing tc profiles before configuring our own. If there is no preexisting
@@ -18,7 +18,7 @@ def setup_delays(config, executor):
     print("server_names_to_ips:", server_names_to_ips)
 
     for server_name in config['server_names']:
-        server_url = remote_util.get_machine_url(config, server_name)
+        server_url = utils.remote_util.get_machine_url(config, server_name)
         print("setting up delay for", server_url)
 
         server_ips_to_delays = get_ip_to_delay(config, server_names_to_ips, server_name)
@@ -30,7 +30,7 @@ def setup_delays(config, executor):
                                            server_interface, server_url))
         # Get rid of network delay if using lan latency.
         else:
-            futures.append(executor.submit(remote_util.run_remote_command_sync,
+            futures.append(executor.submit(utils.remote_util.run_remote_command_sync,
                                            'sudo tc qdisc del dev %s root' % server_interface,
                                            config['cloudlab_user'], server_url))
 
@@ -45,13 +45,14 @@ def get_server_name_to_internal_ip_map(config):
 
     for server_name in config['server_names']:
         ip = get_ip_for_server_name_from_remote_machine(server_name,
-                                                        remote_util.get_machine_url(config, config['server_names'][0]))
+                                                        utils.remote_util.get_machine_url(config,
+                                                                                          config['server_names'][0]))
         name_to_ip[server_name] = ip
 
     return name_to_ip
 
 def get_ip_for_server_name_from_remote_machine(server_name, remote_url):
-    return remote_util.run_remote_command_sync('getent hosts %s | awk \'{ print $1 }\'' % server_name, remote_url).rstrip()
+    return utils.remote_util.run_remote_command_sync('getent hosts %s | awk \'{ print $1 }\'' % server_name, remote_url).rstrip()
 
 
 def get_ip_to_delay(config, name_to_ip, server_name):
@@ -69,7 +70,7 @@ def get_ip_to_delay(config, name_to_ip, server_name):
 
 
 def get_exp_net_interface(config, remote_url):
-    return remote_util.run_remote_command_sync('cat /var/emulab/boot/ifmap | awk \'{ print $1 }\'', remote_url).rstrip()
+    return utils.remote_util.run_remote_command_sync('cat /var/emulab/boot/ifmap | awk \'{ print $1 }\'', remote_url).rstrip()
 
 
 def add_delays_for_ips(config, ip_to_delay, interface, remote_url):
@@ -84,4 +85,4 @@ def add_delays_for_ips(config, ip_to_delay, interface, remote_url):
         command += 'sudo tc qdisc add dev %s handle %d: parent 1:%d netem delay %dms; ' % (interface, idx, idx, delay / 2)
         command += 'sudo tc filter add dev %s pref %d protocol ip u32 match ip dst %s flowid 1:%d; ' % (interface, idx, ip, idx)
         idx += 1
-    remote_util.run_remote_command_sync(command, remote_url)
+    utils.remote_util.run_remote_command_sync(command, remote_url)

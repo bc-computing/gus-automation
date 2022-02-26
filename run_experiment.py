@@ -3,8 +3,8 @@ import os
 
 import time
 
-from command_util import *
-from remote_util import *
+from utils.command_util import *
+from utils.remote_util import *
 from setup_network_delay import setup_delays, get_server_name_to_internal_ip_map
 from setup_nodes import setup_nodes
 
