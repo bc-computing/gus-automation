@@ -36,7 +36,7 @@ def switch_to_branch(src_directory, destination_branch, repo_name):
     current_branch = get_current_branch(src_directory)
 
     if current_branch == destination_branch:
-        print("staying on branch %s", current_branch)
+        print("staying on branch %s" % current_branch)
     else:
         print("switching from branch %s to %s in the %s repo. any changes will be stashed"
               % (current_branch, destination_branch, repo_name))
