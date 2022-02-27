@@ -45,14 +45,24 @@ def run_experiment(server_names_to_internal_ips, config, timestamp, executor):
     print('waiting for client to finish')
     client_thread.wait()
 
-    print("terminating master and server")
-    for server_thread in server_threads:
-        server_thread.terminate()
-    master_thread.terminate()
+    print("killing master and server")
+    kill_machines(config, executor)
 
     print("collecting experiment data")
     path_to_client_data = collect_exp_data(config, timestamp, executor)
     # calculate_exp_data(config, path_to_client_data)
+
+def kill_machines(config, executor):
+    futures = []
+
+    master_url = get_machine_url(config, config['server_names'][0])
+    futures.append(executor.submit(run_remote_command_sync('killall -9 master', master_url)))
+
+    for server_name in config['server_names']:
+        server_url = get_machine_url(config, server_name)
+        futures.append(executor.submit(run_remote_command_sync('killall -9 server', server_url)))
+
+    concurrent.futures.wait(futures)
 
 def start_master(config, timestamp):
     master_command = get_master_cmd(config, timestamp)
@@ -84,18 +94,6 @@ def start_clients(config, timestamp, server_names_to_internal_ips):
     client_url = get_machine_url(config, 'client')
     client_command = get_client_cmd(config, timestamp, server_names_to_internal_ips)
     return run_remote_command_async(client_command, client_url)
-
-def kill_machines(config, executor):
-    futures = []
-
-    master_url = get_machine_url(config, config['server_names'][0])
-    futures.append(executor.submit(run_remote_command_sync('killall -15 master', master_url)))
-
-    for server_name in config['server_names']:
-        server_url = get_machine_url(config, server_name)
-        futures.append(executor.submit(run_remote_command_sync('killall -15 server', server_url)))
-
-    concurrent.futures.wait(futures)
 
 def collect_exp_data(config, timestamp, executor):
     download_futures = []

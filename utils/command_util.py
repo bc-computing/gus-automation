@@ -67,9 +67,9 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
     client_command = ' '.join([str(x) for x in [
         path_to_client_bin,
         '-maddr=%s' % master_addr,
-        '-writes=%d' % config['write_percentage'],
+        '-writes=%f' % config['write_percentage'],
         '-c=%d' % config['conflict_percentage'],
-        '-T=%d' % int(config['clients_per_replica']) * config['number_of_replicas']
+        '-T=%d' % (int(config['clients_per_replica']) * config['number_of_replicas'])
     ]])
 
     # Only run client for 3 minutes.
