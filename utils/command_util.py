@@ -31,8 +31,9 @@ def get_server_cmd(config, timestamp, server_names_to_ips, server_name):
 
     server_command = ' '.join([str(x) for x in [
         path_to_server_bin,
-        '-addr', server_addr,
-        '-maddr', master_addr
+        '-maddr=%s' % master_addr,
+        '-addr=%s' % server_addr,
+        '-exec=true',
     ]])
     server_command += get_replication_protocol_args(config['replication_protocol'])
 
@@ -65,10 +66,10 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
 
     client_command = ' '.join([str(x) for x in [
         path_to_client_bin,
-        '-maddr', master_addr,
-        '-writes', config['write_percentage'],
-        '-c', config['conflict_percentage'],
-        '-T', int(config['clients_per_replica']) * config['number_of_replicas']
+        '-maddr=%s' % master_addr,
+        '-writes=%d' % config['write_percentage'],
+        '-c=%d' % config['conflict_percentage'],
+        '-T=%d' % int(config['clients_per_replica']) * config['number_of_replicas']
     ]])
 
     # Only run client for 3 minutes.
