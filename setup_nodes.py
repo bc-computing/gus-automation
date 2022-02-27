@@ -13,14 +13,14 @@ from utils.git_util import *
 
 
 def setup_nodes(config, executor):
-    switch_to_branch(config)
+    switch_branches(config)
     make_binaries(config)
     timestamp = prepare_control_exp_directory(config)
     prepare_remote_exp_and_bin_directories(config, timestamp, executor)
     copy_binaries_to_machines(config, executor)
     return timestamp
 
-def switch_to_branch(config):
+def switch_branches(config):
     if config['number_of_replicas'] == 3:
         destination_branch = "main"
     elif config['number_of_replicas'] == 5:
@@ -29,16 +29,19 @@ def switch_to_branch(config):
         print("ERROR: supported number of replicas is only 3 or 5")
         exit(1)
 
-    gus_epaxos_control_src_directory = config['gus_epaxos_control_src_directory']
-    gryff_control_src_directory = config['gryff_control_src_directory']
+    switch_to_branch(config['gus_epaxos_control_src_directory'], destination_branch, "gus-epaxos")
+    switch_to_branch(config['gryff_control_src_directory'], destination_branch, "gryff")
 
-    print("switching from branch %s to %s in the gus-epaxos repo" %
-          (get_current_branch(gus_epaxos_control_src_directory), destination_branch))
-    checkout_branch_hard_reset(gus_epaxos_control_src_directory, destination_branch)
+def switch_to_branch(src_directory, destination_branch, repo_name):
+    current_branch = get_current_branch(src_directory)
 
-    print("switching from branch %s to %s in the gryff repo" %
-          (get_current_branch(gryff_control_src_directory), destination_branch))
-    checkout_branch_hard_reset(gryff_control_src_directory, destination_branch)
+    if current_branch == destination_branch:
+        print("staying on branch %s", current_branch)
+    else:
+        print("switching from branch %s to %s in the %s repo. any changes will be stashed"
+              % (current_branch, destination_branch, repo_name))
+        stash(src_directory)
+        checkout_branch(src_directory, destination_branch)
 
 
 def make_binaries(config):
