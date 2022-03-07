@@ -35,7 +35,7 @@ def get_server_cmd(config, timestamp, server_names_to_ips, server_name):
         '-addr=%s' % server_addr,
         '-exec=true',
     ]])
-    server_command += get_replication_protocol_args(config['replication_protocol'])
+    server_command += " " + get_replication_protocol_args(config['replication_protocol'])
 
     stdout_file = os.path.join(exp_directory, 'server-%s-stdout.log' % server_name)
     stderr_file = os.path.join(exp_directory, 'server-%s-stderr.log' % server_name)
