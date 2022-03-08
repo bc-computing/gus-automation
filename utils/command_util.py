@@ -50,7 +50,7 @@ def get_replication_protocol_args(replication_protocol):
     elif replication_protocol == "epaxos":
         return "-gus=false -e=true -exec=true -dreply=true"
     elif replication_protocol == "gryff":
-        return ""
+        return "-t -proxy -exec=true -dreply=true"
     else:
         print("ERROR: unknown replication protocol. Please choose between gus, epaxos, and gryff")
         exit(1)
