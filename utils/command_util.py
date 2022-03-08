@@ -72,7 +72,7 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
         '-T=%d' % (int(config['clients_per_replica']) * config['number_of_replicas'])
     ]])
     
-    if replication_protocol == "gryff"
+    if replication_protocol == "gryff":
         client_command += " -proxy"
 
     # Only run client for 3 minutes.
