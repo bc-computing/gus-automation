@@ -1,4 +1,10 @@
 # Figure Plotting Library
+## Table of Contents
+- Dependencies
+- Background
+- Workflow
+- Package Design
+- How to Run
 
 ## Dependencies
 ### Code

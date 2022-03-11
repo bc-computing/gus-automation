@@ -1,6 +1,12 @@
 # Gus Experiment Automation
 This repo consists of python code that will autonomously run the replication protocol experiments cited in our paper and plot them. See `config_instruction.md` for information on available configs. 
 
+## Table of Contents
+- Dependencies
+- How to Run
+- Workflow
+- Package Design
+
 ## Dependencies
 ### Code
 - Go 1.15 (for replication protocol code)
