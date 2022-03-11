@@ -3,13 +3,7 @@
 ## Dependencies
 ### Code
 - Python 3.8 (for running experiments automatically, calculating stats, plotting data)
-- gnuplot  
-
-## How to Run
-1. Uncomment the relevant sections in the `main()` function of `plot_figs.py`. 
-2. d
-3. Run `python3.8 plot_figs.py`
-
+- gnuplot
 
 ## Background
 In order to understand the plotting code, one must understand what data is outputted by an experiment.
@@ -22,14 +16,12 @@ The client process in particular will produce some extra output. Detailed below 
 #### Latency
 These are contained in files that start with `latFileRead` or `latFileWrite`. These files contain the latency of every client request that was sent during the experiment (the time in milliseconds between sending a request and getting a response from a server).
 
-These latencies are organized in two ways: by operation type and server number. In order to analyze write commands and read commands separately, the latencies of read commands are stored in `latFileRead` and the latencies of the write commands are stored in `latFileWrite`. To plot data with an even amount of latencies from each server, the latencies are also seperated by server. For example, with 3 servers, there would be `latFileRead-0.txt`, `latFileRead-1.txt`, and `latFileRead-2.txt`.
+These latencies are organized in two ways: by operation type and server number. In order to analyze write commands and read commands separately, the latencies of read commands are stored in `latFileRead` and the latencies of the write commands are stored in `latFileWrite`. To plot data with the same amount of latencies from each server, the latencies are also seperated by server. For example, with 3 servers, there would be `latFileRead-0.txt`, `latFileRead-1.txt`, and `latFileRead-2.txt`.
 
 #### Throughput
 This is contained in a file called `lattput.txt`. Every couple of seconds while the experiment is running, the client will print a row of data into this file. One of the columns corresponds to the total throughput of the system (number of requests completed / time of experiment in seconds).
 
-To get the average throughput of the system, we run `client_metrics.py` on the client folder, which will print out a dictionary of statistics.
-
-TODO: GET PICTURE OF CLIENT METRIC OUTPUT
+To get the average throughput of the system, we run `client_metrics.py` on the client folder, which will print out a dictionary of statistics. The exact statistics can be found by reading through the code.
 
 ## Workflow
 Each set of figures vary in how data is collected and plotted. I will detail how each figure is plotted by their number in the Gus paper. These figures correspond to the data in the `latencies`, `throughput-latency`, `data-size-latencies`, and `write-ratio-throughput` folders. 
@@ -49,7 +41,7 @@ Since figure 6 features the CDFs of both read and write latencies, we extract th
 #### Percentile Calculation
 Once the latencies are collected, we use numpy on the aggregated latencies, calculating 1 to 99 percentile latency (incrementing by 1 percentile). We then put these percentiles in a csv, with the second column containing the percentile and the first column containing the corresponding latency.
 
-In addition to calculating 1 to 99 percentile latency, to really focus on the tail latency, we also calculate a log scaled cdf, with most percentile calculated being in between the 90th and 100th percentiles. Since the log scaled cdfs corresponded pretty nicely with the regular scaled cdfs, we chose not to show them in our paper.
+In addition to calculating 1 to 99 percentile latency, to really focus on the tail latency, we also calculate a log scaled cdf, with most percentile calculated being in between the 90th and 100th percentiles. Since the log scaled cdfs didn't show anything that couldn't be seen with the regular scaled cdfs, we chose not to show them in our paper.
 
 Percentiles are calculated for all 3 protocols, all 3 conflict rates, and both optypes.
 
@@ -83,6 +75,15 @@ For figures 6 and 7, `plot_figs.py`, `folders_to_norm_latencies.py`, `latencies_
 ### plot_figs.py
 This file acts as the main function for the plotting of the figures. The user inputs the folder locations of the necessary data, and uses the functions in the files listed below to transform the client folders into plots.
 
+The way we organized experiment data is as follows:
+- The `latencies` folder corresponds with figures 6 through 7. Experiments are first sorted by replication protocol, and then by conflict rate.
+- The `throughput-latency` folder corresponds with figure 8. The data is sorted by replication protocol.
+- The `write-ratio-throughput` folder corresponds with figure 9, sorted by replicatoin protocol.
+- We are missing the replication factor data that corresponds with figure 10, but I can get this later if needed.
+- The `data_size-latencies` folder corresponds with figure 11.
+
+*Note*: All of the experiment data was manually placed into these folders, just so it was easier for the code to find the data it needed. With this fixed structure we only had to input the location of three folders, and the code could figure out where everything else was by itself. 
+
 ### folders_to_norm_latencies.py
 The function `extract_norm_latencies()` will do the latency aggregation mentioned above.
 
@@ -91,5 +92,13 @@ Given a python list of latencies, the function `latencies_to_csv()` will calcula
 
 ### csvs_to_plot.py
 Each figure has a specific function in this file that will take the necessary csv files and plot the data using gnuplot like it appears in the paper.
+
+## How to Run
+1. If any experiments need to be updated, place the client folder in the relevant folder location and rename it.
+2. Uncomment the sections relative to the figures you want to plot in the `main()` function of `plot_figs.py`.
+   1. *Note*: For some reason the code for plotting figures 8 and 10 were not saved into the repo, so those will have to be reimplemented later.
+3. Change folder locations in the code if needed. For figures 6-7, change the first 3 variables in the main function. For the other figures, go to their section and change the folder location.
+4. Run `python3.8 plot_figs.py`
+5. Results will be in the `plots` target directory.
 ___
-TODO: one thing I realized after writing this doc is that the latency percentiles calculated via `client_metrics.py` did not normalize latencies like the code in `plot_figs.py`.
+TODO: one thing I realized after writing this doc is that the latency percentiles calculated via `client_metrics.py` did not normalize latencies like the code in `plot_figs.py`. We'll need to fix this.

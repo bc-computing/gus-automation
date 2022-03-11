@@ -42,7 +42,7 @@ In each server and client machine,
 6. Download the binaries from the control machine.
 
 #### Execution
-1. Kill any processes on the client and server machines that are named `master`, `server`, or `client`.
+1. Kill any processes on the client and server machines that are named `master`, `server`, or `client` for safety.
 2. Execute master, server, client binaries on their respective machines.
 3. Once the client process finishes, kill all master and server processes.
 4. Download the logs of each master, client, and server process into the control machine.

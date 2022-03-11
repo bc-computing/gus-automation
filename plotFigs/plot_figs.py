@@ -66,6 +66,8 @@ def main():
     # cdf_csvs_to_plot(plot_target_directory, "7b", gryff_fig_7_csvs[1], gus_fig_7_csvs[1], epaxos_fig_7_csvs[1],
     #              is_for_reads=False)
 
+    # fig 8
+
     # fig 9
     # write_ratio_throughput_csv_folder = "/Users/zhouaea/Desktop/plotFigs/write_ratio-throughput"
     # gryff_write_ratio_throughput_csv = os.path.join(write_ratio_throughput_csv_folder, "gryff-write_ratio-throughput.csv")
