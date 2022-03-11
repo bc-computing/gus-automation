@@ -148,7 +148,7 @@ def calculate_fig_6_csvs(csv_target_directory,
     return gryff_fig_6_csvs, gus_fig_6_csvs, epaxos_fig_6_csvs
 
 
-def calculate_fig_7_csvs(csv_target_directory, gryff_7_latency_folder, gus_7_latency_folder, epaxos_7_latency_folder):
+def calculate_fig_9_csvs(csv_target_directory, gryff_7_latency_folder, gus_7_latency_folder, epaxos_7_latency_folder):
     # Extract data in each latency folder. We only need reads for figure 6, no writes.
     gryff_7a_latencies = extract_norm_latencies(gryff_7_latency_folder, is_for_reads=True)
     gryff_7b_latencies = extract_norm_latencies(gryff_7_latency_folder, is_for_reads=False)
@@ -160,56 +160,26 @@ def calculate_fig_7_csvs(csv_target_directory, gryff_7_latency_folder, gus_7_lat
     epaxos_7b_latencies = extract_norm_latencies(epaxos_7_latency_folder, is_for_reads=False)
 
     # Calculate csvs for each list of latencies.
-    gryff_7a_norm_cdf_csv, _ = latencies_to_csv(csv_target_directory, gryff_7a_latencies, "gryff", "7a")
-    gryff_7b_norm_cdf_csv, _ = latencies_to_csv(csv_target_directory, gryff_7b_latencies, "gryff", "7b")
+    gryff_7a_norm_cdf_csv, gryff_7a_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gryff_7a_latencies, "gryff", "7a")
+    gryff_7b_norm_cdf_csv, gryff_7b_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gryff_7b_latencies, "gryff", "7b")
 
-    gus_7a_norm_cdf_csv, _ = latencies_to_csv(csv_target_directory, gus_7a_latencies, "gus", "7a")
-    gus_7b_norm_cdf_csv, _ = latencies_to_csv(csv_target_directory, gus_7b_latencies, "gus", "7b")
+    gus_7a_norm_cdf_csv, gus_7a_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gus_7a_latencies, "gus", "7a")
+    gus_7b_norm_cdf_csv, gus_7b_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gus_7b_latencies, "gus", "7b")
 
-    epaxos_7a_norm_cdf_csv, _ = latencies_to_csv(csv_target_directory, epaxos_7a_latencies, "epaxos", "7a")
-    epaxos_7b_norm_cdf_csv, _ = latencies_to_csv(csv_target_directory, epaxos_7b_latencies, "epaxos", "7b")
+    epaxos_7a_norm_cdf_csv, epaxos_7a_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, epaxos_7a_latencies, "epaxos", "7a")
+    epaxos_7b_norm_cdf_csv, epaxos_7b_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, epaxos_7b_latencies, "epaxos", "7b")
 
     # Package csvs into tuples before returning them
-    gryff_fig_7_csvs = (gryff_7a_norm_cdf_csv, gryff_7b_norm_cdf_csv)
+    gryff_fig_7_csvs = (gryff_7a_norm_cdf_csv, gryff_7a_norm_log_cdf_csv,
+                        gryff_7b_norm_cdf_csv, gryff_7b_norm_log_cdf_csv)
 
-    gus_fig_7_csvs = (gus_7a_norm_cdf_csv, gus_7b_norm_cdf_csv)
+    gus_fig_7_csvs = (gus_7a_norm_cdf_csv, gus_7a_norm_log_cdf_csv,
+                        gus_7b_norm_cdf_csv, gus_7b_norm_log_cdf_csv)
 
-    epaxos_fig_7_csvs = (epaxos_7a_norm_cdf_csv, epaxos_7b_norm_cdf_csv)
+    epaxos_fig_7_csvs = (epaxos_7a_norm_cdf_csv, epaxos_7a_norm_log_cdf_csv,
+                        epaxos_7b_norm_cdf_csv, epaxos_7b_norm_log_cdf_csv)
 
     return gryff_fig_7_csvs, gus_fig_7_csvs, epaxos_fig_7_csvs
-
-def calculate_fig_9_csvs(csv_target_directory, gryff_9_latency_folder, gus_9_latency_folder, epaxos_9_latency_folder):
-    # Extract data in each latency folder. We only need reads for figure 6, no writes.
-    gryff_9a_latencies = extract_norm_latencies(gryff_9_latency_folder, is_for_reads=True)
-    gryff_9b_latencies = extract_norm_latencies(gryff_9_latency_folder, is_for_reads=False)
-
-    gus_9a_latencies = extract_norm_latencies(gus_9_latency_folder, is_for_reads=True)
-    gus_9b_latencies = extract_norm_latencies(gus_9_latency_folder, is_for_reads=False)
-
-    epaxos_9a_latencies = extract_norm_latencies(epaxos_9_latency_folder, is_for_reads=True)
-    epaxos_9b_latencies = extract_norm_latencies(epaxos_9_latency_folder, is_for_reads=False)
-
-    # Calculate csvs for each list of latencies.
-    gryff_9a_norm_cdf_csv, gryff_9a_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gryff_9a_latencies, "gryff", "9a")
-    gryff_9b_norm_cdf_csv, gryff_9b_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gryff_9b_latencies, "gryff", "9b")
-
-    gus_9a_norm_cdf_csv, gus_9a_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gus_9a_latencies, "gus", "9a")
-    gus_9b_norm_cdf_csv, gus_9b_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, gus_9b_latencies, "gus", "9b")
-
-    epaxos_9a_norm_cdf_csv, epaxos_9a_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, epaxos_9a_latencies, "epaxos", "9a")
-    epaxos_9b_norm_cdf_csv, epaxos_9b_norm_log_cdf_csv = latencies_to_csv(csv_target_directory, epaxos_9b_latencies, "epaxos", "9b")
-
-    # Package csvs into tuples before returning them
-    gryff_fig_9_csvs = (gryff_9a_norm_cdf_csv, gryff_9a_norm_log_cdf_csv,
-                        gryff_9b_norm_cdf_csv, gryff_9b_norm_log_cdf_csv)
-
-    gus_fig_9_csvs = (gus_9a_norm_cdf_csv, gus_9a_norm_log_cdf_csv,
-                        gus_9b_norm_cdf_csv, gus_9b_norm_log_cdf_csv)
-
-    epaxos_fig_9_csvs = (epaxos_9a_norm_cdf_csv, epaxos_9a_norm_log_cdf_csv,
-                        epaxos_9b_norm_cdf_csv, epaxos_9b_norm_log_cdf_csv)
-
-    return gryff_fig_9_csvs, gus_fig_9_csvs, epaxos_fig_9_csvs
 
 if __name__ == "__main__":
     main()
