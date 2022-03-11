@@ -35,7 +35,7 @@ def get_server_cmd(config, timestamp, server_names_to_ips, server_name):
         '-addr=%s' % server_addr,
         '-exec=true',
     ]])
-    server_command += get_replication_protocol_args(config['replication_protocol'])
+    server_command += " " + get_replication_protocol_args(config['replication_protocol'])
 
     stdout_file = os.path.join(exp_directory, 'server-%s-stdout.log' % server_name)
     stderr_file = os.path.join(exp_directory, 'server-%s-stderr.log' % server_name)
@@ -50,7 +50,7 @@ def get_replication_protocol_args(replication_protocol):
     elif replication_protocol == "epaxos":
         return "-gus=false -e=true -exec=true -dreply=true"
     elif replication_protocol == "gryff":
-        return ""
+        return "-t -proxy -exec=true -dreply=true"
     else:
         print("ERROR: unknown replication protocol. Please choose between gus, epaxos, and gryff")
         exit(1)
@@ -71,6 +71,9 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
         '-c=%d' % config['conflict_percentage'],
         '-T=%d' % (int(config['clients_per_replica']) * config['number_of_replicas'])
     ]])
+    
+    if config['replication_protocol'] == "gryff":
+        client_command += " -proxy"
 
     # Only run client for 3 minutes.
     timeout = "180s"
