@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-# csvs is a ____ of csv files
+# for figures 6 and 7
 def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_csv, is_for_reads, log=False):
 
     plot_script_file = os.path.join(plot_target_directory, '%s.gpi' % figure)
@@ -11,12 +11,13 @@ def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_c
     generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols, figure, is_for_reads=is_for_reads, log=log)
     subprocess.call(['gnuplot', plot_script_file])
 
+
 def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols, figure, is_for_reads, log=False):
     with open(plot_script_file, 'w+') as f:
         f.write("set datafile separator ','\n")
         f.write("set terminal pngcairo size 1500,500 enhanced font 'Helvetica,36'\n")
 
-        if '9' in figure:
+        if '7' in figure:
             if log:
                 f.write("set key at graph 0.85, 0.725\n")
             else:
@@ -52,6 +53,7 @@ def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, p
             if i != len(csvs) - 1:
                 f.write(', \\\n')
 
+# for figure 8
 def write_ratio_throughput_csvs_to_plot(plot_target_directory, gryff_csv, gus_csv, epaxos_csv):
     plot_script_file = os.path.join(plot_target_directory, 'write_ratio-throughput.gpi')
 
@@ -86,6 +88,7 @@ def generate_write_ratio_throughput_gnuplot_script(plot_script_file, plot_target
             if i != len(csvs) - 1:
                 f.write(', \\\n')
 
+# for figure 9
 def write_ratio_throughput_csvs_to_plot(plot_target_directory, gryff_csv, gus_csv, epaxos_csv):
     plot_script_file = os.path.join(plot_target_directory, 'write_ratio-throughput.gpi')
 
@@ -120,6 +123,7 @@ def generate_write_ratio_throughput_gnuplot_script(plot_script_file, plot_target
             if i != len(csvs) - 1:
                 f.write(', \\\n')
 
+# for figure 11
 def data_size_latencies_csvs_to_plot(plot_target_directory, gus_csv, giza_csv):
     plot_script_file = os.path.join(plot_target_directory, 'data_size-latencies.gpi')
 
