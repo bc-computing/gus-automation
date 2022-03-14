@@ -33,7 +33,7 @@ To get the average throughput of the system, we run `client_metrics.py` on the c
 Each set of figures vary in how data is collected and plotted. I will detail how each figure is plotted by their number in the Gus paper. These figures correspond to the data in the `latencies`, `throughput-latency`, `data-size-latencies`, and `write-ratio-throughput` folders. 
 
 ### Figure 6 - Tail Latency
-Figure 6 graphs a cumulative distribution function of the latencies of gus, gryff, and epaxos with two independent variables: conflict percentage and operation type.
+Figure 6 graphs a cumulative distribution function of the latencies of Gus, Gryff, and Epaxos with two independent variables: conflict percentage and operation type.
 
 The workflow from experiment data to tail latency plots can be split into 3 steps: latency aggregation, percentile calculation, percentile plotting.
 
@@ -70,10 +70,10 @@ Afterwards, we plotted the csvs of each replication protocol using gnuplot.
 Figure 9 was also collected manually. We ran each replication protocol with the maximum clients it could handle without crashing, varied write percentage, and used `client_metrics.py` on the resulting client folders to give us average throughput. Afterwards, we plotted the csvs of each replication protocol using gnuplot.
 
 ### Figure 10 - Replication Factor vs. Latency (layered design)
-Figure 10 was also collected manually. We ran experiments with the layered design version of gus (by switching branches) with different numbers of data servers, and used `client_metrics.py` on the resulting client folders to extract p99.99 read/write latency. Then we plotted with gnuplot.
+Figure 10 was also collected manually. We ran experiments with the layered design version of Gus (by switching branches) with different numbers of data servers, and used `client_metrics.py` on the resulting client folders to extract p99.99 read/write latency. Then we plotted with gnuplot.
 
 ### Figure 11 - Data Size vs Read Latency
-Figure 11 was also collected manually, where we varied data size and used `client_metrics.py` to get p50 and p99 read latency with both giza and gus. Data was plotted with gnuplot.
+Figure 11 was also collected manually, where we varied data size and used `client_metrics.py` to get p50 and p99 read latency with both Giza and Gus. Data was plotted with gnuplot.
 
 ## Package Design
 For figures 6 and 7, `plot_figs.py`, `folders_to_norm_latencies.py`, `latencies_to_csv.py`, and `csvs_to_plot.py` were used. Figures 8-11 do not use `folders_to_norm_latencies.py` and `csvs_to_plot.py`. Below I will detail what each file does.
