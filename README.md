@@ -17,11 +17,19 @@ This repo consists of python code that will autonomously run the replication pro
 - The Gryff repository 
 - Note: Both repositories are derived from the EPaxos repository, but have different communication between clients and servers, so it is easier to have two seperate repos.
 
-All of the dependencies mentioned above are preinstalled in the control machine in `/root/go/src` in this [cloudlab profile](https://www.cloudlab.us/p/fff5448808f3ecb656874213ea663bd448544a7e).
+All of the dependencies mentioned above are preinstalled in the control machine in this [cloudlab profile](https://www.cloudlab.us/p/fff5448808f3ecb656874213ea663bd448544a7e). The server and client machines only have the code dependencies installed.
 
 ## How to Run
+### Setup
+1. Instantiate the cloudlab profile above.
+2. Connect to the control machine via ssh.
+3. Open this repo in the control machine. This repo and others can be found in `/root/go/src`. All repos are stored in root because cloudlab disk images do not save data stored in user home directories.
+   1. `sudo su`
+   2. `cd ~/go/src/gus-automation`
+
 ### Single Experiment
-1. Modify `config.json` to choose the settings for the experiment that will be run.
+1. Modify `config.json` to choose the settings for the experiment that will be run. The file `config_instrunction.md` provides information on each field of the config for your convenience. 
+   1. Hint: It is likely that you will have to modify the default communication parameters to get the experiment to work.
 2. Run `python3.8 setup_network_delay_test.py config.json` to create/remove artificial delay between servers. Delay settings are persistent.
 3. Run `python3.8 run_experiment_test.py config.json` to run the experiment.
 ### Multiple Experiments
@@ -42,7 +50,7 @@ In the control machine,
    1. The directory is named after the current time to distnguish it from the result folders of other experiments.
    2. This directory will contain the output from each server and client machine.
 
-In each server and client machine,
+From the control machine, ssh to each server and client machine. Then
 1. Create a result folder (with the same timestamp) to store its own results.
 2. Create a folder to store binaries.
 3. Download the binaries from the control machine.
