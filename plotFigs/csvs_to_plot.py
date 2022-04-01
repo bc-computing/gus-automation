@@ -1,15 +1,24 @@
+from logging import StrFormatStyle
 import os
 import subprocess
+from pathlib import Path
+import matplotlib.pyplot as plt
+
 
 # for figures 6 and 7
 def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_csv, is_for_reads, log=False):
 
-    plot_script_file = os.path.join(plot_target_directory, '%s.gpi' % figure)
+    print("Type of figure: ", type(figure))
+    figure_dot_gpi = "{}.gpi".format(figure)
+    plot_script_file = plot_target_directory / figure_dot_gpi
+    print("Plot script file path:", plot_script_file, " , exists:" , os.path.exists(plot_script_file))
+    
 
     csvs = (gryff_csv, gus_csv, epaxos_csv)
     protocols = ["Gryff", "Gus", "EPaxos"]  # should match with csvs passed in
     generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols, figure, is_for_reads=is_for_reads, log=log)
-    subprocess.call(['gnuplot', plot_script_file])
+    print("Here is plot_scrip_file before subcprocess.call" , plot_script_file)
+    subprocess.call(['gnuplot', plot_script_file]) #-- CONVERT TO Matplotlib
 
 
 def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols, figure, is_for_reads, log=False):
@@ -91,6 +100,7 @@ def generate_write_ratio_throughput_gnuplot_script(plot_script_file, plot_target
 # for figure 11
 def data_size_latencies_csvs_to_plot(plot_target_directory, gus_csv, giza_csv):
     plot_script_file = os.path.join(plot_target_directory, 'data_size-latencies.gpi')
+    print(os.path.exists("plot script file exists:", plot_script_file))
 
     csvs = (gus_csv, giza_csv)
     protocols = ["Gus", "Giza"]  # should match with csvs passed in
