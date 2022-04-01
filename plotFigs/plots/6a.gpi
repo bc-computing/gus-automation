@@ -1,5 +1,5 @@
 set datafile separator ','
-set terminal pngcairo size 1500,500 enhanced font 'Helvetica,36'
+set terminal pngcairo size 1500,500 enhanced font 'Helvetica,30'
 set key bottom right
 set xlabel 'Latency (ms)'
 set ylabel 'Fraction of Reads'

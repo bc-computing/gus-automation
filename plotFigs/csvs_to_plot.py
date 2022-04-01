@@ -24,7 +24,7 @@ def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_c
 def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols, figure, is_for_reads, log=False):
     with open(plot_script_file, 'w+') as f:
         f.write("set datafile separator ','\n")
-        f.write("set terminal pngcairo size 1500,500 enhanced font 'Helvetica,36'\n")
+        f.write("set terminal pngcairo size 1500,500 enhanced font 'Helvetica,30'\n")
 
         if '7' in figure:
             if log:
