@@ -7,6 +7,9 @@ from csvs_to_plot import cdf_csvs_to_plot, write_ratio_throughput_csvs_to_plot, 
 import os.path
 from pathlib import Path
 
+from client_metrics import get_metrics
+
+
 
 
 def main():
@@ -14,11 +17,9 @@ def main():
     csv_target_directory = Path("C:/Users/cadum/GusResearch/gus-automation/plotFigs/csvs")
     plot_target_directory = Path("C:/Users/cadum/GusResearch/gus-automation/plotFigs/plots")
     latency_folder = Path("C:/Users/cadum/GusResearch/gus-automation/plotFigs/latencies")
-    print(os.path.exists(latency_folder))
-
+   
     # Calculated automatically.
     gryff_latency_folder = latency_folder / "gryff"
-    print("Griff latency folder exists: ", os.path.exists(gryff_latency_folder))
     gryff_6a_latency_folder = gryff_latency_folder / "6a"
     gryff_6b_latency_folder = gryff_latency_folder / "6b"
     gryff_6c_latency_folder = gryff_latency_folder / "6c"
@@ -36,6 +37,10 @@ def main():
     epaxos_6c_latency_folder = epaxos_latency_folder / "6c"
     epaxos_7_latency_folder = epaxos_latency_folder / "7"
 
+    stats = get_metrics(epaxos_6a_latency_folder)
+    for x in stats:
+        print(x, stats[x])
+    
     # fig 6
     gryff_fig_6_csvs, gus_fig_6_csvs, epaxos_fig_6_csvs = calculate_fig_6_csvs(csv_target_directory,
                                                                                 gryff_6a_latency_folder,
