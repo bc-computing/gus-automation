@@ -56,7 +56,7 @@
   "base_control_experiment_directory": "/root/go/src/gus-automation/results",
   "base_remote_experiment_directory": "~/results",
   "remote_bin_directory": "~/bin",
-  "replication_protocol": "gus",
+  "replication_protocol": "epaxos",
   "number_of_replicas": 3,
   "experiment_length": 180,
   "write_percentage": 0.055,

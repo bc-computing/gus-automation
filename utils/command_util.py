@@ -34,6 +34,7 @@ def get_server_cmd(config, timestamp, server_names_to_ips, server_name):
         '-maddr=%s' % master_addr,
         '-addr=%s' % server_addr,
         '-exec=true',
+        'durable=true'
     ]])
     server_command += " " + get_replication_protocol_args(config['replication_protocol'])
 
