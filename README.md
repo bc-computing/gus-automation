@@ -23,6 +23,7 @@ All of the dependencies mentioned above are preinstalled in the control machine 
 ### Setup
 1. Instantiate the cloudlab profile above.
 2. Connect to the control machine via ssh.
+   1. Make sure to include `-A` 
 3. Open this repo in the control machine. This repo and others can be found in `/root/go/src`. All repos are stored in root because cloudlab disk images do not save data stored in user home directories.
    1. `sudo su`
    2. `cd ~/go/src/gus-automation`
