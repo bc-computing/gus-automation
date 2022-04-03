@@ -17,6 +17,7 @@
 - Replication Protocol Parameters
   - replication_protocol: gus, gryff, or epaxos
   - number_of_replicas: 3 or 5
+  - durable: true or false
 - Client Parameters
   - experiment_length: in seconds
   - write_percentage: Floating point number between 0 and 1

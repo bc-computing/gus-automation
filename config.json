@@ -58,6 +58,7 @@
   "remote_bin_directory": "~/bin",
   "replication_protocol": "gus",
   "number_of_replicas": 3,
+  "durable": false,
   "experiment_length": 180,
   "write_percentage": 0.055,
   "conflict_percentage": 2,
