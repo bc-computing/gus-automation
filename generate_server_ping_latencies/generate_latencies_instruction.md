@@ -1,6 +1,6 @@
 # Latency Editing Library
 This library will let you modify the `server_ping_latencies` field in config.json to your liking. There are two steps: 
-1. Pull the latest AWS latency statistics.
+1. Pull the latest AWS latency statistics from [cloudping.co](https://www.cloudping.co/grid/p_50/timeframe/1Y).
 2. Filter the aggregate statistics into latencies that pertain to the region combinations you want to test. 
 
 ## 1. Pull the latest AWS latency statistics
