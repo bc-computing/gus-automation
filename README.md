@@ -19,6 +19,8 @@ This repo consists of python code that will autonomously run the replication pro
 
 All of the dependencies mentioned above are preinstalled in the control machine in this [cloudlab profile](https://www.cloudlab.us/p/fff5448808f3ecb656874213ea663bd448544a7e). The server and client machines only have the code dependencies installed.
 
+NOTE: The preinstalled repos may not contain the latest versions. Make sure to git pull inside each repo after instantiating the profile.
+
 ## How to Run
 ### Setup
 1. Instantiate the cloudlab profile above.
