@@ -1,0 +1,1056 @@
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43144
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43136
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43142
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Dialing master at addr 10.10.1.1:7087
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54642
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43146
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43172
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43170
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43168
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43166
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43164
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54652
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54656
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43156
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43154
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43152
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53118
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43150
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54700
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53114
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43202
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43140
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54692
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54690
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43138
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43194
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54686
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43190
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43188
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54680
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43184
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54674
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54676
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53090
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43178
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53182
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53180
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43264
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54756
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53174
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43258
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54750
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43254
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53164
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54742
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54740
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54746
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53158
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53154
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54766
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43242
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54732
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43270
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43236
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43234
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43230
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43226
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43224
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43222
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43232
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54722
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43220
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53132
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54710
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43214
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54706
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43326
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43330
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43328
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Received ping from replica 1 in time 374612
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 428904
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 475471
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 2 in time 703619
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54818
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43322
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54704
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Received ping from replica 2 in time 747922
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53234
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43208
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Received ping from replica 2 in time 746750
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54808
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54812
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54810
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54804
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43312
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53268
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Received ping from replica 2 in time 1054708
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54846
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54796
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54798
+2022/04/10 14:41:36 Received ping from replica 1 in time 806241
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54800
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54842
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54794
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53210
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54788
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54792
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53206
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43290
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53200
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53202
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43346
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53198
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Received ping from replica 1 in time 1023379
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43282
+2022/04/10 14:41:36 Received ping from replica 0 in time 1068383
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54774
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53192
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54770
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53188
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54834
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54836
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53258
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53250
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53302
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54832
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43386
+2022/04/10 14:41:36 Received ping from replica 0 in time 2812924
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53298
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Received ping from replica 0 in time 2824646
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54874
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53246
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53296
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43308
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54828
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54872
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53284
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53280
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53278
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54856
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53272
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53264
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53274
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53270
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53320
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53318
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54894
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53316
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53312
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54890
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53308
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53304
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43392
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Received ping from replica 2 in time 262963
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53324
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53322
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54906
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Received ping from replica 0 in time 227156
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53282
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Got replica list from master.
+2022/04/10 14:41:36 Connecting to replicas...
+2022/04/10 14:41:36 Dialing replica 0 with addr 10.10.1.1:7070
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54870
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53288
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53286
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53332
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 0 with connection 10.10.1.6:43416
+2022/04/10 14:41:36 Dialing replica 1 with addr 10.10.1.2:7070
+2022/04/10 14:41:36 Received ping from replica 1 in time 368561
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 322825
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 349586
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53328
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Received ping from replica 2 in time 425618
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Received ping from replica 1 in time 1866629
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 6415327
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6393836
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53336
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53338
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Received ping from replica 2 in time 17012363
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Connected to replica 1 with connection 10.10.1.6:54914
+2022/04/10 14:41:36 Dialing replica 2 with addr 10.10.1.3:7070
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Received ping from replica 2 in time 24387098
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Received ping from replica 2 in time 9223582
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 2 in time 9203193
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 2 in time 9184448
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Connected to replica 2 with connection 10.10.1.6:53340
+2022/04/10 14:41:36 Successfully connected to all 3 replicas.
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Received ping from replica 1 in time 14480666
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 14501787
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Received ping from replica 1 in time 17069489
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Received ping from replica 2 in time 2349084
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 2 in time 2542406
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 4692026
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 4714588
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5117253
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 4924512
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 4977371
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5212752
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5193025
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5144945
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5136309
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5257546
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5267304
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5398731
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5298313
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5429228
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5426112
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5438205
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5487136
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5566796
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5551548
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5684867
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5715395
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5741273
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 2 in time 5589599
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 10597837
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 2 in time 10547593
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 0 in time 24558008
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 1 in time 5724391
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5773513
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5827415
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 5904449
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5889562
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 2 in time 5998936
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6072103
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 5986072
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Received ping from replica 1 in time 6186268
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6225811
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6170498
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6277408
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6325047
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6366345
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6414395
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6471041
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6510805
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6557012
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6605954
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6669403
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6781624
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6726810
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6765944
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6873395
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6921426
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 6854060
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 6978082
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 7025290
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 7096524
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 1 in time 12669281
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 12645115
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 12681554
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 12682646
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 0 in time 8650948
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 8627524
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 8701763
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 8907349
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 8750955
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 8857175
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 8832739
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 1 in time 8808584
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 8916666
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 8992488
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 9033635
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 0 in time 9074662
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 10687085
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 13088587
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 0 in time 16169863
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 14118387
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 14762615
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 1 in time 21898983
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 2 in time 21976018
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 31337318
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 1 in time 36495988
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 36722273
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 48987295
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 46745412
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 48886316
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 63517905
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 1 in time 64356287
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 2 in time 66601607
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 77026901
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 85322502
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Received ping from replica 2 in time 90598914
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 92889688
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 0 in time 91383965
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 92817222
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 87078504
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 2 in time 92957364
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 92706365
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 92802965
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 0 in time 102044600
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 100102960
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 10230779
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Received ping from replica 2 in time 101082597
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 The leader is replica 0
+2022/04/10 14:41:36 Determining replica pings...
+2022/04/10 14:41:36 Sending ping to replica 2
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Sending ping to replica 0
+2022/04/10 14:41:36 Sending ping to replica 1
+2022/04/10 14:41:36 Received ping from replica 2 in time 268955
+2022/04/10 14:41:36 Done pinging replica 2.
+2022/04/10 14:41:36 Received ping from replica 0 in time 1111514
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 247915
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 2 in time 102134038
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 102280202
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 103484620
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 103816753
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 2 in time 105087796
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 0 in time 5917774
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 0 in time 18563992
+2022/04/10 14:41:36 Done pinging replica 0.
+2022/04/10 14:41:36 Received ping from replica 1 in time 18669900
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
+2022/04/10 14:41:36 Received ping from replica 1 in time 22838214
+2022/04/10 14:41:36 Done pinging replica 1.
+2022/04/10 14:41:36 Successfully pinged all replicas!
