@@ -1,0 +1,37 @@
+{
+    "california": {
+      "california": 0,
+      "ireland": 151,
+      "japan": 113,
+      "oregon": 59,
+      "virginia": 72
+    },
+    "ireland": {
+      "california": 151,
+      "ireland": 0,
+      "japan": 220,
+      "oregon": 145,
+      "virginia": 88
+    },
+    "japan": {
+      "california": 113,
+      "ireland": 220,
+      "japan": 0,
+      "oregon": 121,
+      "virginia": 162
+    },
+    "oregon": {
+      "california": 59,
+      "ireland": 145,
+      "japan": 121,
+      "oregon": 0,
+      "virginia": 93
+    },
+    "virginia": {
+      "california": 72,
+      "ireland": 88,
+      "japan": 162,
+      "oregon": 93,
+      "virginia": 0
+    }
+}
