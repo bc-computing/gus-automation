@@ -37,7 +37,14 @@ def main():
     epaxos_6c_latency_folder = epaxos_latency_folder / "6c"
     epaxos_7_latency_folder = epaxos_latency_folder / "7"
 
-    stats = get_metrics(epaxos_6a_latency_folder)
+    
+    stats= get_metrics(gryff_6c_latency_folder)
+    print("\ngryff:")
+    for x in stats:
+        print(x, stats[x])
+
+    stats= get_metrics(gus_6c_latency_folder)
+    print("\ngus:")
     for x in stats:
         print(x, stats[x])
     

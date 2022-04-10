@@ -1,10 +1,10 @@
 set datafile separator ','
-set terminal pngcairo size 1500,500 enhanced font 'Helvetica,30'
-set key bottom right
+set terminal pngcairo size 1500,500 enhanced font 'Helvetica, 26'
+set key top right
 set xlabel 'Latency (ms)'
 set ylabel 'Fraction of Writes'
 set ytics .2
-set xrange [0:300]
+set xrange [0:900]
 set output 'C:\Users\cadum\GusResearch\gus-automation\plotFigs\plots/6a-write.png'
 set style line 1 linetype 1 linecolor "web-green" linewidth 6 dashtype 4
 set style line 2 linetype 1 linecolor "orange" linewidth 6 dashtype 1

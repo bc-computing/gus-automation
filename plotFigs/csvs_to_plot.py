@@ -24,7 +24,7 @@ def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_c
 def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols, figure, is_for_reads, log=False):
     with open(plot_script_file, 'w+') as f:
         f.write("set datafile separator ','\n")
-        f.write("set terminal pngcairo size 1500,500 enhanced font 'Helvetica,30'\n")
+        f.write("set terminal pngcairo size 1500,500 enhanced font 'Helvetica, 26'\n")
 
         if '7' in figure:
             if log:
@@ -33,7 +33,7 @@ def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, p
                 f.write("set key at graph 0.9, 0.725\n")
 
         else:
-            f.write("set key bottom right\n")
+            f.write("set key top right\n")
 
 
         f.write("set xlabel 'Latency (ms)'\n")
@@ -45,7 +45,7 @@ def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, p
         f.write("set ytics .2\n")
 
         if '6' in figure:
-            f.write("set xrange [0:300]\n")
+            f.write("set xrange [0:900]\n")
 
         f.write('set output \'%s/%s\'\n' % (plot_target_directory, os.path.splitext(os.path.basename(plot_script_file))[0] + '.png'))
 
