@@ -24,7 +24,7 @@ def get_redis_server_cmd(config, timestamp, server_names_to_ips, server_name):
     exp_directory = os.path.join(config['base_remote_experiment_directory'], timestamp)
     server_addr = server_names_to_ips[server_name]
 
-    redis_remote_bin_directory = os.path.join(config['remote_bin_directory'], "redis")
+    redis_remote_bin_directory = os.path.join(config['remote_bin_directory'], "redis", "redis-server")
     server_command = "%s --protected-mode no &" % redis_remote_bin_directory
 
     stdout_file = os.path.join(exp_directory, 'redis-server-%s-stdout.log' % server_name)
