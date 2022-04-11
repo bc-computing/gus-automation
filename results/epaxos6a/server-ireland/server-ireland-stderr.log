@@ -1,30 +1,30 @@
-2022/04/10 14:19:31 Server starting on port 7070
-2022/04/10 14:19:32 Starting Egalitarian Paxos replica...
-2022/04/10 14:19:32 rpc.Register: method "ConnectToPeers" has 1 input parameters; needs exactly three
-2022/04/10 14:19:32 rpc.Register: method "ConnectToPeersNoListeners" has 1 input parameters; needs exactly three
-2022/04/10 14:19:32 rpc.Register: reply type of method "RegisterRPC" is not a pointer: "chan fastrpc.Serializable"
-2022/04/10 14:19:32 rpc.Register: method "ReplyBeacon" has 2 input parameters; needs exactly three
-2022/04/10 14:19:32 rpc.Register: method "ReplyPropose" has 0 output parameters; needs exactly one
-2022/04/10 14:19:32 rpc.Register: method "ReplyProposeTS" has 0 output parameters; needs exactly one
-2022/04/10 14:19:32 rpc.Register: method "SendBeacon" has 2 input parameters; needs exactly three
-2022/04/10 14:19:32 rpc.Register: method "SendMsg" has 4 input parameters; needs exactly three
-2022/04/10 14:19:32 rpc.Register: method "SendMsgNoFlush" has 4 input parameters; needs exactly three
-2022/04/10 14:19:32 rpc.Register: method "UpdatePreferredPeerOrder" has 2 input parameters; needs exactly three
-2022/04/10 14:19:32 rpc.Register: method "WaitForClientConnections" has 1 input parameters; needs exactly three
-2022/04/10 14:19:33 Replica id: 2. Done connecting to peers
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
-2022/04/10 14:19:36 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:50 Server starting on port 7070
+2022/04/10 19:14:51 Starting Egalitarian Paxos replica...
+2022/04/10 19:14:51 rpc.Register: method "ConnectToPeers" has 1 input parameters; needs exactly three
+2022/04/10 19:14:51 rpc.Register: method "ConnectToPeersNoListeners" has 1 input parameters; needs exactly three
+2022/04/10 19:14:51 rpc.Register: reply type of method "RegisterRPC" is not a pointer: "chan fastrpc.Serializable"
+2022/04/10 19:14:51 rpc.Register: method "ReplyBeacon" has 2 input parameters; needs exactly three
+2022/04/10 19:14:51 rpc.Register: method "ReplyPropose" has 0 output parameters; needs exactly one
+2022/04/10 19:14:51 rpc.Register: method "ReplyProposeTS" has 0 output parameters; needs exactly one
+2022/04/10 19:14:51 rpc.Register: method "SendBeacon" has 2 input parameters; needs exactly three
+2022/04/10 19:14:51 rpc.Register: method "SendMsg" has 4 input parameters; needs exactly three
+2022/04/10 19:14:51 rpc.Register: method "SendMsgNoFlush" has 4 input parameters; needs exactly three
+2022/04/10 19:14:51 rpc.Register: method "UpdatePreferredPeerOrder" has 2 input parameters; needs exactly three
+2022/04/10 19:14:51 rpc.Register: method "WaitForClientConnections" has 1 input parameters; needs exactly three
+2022/04/10 19:14:52 Replica id: 2. Done connecting to peers
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0
+2022/04/10 19:14:55 weird 0; conflicted 0; slow 0; happy 0

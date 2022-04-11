@@ -1,14 +1,14 @@
-2022/04/10 14:45:34 Server starting on port 7070
-2022/04/10 14:45:35 Starting Gus replica...
-2022/04/10 14:45:36 rpc.Register: method "ConnectToPeers" has 1 input parameters; needs exactly three
-2022/04/10 14:45:36 rpc.Register: method "ConnectToPeersNoListeners" has 1 input parameters; needs exactly three
-2022/04/10 14:45:36 rpc.Register: reply type of method "RegisterRPC" is not a pointer: "chan fastrpc.Serializable"
-2022/04/10 14:45:36 rpc.Register: method "ReplyBeacon" has 2 input parameters; needs exactly three
-2022/04/10 14:45:36 rpc.Register: method "ReplyPropose" has 0 output parameters; needs exactly one
-2022/04/10 14:45:36 rpc.Register: method "ReplyProposeTS" has 0 output parameters; needs exactly one
-2022/04/10 14:45:36 rpc.Register: method "SendBeacon" has 2 input parameters; needs exactly three
-2022/04/10 14:45:36 rpc.Register: method "SendMsg" has 4 input parameters; needs exactly three
-2022/04/10 14:45:36 rpc.Register: method "SendMsgNoFlush" has 4 input parameters; needs exactly three
-2022/04/10 14:45:36 rpc.Register: method "UpdatePreferredPeerOrder" has 2 input parameters; needs exactly three
-2022/04/10 14:45:36 rpc.Register: method "WaitForClientConnections" has 1 input parameters; needs exactly three
-2022/04/10 14:45:36 Replica id: 0. Done connecting to peers
+2022/04/10 19:46:14 Server starting on port 7070
+2022/04/10 19:46:15 Starting Gus replica...
+2022/04/10 19:46:16 rpc.Register: method "ConnectToPeers" has 1 input parameters; needs exactly three
+2022/04/10 19:46:16 rpc.Register: method "ConnectToPeersNoListeners" has 1 input parameters; needs exactly three
+2022/04/10 19:46:16 rpc.Register: reply type of method "RegisterRPC" is not a pointer: "chan fastrpc.Serializable"
+2022/04/10 19:46:16 rpc.Register: method "ReplyBeacon" has 2 input parameters; needs exactly three
+2022/04/10 19:46:16 rpc.Register: method "ReplyPropose" has 0 output parameters; needs exactly one
+2022/04/10 19:46:16 rpc.Register: method "ReplyProposeTS" has 0 output parameters; needs exactly one
+2022/04/10 19:46:16 rpc.Register: method "SendBeacon" has 2 input parameters; needs exactly three
+2022/04/10 19:46:16 rpc.Register: method "SendMsg" has 4 input parameters; needs exactly three
+2022/04/10 19:46:16 rpc.Register: method "SendMsgNoFlush" has 4 input parameters; needs exactly three
+2022/04/10 19:46:16 rpc.Register: method "UpdatePreferredPeerOrder" has 2 input parameters; needs exactly three
+2022/04/10 19:46:16 rpc.Register: method "WaitForClientConnections" has 1 input parameters; needs exactly three
+2022/04/10 19:46:17 Replica id: 0. Done connecting to peers
