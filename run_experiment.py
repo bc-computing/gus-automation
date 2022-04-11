@@ -43,7 +43,7 @@ def kill_layered_machines(config, executor):
     futures = []
 
     server_names = config['server_names']
-    for i in range(server_names):
+    for i in range(len(server_names)):
         server_url = get_machine_url(config, server_names[i])
         if i < 3:
             futures.append(executor.submit(run_remote_command_sync('killall -9 server', server_url)))

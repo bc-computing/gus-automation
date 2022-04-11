@@ -9,6 +9,7 @@
   - server_ping_latencies: a dictionary of dictionaries. The first key identifies a specific machine i. The second keys identify the desired latency between i and the other machines. This can be automatically generated via the `generate_server_ping_latencies` library. Look at that library's readme for more information. 
   - max_bandwidth: The maximum bandwidth between machines. Check the PARAMETERS section of the tc (traffic control) man page to see available units of transfer rates. 
 - Folder Location Parameters (control locations are by default in the root folder, this is because disk image data can not be stored in standard user home directories. for convenient sshing, remote locations are in the user's home folder)
+  - Note: for all folder locations on the control machine, the paths must be absolute, they cannot be relative.
   - gus_epaxos_control_src_directory: path to a directory on the control machine that contains the gus-epaxos git repository
   - gryff_control_src_directory: path to a directory on the control machine that contains the gryff git repository
   - base_control_experiment_directory: path to a directory on the control machine where experiment result subfolders will be stored
