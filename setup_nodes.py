@@ -21,16 +21,19 @@ def setup_nodes(config, executor):
     return timestamp
 
 def switch_branches(config):
-    if config['number_of_replicas'] == 3:
+    if config['layered']:
+        destination_branch = "layered"
+    elif config['number_of_replicas'] == 3:
         destination_branch = "main"
     elif config['number_of_replicas'] == 5:
         destination_branch = "n=5"
     else:
-        print("ERROR: supported number of replicas is only 3 or 5")
+        print("ERROR: supported number of replicas for gus, gryff, and epaxos is only 3 or 5")
         exit(1)
 
     switch_to_branch(config['gus_epaxos_control_src_directory'], destination_branch, "gus-epaxos")
-    switch_to_branch(config['gryff_control_src_directory'], destination_branch, "gryff")
+    if not config['layered']:
+        switch_to_branch(config['gryff_control_src_directory'], destination_branch, "gryff")
 
 def switch_to_branch(src_directory, destination_branch, repo_name):
     current_branch = get_current_branch(src_directory)

@@ -20,6 +20,19 @@ def get_master_cmd(config, timestamp):
     return master_command
 
 
+def get_redis_server_cmd(config, timestamp, server_names_to_ips, server_name):
+    exp_directory = os.path.join(config['base_remote_experiment_directory'], timestamp)
+    server_addr = server_names_to_ips[server_name]
+
+    server_command = "~/redis-6.2.2/src/redis-server --protected-mode no &"
+
+    stdout_file = os.path.join(exp_directory, 'redis-server-%s-stdout.log' % server_name)
+    stderr_file = os.path.join(exp_directory, 'redis-server-%s-stderr.log' % server_name)
+
+    server_command = tcsh_redirect_output_to_files(server_command,
+                                                   stdout_file, stderr_file)
+    return server_command
+
 def get_server_cmd(config, timestamp, server_names_to_ips, server_name):
     exp_directory = os.path.join(config['base_remote_experiment_directory'], timestamp)
     if config['replication_protocol'] == "gryff":
@@ -50,11 +63,13 @@ def get_replication_protocol_args(replication_protocol):
     if replication_protocol == "gus":
         return ""
     elif replication_protocol == "epaxos":
-        return "-gus=false -e=true -exec=true -dreply=true"
+        return "-gus=false -e=true"
     elif replication_protocol == "gryff":
         return "-t -proxy -exec=true -dreply=true"
+    elif replication_protocol == "giza":
+        return "-gus=false -f=true"
     else:
-        print("ERROR: unknown replication protocol. Please choose between gus, epaxos, and gryff")
+        print("ERROR: unknown replication protocol. Please choose between gus, epaxos, gryff, and giza")
         exit(1)
 
 
@@ -64,18 +79,30 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
         path_to_client_bin = os.path.join(config['remote_bin_directory'], 'gryff', 'client')
     else:
         path_to_client_bin = os.path.join(config['remote_bin_directory'], 'gus-epaxos', 'client')
+
     master_addr = server_names_to_ips[config['server_names'][0]]
 
-    client_command = ' '.join([str(x) for x in [
-        path_to_client_bin,
-        '-maddr=%s' % master_addr,
-        '-writes=%f' % config['write_percentage'],
-        '-c=%d' % config['conflict_percentage'],
-        '-T=%d' % (int(config['clients_per_replica']) * config['number_of_replicas'])
-    ]])
-    
-    if config['replication_protocol'] == "gryff":
-        client_command += " -proxy"
+    if config['layered']:
+        client_command = ' '.join([str(x) for x in [
+            path_to_client_bin,
+            '-maddr=%s' % master_addr,
+            '-writes=%f' % config['write_percentage'],
+            '-c=%d' % config['conflict_percentage'],
+            '-T=1', # Number of clients is hardcoded to 1 for layered experiments
+            '-size=4000000', # size is hardcoded to 4MB
+            '-redis=%d' % config['number_of_replicas']
+        ]])
+    else:
+        client_command = ' '.join([str(x) for x in [
+            path_to_client_bin,
+            '-maddr=%s' % master_addr,
+            '-writes=%f' % config['write_percentage'],
+            '-c=%d' % config['conflict_percentage'],
+            '-T=%d' % (int(config['clients_per_replica']) * config['number_of_replicas'])
+        ]])
+
+        if config['replication_protocol'] == "gryff":
+            client_command += " -proxy"
 
     # Only run client for 3 minutes.
     timeout = "180s"

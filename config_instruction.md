@@ -14,12 +14,14 @@
   - base_control_experiment_directory: path to a directory on the control machine where experiment result subfolders will be stored
   - base_remote_experiment_directory: path to a directory on the remote machines where experiment result subfolders will be stored
   - remote_bin_directory: path to a directory on remote machines where server/client binaries will be stored
+  - redis_control_bin: path to a binary on the control machine that contains redis server code
 - Replication Protocol Parameters
+  - layered: true or false
   - replication_protocol: gus, gryff, or epaxos
-  - number_of_replicas: 3 or 5
+  - number_of_replicas: 3 or 5 (or 7 or 9 in layered experiments)
   - durable: true or false
 - Client Parameters
   - experiment_length: in seconds
   - write_percentage: Floating point number between 0 and 1
   - conflict_percentage: Integer between 0 and 100. 
-  - clients_per_replica
+  - clients_per_replica: only works for non-layered experiments, layered will always use 1 client for all replicas 
