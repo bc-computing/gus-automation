@@ -10,6 +10,10 @@ def copy_remote_directory_to_local(local_path, remote_url, remote_path, exclude_
     args = ["rsync", "-r", "-e", "ssh", "%s:%s/" % (remote_url, remote_path), local_path]
     subprocess.call(args)
 
+def copy_local_file_to_remote(local_path, remote_url, remote_path):
+    args = ["scp", local_path, "%s:%s" % (remote_url, remote_path)]
+    subprocess.call(args)
+
 
 def get_machine_url(config, server_name):
     return "%s@%s" % (config['cloudlab_user'],

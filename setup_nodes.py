@@ -18,6 +18,9 @@ def setup_nodes(config, executor):
     timestamp = prepare_control_exp_directory(config)
     prepare_remote_exp_and_bin_directories(config, timestamp, executor)
     copy_binaries_to_machines(config, executor)
+    if config['layered']:
+        copy_redis_binaries_to_machines(config, executor)
+
     return timestamp
 
 def switch_branches(config):
@@ -106,9 +109,15 @@ def prepare_remote_exp_and_bin_directory(config, machine_name, remote_out_direct
     run_remote_command_sync('mkdir -p %s' % remote_out_directory, machine_url)
 
     gus_epaxos_remote_bin_directory = os.path.join(remote_bin_directory, "gus-epaxos")
+
     gryff_remote_bin_directory = os.path.join(remote_bin_directory, "gryff")
+
     run_remote_command_sync('mkdir -p %s' % gus_epaxos_remote_bin_directory, machine_url)
     run_remote_command_sync('mkdir -p %s' % gryff_remote_bin_directory, machine_url)
+
+    if config['layered']:
+        redis_remote_bin_directory = os.path.join(remote_bin_directory, "redis")
+        run_remote_command_sync('mkdir -p %s' % redis_remote_bin_directory, machine_url)
 
 
 def copy_binaries_to_machines(config, executor):
@@ -132,5 +141,18 @@ def copy_binaries_to_machines(config, executor):
                                    gus_epaxos_control_bin_directory, client_url, gus_epaxos_remote_bin_directory))
     futures.append(executor.submit(copy_local_directory_to_remote,
                                    gryff_control_bin_directory, client_url, gryff_remote_bin_directory))
+
+    concurrent.futures.wait(futures)
+
+def copy_redis_binaries_to_machines(config, executor):
+    print("copying redis binaries")
+
+    redis_control_bin = config['redis_control_bin']
+    redis_remote_bin_directory = os.path.join(config['remote_bin_directory'], 'redis')
+
+    futures = []
+    for server_name in config['server_names']:
+        server_url = get_machine_url(config, server_name)
+        copy_local_file_to_remote(redis_control_bin, server_url, redis_remote_bin_directory)
 
     concurrent.futures.wait(futures)
