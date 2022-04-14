@@ -26,7 +26,7 @@ def setup_nodes(config, executor):
 def switch_branches(config):
     if config['scale']:
         destination_branch = "scale"
-    if config['layered']:
+    elif config['layered']:
         destination_branch = "layered"
     elif config['number_of_replicas'] == 3:
         destination_branch = "main"

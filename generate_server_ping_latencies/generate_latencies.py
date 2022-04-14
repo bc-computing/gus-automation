@@ -48,7 +48,7 @@ def filter_countries(config, all_latencies):
     regions_to_keep = config["server_names"]
     for region_to_keep in regions_to_keep:
         if region_to_keep not in regions:
-            print("User error: %s is not a valid country!" % region_to_keep)
+            print("User error: %s is not a valid region!" % region_to_keep)
             exit()
 
     # Delete unnecessary regions
