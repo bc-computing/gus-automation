@@ -7,7 +7,7 @@
   "oregon",
   "japan"
   ],
-  "cloudlab_user": "zhouaea",
+  "cloudlab_user": "root",
   "experiment_name": "test",
   "project_name": "HyflowTM-PG0",
   "host_format_str": "%s.%s.%s.utah.cloudlab.us",
