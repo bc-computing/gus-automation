@@ -154,7 +154,12 @@ def start_servers(config, timestamp, server_names_to_internal_ips):
 
 
 def start_clients(config, timestamp, server_names_to_internal_ips):
-    client_url = get_machine_url(config, 'client')
+    # Client machine is colocated with first metadata server in layered experiments
+    if config['layered']:
+        client_url = get_machine_url(config, config['server_names'][0])
+    else:
+        client_url = get_machine_url(config, 'client')
+
     client_command = get_client_cmd(config, timestamp, server_names_to_internal_ips)
     return run_remote_command_async(client_command, client_url)
 
