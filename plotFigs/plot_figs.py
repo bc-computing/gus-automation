@@ -1,9 +1,9 @@
 # This is a hack to get gus data to plot with gryff data derived from gryff repo.
 
 
-from folder_to_norm_latencies import extract_norm_latencies
+from plotFigs.folder_to_norm_latencies import extract_norm_latencies
 from latencies_to_csv import latencies_to_csv
-from csvs_to_plot import cdf_csvs_to_plot, write_ratio_throughput_csvs_to_plot, data_size_latencies_csvs_to_plot
+from csvs_to_plot import data_size_latencies_csvs_to_plot
 import os.path
 
 
