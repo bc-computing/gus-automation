@@ -10,12 +10,12 @@
   - max_bandwidth: The maximum bandwidth between machines. Check the PARAMETERS section of the tc (traffic control) man page to see available units of transfer rates. 
 - Folder Location Parameters (control locations are by default in the root folder, this is because disk image data can not be stored in standard user home directories. for convenient sshing, remote locations are in the user's home folder)
   - Note: for all folder locations on the control machine, the paths must be absolute, they cannot be relative.
-  - gus_epaxos_control_src_directory: path to a directory on the control machine that contains the gus-epaxos git repository
-  - gryff_control_src_directory: path to a directory on the control machine that contains the gryff git repository
-  - base_control_experiment_directory: path to a directory on the control machine where experiment result subfolders will be stored
+  - gus_epaxos_control_src_directory: absolute path to a directory on the control machine that contains the gus-epaxos git repository
+  - gryff_control_src_directory: absolute path to a directory on the control machine that contains the gryff git repository
+  - base_control_experiment_directory: absolute path to a directory on the control machine where experiment result subfolders will be stored
   - base_remote_experiment_directory: path to a directory on the remote machines where experiment result subfolders will be stored
   - remote_bin_directory: path to a directory on remote machines where server/client binaries will be stored
-  - redis_control_bin: path to a binary on the control machine that contains redis server code
+  - redis_control_bin: absolute path to a binary on the control machine that contains redis server code
 - Replication Protocol Parameters
   - scale: true or false, takes precedence over other parameters, gus replication protocol only
   - layered: true or false, takes precedence over other parameters except scale, for gus or giza replication protocols only
