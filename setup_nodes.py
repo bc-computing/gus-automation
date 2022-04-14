@@ -24,6 +24,8 @@ def setup_nodes(config, executor):
     return timestamp
 
 def switch_branches(config):
+    if config['scale']:
+        destination_branch = "scale"
     if config['layered']:
         destination_branch = "layered"
     elif config['number_of_replicas'] == 3:
@@ -35,7 +37,7 @@ def switch_branches(config):
         exit(1)
 
     switch_to_branch(config['gus_epaxos_control_src_directory'], destination_branch, "gus-epaxos")
-    if not config['layered']:
+    if not config['layered'] and not config["scale"]:
         switch_to_branch(config['gryff_control_src_directory'], destination_branch, "gryff")
 
 def switch_to_branch(src_directory, destination_branch, repo_name):

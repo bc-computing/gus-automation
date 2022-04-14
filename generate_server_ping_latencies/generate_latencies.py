@@ -4,8 +4,8 @@ import json
 import sys
 
 region_to_country = {
-    "af-south-1": "cape town",
-    "ap-east-1": "hong kong",
+    "af-south-1": "cape_town",
+    "ap-east-1": "hong_kong",
     "ap-northeast-1": "tokyo", # gryff called this tokyo, but its official name on the website is tokyo
     "ap-northeast-2": "seoul",
     "ap-northeast-3": "osaka",
@@ -20,7 +20,7 @@ region_to_country = {
     "eu-west-2": "london",
     "eu-west-3": "paris",
     "me-south-1": "bahrain",
-    "sa-east-1": "são paulo",
+    "sa-east-1": "sao_paulo",
     "us-east-1": "virginia", # for some reason the table lists N. Virginia
     "us-east-2": "ohio",
     "us-west-1": "california", # for some reason the table lists N. California
@@ -62,21 +62,21 @@ def filter_countries(config, all_latencies):
 
 
 
-if len(sys.argv) != 2:
-    sys.stderr.write('Usage: python3 %s <config_file>\n' % sys.argv[0])
+if len(sys.argv) != 3:
+    sys.stderr.write('Usage: python3 %s <config_file> <latency_file>\n' % sys.argv[0])
     sys.exit(1)
 
 with open(sys.argv[1]) as config_file:
     config = json.load(config_file, object_pairs_hook=OrderedDict)
 
-all_latencies_file = open("all_latencies.json")
-all_latencies = json.load(all_latencies_file)
+latencies_file = open(sys.argv[2])
+latencies = json.load(latencies_file)
 
-convert_region_to_country(all_latencies)
+convert_region_to_country(latencies)
 # print(all_latencies)
-filter_countries(config, all_latencies)
+filter_countries(config, latencies)
 # print(all_latencies)
-config["server_ping_latencies"] = all_latencies
+config["server_ping_latencies"] = latencies
 with open(sys.argv[1], 'w') as config_file:
     json.dump(config, config_file, indent=2)
 

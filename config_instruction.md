@@ -17,7 +17,8 @@
   - remote_bin_directory: path to a directory on remote machines where server/client binaries will be stored
   - redis_control_bin: path to a binary on the control machine that contains redis server code
 - Replication Protocol Parameters
-  - layered: true or false
+  - scale: true or false, takes precedence over other parameters, gus replication protocol only
+  - layered: true or false, takes precedence over other parameters except scale, for gus or giza replication protocols only
   - replication_protocol: gus, gryff, or epaxos
   - number_of_replicas: 3 or 5 (or 7 or 9 in layered experiments)
   - durable: true or false

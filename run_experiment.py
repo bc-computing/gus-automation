@@ -15,7 +15,6 @@ def run_experiment(server_names_to_internal_ips, config, timestamp, executor):
     else:
         run_standard_experiment(server_names_to_internal_ips, config, timestamp, executor)
 
-
 def run_layered_experiment(server_names_to_internal_ips, config, timestamp, executor):
     print("killing machines for safety")
     kill_layered_machines(config, executor)

@@ -53,6 +53,17 @@ def get_server_cmd(config, timestamp, server_names_to_ips, server_name):
 
     server_command += " " + get_replication_protocol_args(config['replication_protocol'])
 
+    if config['scale']:
+        number_of_replicas = config['number_of_replicas']
+        if number_of_replicas == 7:
+            server_command += " -readQ=4 -writeQ=5"
+        elif number_of_replicas == 9:
+            server_command += " -readQ=5 -writeQ=7"
+        elif number_of_replicas == 11:
+            server_command += " -readQ=6 -writeQ=8"
+        else:
+            print("ERROR: scale branch should only be run with n = 7, 9, or 11")
+
     stdout_file = os.path.join(exp_directory, 'server-%s-stdout.log' % server_name)
     stderr_file = os.path.join(exp_directory, 'server-%s-stderr.log' % server_name)
 

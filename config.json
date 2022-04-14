@@ -57,6 +57,7 @@
   "base_remote_experiment_directory": "~/results",
   "remote_bin_directory": "~/bin",
   "redis_control_bin": "~/redis-6.2.2/src/redis-server",
+  "scale":  false,
   "layered": false,
   "replication_protocol": "gus",
   "number_of_replicas": 3,
