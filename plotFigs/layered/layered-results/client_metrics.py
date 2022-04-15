@@ -26,6 +26,9 @@ import numpy as np
 from os import path
 import statistics
 
+import sys
+
+
 def get_metrics(dirname):
     """
     Computes key metrics about an experiment from the client-side logfiles, and
@@ -39,7 +42,7 @@ def get_metrics(dirname):
             tputs.append(float(l[2]))
 
 
-    read_log_files = glob.glob(os.path.join(dirname, "latFileRead*"))
+    read_log_files = glob.glob(os.path.join(dirname, "latencyRead*"))
     reads = []
     for read_log_file in read_log_files:
         with open(read_log_file) as f:
@@ -47,7 +50,7 @@ def get_metrics(dirname):
                 l = l.split(' ')
                 reads.append(float(l[1]))
 
-    write_log_files = glob.glob(os.path.join(dirname, "latFileWrite*"))
+    write_log_files = glob.glob(os.path.join(dirname, "latencyWrite*"))
     writes = []
     for write_log_file in write_log_files:
         with open(write_log_file) as f:
@@ -56,26 +59,21 @@ def get_metrics(dirname):
                 writes.append(float(l[1]))
 
     return {
-        #'mean_lat_commit': statistics.mean(commit_lats),
-        #'p50_lat_commit': np.percentile(commit_lats, 50),
-        #'p90_lat_commit': np.percentile(commit_lats, 90),
-        #'p95_lat_commit': np.percentile(commit_lats, 95),
-        #'p99_lat_commit': np.percentile(commit_lats, 99),
-        'mean_Read': statistics.mean(reads),
-        'p50_Read': np.percentile(reads, 50),
-        'p90_Read': np.percentile(reads, 90),
-        'p95_Read': np.percentile(reads, 95),
-        'p99_Read': np.percentile(reads, 99),
-        'p999_Read': np.percentile(reads, 99.9),
+        # 'mean_Read': statistics.mean(reads),
+        # 'p50_Read': np.percentile(reads, 50),
+        # 'p90_Read': np.percentile(reads, 90),
+        # 'p95_Read': np.percentile(reads, 95),
+        # 'p99_Read': np.percentile(reads, 99),
+        # 'p999_Read': np.percentile(reads, 99.9),
         'p9999_Read': np.percentile(reads, 99.99),
-        'mean_Write': statistics.mean(writes),
-        'p50_Write': np.percentile(writes, 50),
-        'p90_Write': np.percentile(writes, 90),
-        'p95_Write': np.percentile(writes, 95),
-        'p99_Write': np.percentile(writes, 99),
-        'p999_Write': np.percentile(writes, 99.9),
+        # 'mean_Write': statistics.mean(writes),
+        # 'p50_Write': np.percentile(writes, 50),
+        # 'p90_Write': np.percentile(writes, 90),
+        # 'p95_Write': np.percentile(writes, 95),
+        # 'p99_Write': np.percentile(writes, 99),
+        # 'p999_Write': np.percentile(writes, 99.9),
         'p9999_Write': np.percentile(writes, 99.99),
-        'avg_tput': statistics.mean(tputs),
+        # 'avg_tput': statistics.mean(tputs),
     }
 
 if __name__ == '__main__':
@@ -85,5 +83,8 @@ if __name__ == '__main__':
     in json format.
     """
 
+    if len(sys.argv) != 2:
+        sys.stderr.write('Usage: python3 %s <path_to_folder>\n' % sys.argv[0])
+        sys.exit(1)
 
-    print(json.dumps(get_metrics(os.getcwd())))
+    print(json.dumps(get_metrics(sys.argv[1])))

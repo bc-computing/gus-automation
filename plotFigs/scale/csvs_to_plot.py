@@ -9,7 +9,7 @@ def plot_csvs(plot_target_directory, figure, csvs, protocols):
 def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols):
     with open(plot_script_file, 'w+') as f:
         f.write("set datafile separator ','\n")
-        f.write("set terminal pngcairo size 2100,500 enhanced font 'Helvetica,36'\n")
+        f.write("set terminal pngcairo size 1750,500 enhanced font 'Helvetica,36'\n")
 
         f.write("set key horizontal tmargin\n")
         f.write("set xlabel 'Latency (ms)'\n")
@@ -18,14 +18,12 @@ def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, p
 
         f.write('set output \'%s/%s\'\n' % (".", os.path.splitext(os.path.basename(plot_script_file))[0] + '.png'))
 
-        f.write('set style line 1 linecolor "salmon" pointtype 5 linewidth 6\n')
-        f.write('set style line 3 linecolor "orange" pointtype 6 linewidth 6\n')
-        f.write('set style line 5 linecolor "orange-red" pointtype 4 linewidth 6\n')
-        f.write('set style line 7 linecolor "dark-red" pointtype 11 linewidth 6\n')
-        f.write('set style line 2 linecolor "aquamarine" pointtype 5 linewidth 6 dashtype 2\n')
-        f.write('set style line 4 linecolor "skyblue" pointtype 6 linewidth 6 dashtype 2\n')
-        f.write('set style line 6 linecolor "web-blue" pointtype 4 linewidth 6 dashtype 2\n')
-        f.write('set style line 8 linecolor "dark-blue" pointtype 11 linewidth 6 dashtype 2\n')
+        f.write('set style line 1 linecolor "orange" pointtype 6 linewidth 6\n')
+        f.write('set style line 3 linecolor "orange-red" pointtype 4 linewidth 6\n')
+        f.write('set style line 5 linecolor "dark-red" pointtype 11 linewidth 6\n')
+        f.write('set style line 2 linecolor "skyblue" pointtype 6 linewidth 6 dashtype 2\n')
+        f.write('set style line 4 linecolor "web-blue" pointtype 4 linewidth 6 dashtype 2\n')
+        f.write('set style line 6 linecolor "dark-blue" pointtype 11 linewidth 6 dashtype 2\n')
 
         f.write('plot ')
         for i in range(len(csvs)):
