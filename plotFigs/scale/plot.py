@@ -1,6 +1,7 @@
 import json
 import os
 
+from folder_to_norm_latencies import extract_norm_latencies
 from extract_latencies import extract_latencies
 from latencies_to_csv import tempo_json_to_csv, gus_latencies_to_csv
 from csvs_to_plot import plot_csvs
@@ -17,8 +18,8 @@ tempo_csvs = []
 # GUS
 # Extract latencies
 for gus_folder in gus_folders:
-    gus_read_latencies.append(extract_latencies(gus_folder, is_for_reads=True))
-    gus_write_latencies.append(extract_latencies(gus_folder, is_for_reads=False))
+    gus_read_latencies.append(extract_norm_latencies(gus_folder, is_for_reads=True))
+    gus_write_latencies.append(extract_norm_latencies(gus_folder, is_for_reads=False))
 
 # Convert latencies to csv
 for i in range(len(gus_read_latencies)):

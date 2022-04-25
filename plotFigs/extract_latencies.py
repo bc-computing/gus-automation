@@ -14,7 +14,6 @@ def extract_latencies(folder, is_for_reads):
     for log_file in log_files:
         with open(log_file) as f:
             ops = f.readlines()
-            print(len(ops))
             latencies += [float(op.split(" ")[1]) for op in ops]
 
     print(len(latencies))
