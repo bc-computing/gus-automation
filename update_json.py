@@ -2,6 +2,7 @@ import json
 import sys
 import os
 import subprocess
+from textwrap import indent
 
 # run via:
 # python update_config <config_num> <protocol>
@@ -21,11 +22,11 @@ def update(file_path, key, new_value):
     file.close()
 
 
-def main():
-    file_path = "configs/fig" + sys.argv[1] + ".json" 
-    print(file_path)
-    update(file_path, "replication_protocol", sys.argv[2])
+# def main():
+#     file_path = "configs/fig" + sys.argv[1] + ".json" 
+#     print(file_path)
+#     update(file_path, "replication_protocol", sys.argv[2])
 
 
 
-main()
+# main()

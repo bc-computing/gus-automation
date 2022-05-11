@@ -6,16 +6,29 @@ from run_experiment import run_experiment
 
 from setup_network_delay import get_server_name_to_internal_ip_map
 
-if len(sys.argv) != 2:
-    sys.stderr.write('Usage: python3 %s <config_file>\n' % sys.argv[0])
-    sys.exit(1)
+def run_exper(results_extension, config_file_path):
+    config_file = open(config_file_path)
+    config = json.load(config_file)
 
-config_file = open(sys.argv[1])
-config = json.load(config_file)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
-    timestamp = setup_nodes(config, executor)
-    server_names_to_internal_ips = get_server_name_to_internal_ip_map(config)
-    run_experiment(server_names_to_internal_ips, config, timestamp, executor)
+        # results_extension is timestamp; if the function is called as a script we use timestamp for results folder name
+        if results_extension == None:
+            results_extension = setup_nodes(config, executor)
 
-config_file.close()
+        server_names_to_internal_ips = get_server_name_to_internal_ip_map(config)
+        run_experiment(server_names_to_internal_ips, config, results_extension, executor)
+
+    config_file.close()
+
+    
+
+
+# This function can be called as a script to run one single experiment
+# python run_experiment_test <config_file>
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        sys.stderr.write('Usage: python3 %s <config_file>\n' % sys.argv[0])
+        sys.exit(1)
+
+    run_exper(results_extension=None, config_file_path=sys.argv[1])

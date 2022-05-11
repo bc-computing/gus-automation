@@ -57,7 +57,7 @@
     "redis_control_bin": "/root/redis-6.2.2/src/redis-server",
     "scale": false,
     "layered": false,
-    "replication_protocol": "epaxos",
+    "replication_protocol": "gryff",
     "number_of_replicas": 5,
     "durable": false,
     "experiment_length": 180,
