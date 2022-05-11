@@ -6,6 +6,7 @@ import time
 import json
 from update_json import update
 from pathlib import Path
+from setup_network_delay_test import setup_network_delay
 
 def run():
     now_string = time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime())
@@ -37,6 +38,8 @@ def run():
             update(config_file_path, "replication_protocol", protocol)
 
             results_extension = temp_path / protocol
+
+            setup_network_delay(config_file_path)
             run_exper(results_extension, config_file_path)
 
 
