@@ -37,7 +37,7 @@ def run():
             update(config_file_path, "replication_protocol", protocol)
 
             results_extension = temp_path / protocol
-            # run_exper(results_extension, config_file_path)
+            run_exper(results_extension, config_file_path)
 
 
     
