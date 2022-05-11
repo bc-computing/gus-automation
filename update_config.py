@@ -1,5 +1,7 @@
 import json
 import sys
+import os
+import subprocess
 
 # run via:
 # python update_config <config_num> <protocol>
