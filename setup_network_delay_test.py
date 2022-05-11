@@ -9,8 +9,8 @@ def setup_network_delay(config_file_path):
     config = json.load(config_file)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
-        print(setup_delays(config, executor).result())
-
+        setup_delays(config, executor)
+        
     config_file.close() 
 
 
