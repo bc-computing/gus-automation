@@ -10,10 +10,10 @@ def setup_network_delay(config_file_path):
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
         setup_delays(config, executor)
-        
+
     config_file.close() 
 
-
+# Automation Does not work - experiments are ending early
 
 if __name__=="__main__":
     if len(sys.argv) != 2:
