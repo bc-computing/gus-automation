@@ -12,10 +12,11 @@ def run_exper(results_extension, config_file_path):
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
 
+        timestamp = setup_nodes(config, executor)
+
         # results_extension is timestamp; if the function is called as a script we use timestamp for results folder name
-        #if results_extension == None:
-            
-        results_extension = setup_nodes(config, executor)
+        if results_extension == None:
+            results_extension = timestamp
 
         server_names_to_internal_ips = get_server_name_to_internal_ip_map(config)
         run_experiment(server_names_to_internal_ips, config, results_extension, executor)
