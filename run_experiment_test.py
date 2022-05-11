@@ -12,7 +12,7 @@ def run_exper(results_extension, config_file_path):
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
 
-        timestamp = setup_nodes(config, executor)
+        timestamp = setup_nodes(config, executor, results_extension)
 
         # results_extension is timestamp; if the function is called as a script we use timestamp for results folder name
         if results_extension == None:

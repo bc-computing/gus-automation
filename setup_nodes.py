@@ -12,11 +12,16 @@ from utils.remote_util import *
 from utils.git_util import *
 
 
-def setup_nodes(config, executor):
+def setup_nodes(config, executor, results_extension):
     switch_branches(config)
     make_binaries(config)
-    timestamp = prepare_control_exp_directory(config)
-    prepare_remote_exp_and_bin_directories(config, timestamp, executor)
+    timestamp = prepare_control_exp_directory(config, results_extension)
+
+    temp = results_extension
+    if results_extension == None:
+        temp = timestamp
+    prepare_remote_exp_and_bin_directories(config, temp, executor)
+    
     copy_binaries_to_machines(config, executor)
     if config['layered']:
         copy_redis_binaries_to_machines(config, executor)
@@ -69,26 +74,31 @@ def make_repo_binaries(repo_directory):
     subprocess.call(["go", "install", "client"], cwd=repo_directory, env=e)
 
 
-def prepare_control_exp_directory(config, config_file=None):
+def prepare_control_exp_directory(config, exp_dir_extension, config_file=None ):
     print("making control experiment directory")
 
-    timestamped_exp_directory = get_timestamped_exp_dir(config)
+    timestamped_exp_directory = get_exp_dir(config, exp_dir_extension)
+
     os.makedirs(timestamped_exp_directory)
     # shutil.copy(config_file, os.path.join(exp_directory, os.path.basename(config_file)))
     return os.path.basename(timestamped_exp_directory)
 
 
 # TODO include type of experiment (latency, throughput, etc.) here
-def get_timestamped_exp_dir(config):
-    now_string = time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime())
-    return os.path.join(config['base_control_experiment_directory'], now_string)
+def get_exp_dir(config, exp_dir_extension):
+
+    # use timestamp if exp_dir_extension is None
+    if exp_dir_extension == None:
+         exp_dir_extension = time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime())
+
+    return os.path.join(config['base_control_experiment_directory'], exp_dir_extension)
 
 
-def prepare_remote_exp_and_bin_directories(config, timestamp, executor):
+def prepare_remote_exp_and_bin_directories(config, results_extension, executor):
     print("preparing remote directories")
 
     # Prepare remote out directory with timestamped experiment directory folder
-    remote_directory = os.path.join(config['base_remote_experiment_directory'], timestamp)
+    remote_directory = os.path.join(config['base_remote_experiment_directory'], results_extension)
 
     # Prepare remote binary directory
     remote_binary_directory = config['remote_bin_directory']
