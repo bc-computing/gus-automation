@@ -1,9 +1,8 @@
 import sys
 
-def my_function(x):
-    return 2*x
+times = ["2022-05-11-09-31-05", "2022-05-11-07-31-05", "2022-05-11-13-31-05", "2022-05-11-09-31-07", "gus7"]
 
+times.sort(reverse=True)
 
-if __name__ == "__main__":
-    print(my_function(int(sys.argv[1])))
+print(times)
 
