@@ -34,38 +34,38 @@ def main():
     epaxos_11_latency_folder = os.path.join(epaxos_latency_folder, "11")
 
     #fig 6
-    gryff_fig_6_csvs, gus_fig_6_csvs, epaxos_fig_6_csvs = calculate_fig_6_csvs(csv_target_directory,
-                                                                               gryff_6a_latency_folder,
-                                                                               gryff_6b_latency_folder,
-                                                                               gryff_6c_latency_folder,
-                                                                               gus_6a_latency_folder,
-                                                                               gus_6b_latency_folder,
-                                                                               gus_6c_latency_folder,
-                                                                               epaxos_6a_latency_folder,
-                                                                               epaxos_6b_latency_folder,
-                                                                               epaxos_6c_latency_folder)
-    print(gryff_fig_6_csvs, gus_fig_6_csvs, epaxos_fig_6_csvs)
+    # gryff_fig_6_csvs, gus_fig_6_csvs, epaxos_fig_6_csvs = calculate_fig_6_csvs(csv_target_directory,
+    #                                                                            gryff_6a_latency_folder,
+    #                                                                            gryff_6b_latency_folder,
+    #                                                                            gryff_6c_latency_folder,
+    #                                                                            gus_6a_latency_folder,
+    #                                                                            gus_6b_latency_folder,
+    #                                                                            gus_6c_latency_folder,
+    #                                                                            epaxos_6a_latency_folder,
+    #                                                                            epaxos_6b_latency_folder,
+    #                                                                            epaxos_6c_latency_folder)
+    # print(gryff_fig_6_csvs, gus_fig_6_csvs, epaxos_fig_6_csvs)
 
-    cdf_csvs_to_plot(plot_target_directory, "6a", gryff_fig_6_csvs[0], gus_fig_6_csvs[0], epaxos_fig_6_csvs[0],
-                 is_for_reads=True)
-    cdf_csvs_to_plot(plot_target_directory, "6a-write", gryff_fig_6_csvs[1], gus_fig_6_csvs[1], epaxos_fig_6_csvs[1],
-                 is_for_reads=False)
-    cdf_csvs_to_plot(plot_target_directory, "6b", gryff_fig_6_csvs[2], gus_fig_6_csvs[2], epaxos_fig_6_csvs[2],
-                 is_for_reads=True)
-    cdf_csvs_to_plot(plot_target_directory, "6b-write", gryff_fig_6_csvs[3], gus_fig_6_csvs[3], epaxos_fig_6_csvs[3],
-                 is_for_reads=False)
-    cdf_csvs_to_plot(plot_target_directory, "6c", gryff_fig_6_csvs[4], gus_fig_6_csvs[4], epaxos_fig_6_csvs[4],
-                 is_for_reads=True)
-    cdf_csvs_to_plot(plot_target_directory, "6c-write", gryff_fig_6_csvs[5], gus_fig_6_csvs[5], epaxos_fig_6_csvs[5],
-                 is_for_reads=False)
+    # cdf_csvs_to_plot(plot_target_directory, "6a", gryff_fig_6_csvs[0], gus_fig_6_csvs[0], epaxos_fig_6_csvs[0],
+    #              is_for_reads=True)
+    # cdf_csvs_to_plot(plot_target_directory, "6a-write", gryff_fig_6_csvs[1], gus_fig_6_csvs[1], epaxos_fig_6_csvs[1],
+    #              is_for_reads=False)
+    # cdf_csvs_to_plot(plot_target_directory, "6b", gryff_fig_6_csvs[2], gus_fig_6_csvs[2], epaxos_fig_6_csvs[2],
+    #              is_for_reads=True)
+    # cdf_csvs_to_plot(plot_target_directory, "6b-write", gryff_fig_6_csvs[3], gus_fig_6_csvs[3], epaxos_fig_6_csvs[3],
+    #              is_for_reads=False)
+    # cdf_csvs_to_plot(plot_target_directory, "6c", gryff_fig_6_csvs[4], gus_fig_6_csvs[4], epaxos_fig_6_csvs[4],
+    #              is_for_reads=True)
+    # cdf_csvs_to_plot(plot_target_directory, "6c-write", gryff_fig_6_csvs[5], gus_fig_6_csvs[5], epaxos_fig_6_csvs[5],
+    #              is_for_reads=False)
 
     # fig 7
-    # gryff_fig_7_csvs, gus_fig_7_csvs, epaxos_fig_7_csvs = calculate_fig_7_csvs(csv_target_directory, gryff_7_latency_folder, gus_7_latency_folder, epaxos_7_latency_folder)
-    #
-    # cdf_csvs_to_plot(plot_target_directory, "7a", gryff_fig_7_csvs[0], gus_fig_7_csvs[0], epaxos_fig_7_csvs[0],
-    #              is_for_reads=True)
-    # cdf_csvs_to_plot(plot_target_directory, "7b", gryff_fig_7_csvs[2], gus_fig_7_csvs[2], epaxos_fig_7_csvs[2],
-    #              is_for_reads=False)
+    gryff_fig_7_csvs, gus_fig_7_csvs, epaxos_fig_7_csvs = calculate_fig_7_csvs(csv_target_directory, gryff_7_latency_folder, gus_7_latency_folder, epaxos_7_latency_folder)
+    
+    cdf_csvs_to_plot(plot_target_directory, "7a", gryff_fig_7_csvs[0], gus_fig_7_csvs[0], epaxos_fig_7_csvs[0],
+                 is_for_reads=True)
+    cdf_csvs_to_plot(plot_target_directory, "7b", gryff_fig_7_csvs[2], gus_fig_7_csvs[2], epaxos_fig_7_csvs[2],
+                 is_for_reads=False)
 
     # fig 8
 
