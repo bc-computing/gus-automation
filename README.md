@@ -41,7 +41,13 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
 #### Layered
 Documentation coming soon
 ### Multiple Experiments
-TODO
+
+Run `python3.8 run_n_experiments.py FIG_NUMBER FIG_NUMBER`
+- Example : `python3.8 run_n_experiments.py 6 7`
+- Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
+
+- NEED TO ADD conflict rate switching for figure 6 (for each protocol, run 3 times, once for each conflict rates)
+
 
 ## Workflow
 ### Single Experiment
