@@ -56,7 +56,7 @@ def machine_url_to_name(url):
 
 
 def get_zone(remote_name):
-    return os.run(["gcloud compute instances list --filter=""name=INSTANCE-NAME"" --format ""get(zone)"" | awk -F/ '{print $NF}'"])
+    return os.system(["gcloud compute instances list --filter=""name=INSTANCE-NAME"" --format ""get(zone)"" | awk -F/ '{print $NF}'"])
 
 
 def ssh_args(command, remote_name):

@@ -94,3 +94,4 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 
 configs/fig6.json is set to epaxos at 25% conflict ratio (for purposes of demo)
 
+```python3 set_config.py``` first
