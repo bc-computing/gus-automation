@@ -2,7 +2,8 @@ import update_json
 import os
 
 def get_user():
-    return os.system("whoami")
+    user = os.system("whoami")
+    print("whoami= " + user)
 
 def main():
     update_json.update("configs/fig6.json","cloud_user",get_user() )
