@@ -1,0 +1,226 @@
+2022/07/19 15:37:49 Server starting on port 7070
+2022/07/19 15:37:49 Got node list from master: [
+2022/07/19 15:37:49 10.10.1.1:7070
+2022/07/19 15:37:49 , 
+2022/07/19 15:37:49 10.10.1.4:7070
+2022/07/19 15:37:49 , 
+2022/07/19 15:37:49 10.10.1.2:7070
+2022/07/19 15:37:49 , 
+2022/07/19 15:37:49 10.10.1.5:7070
+2022/07/19 15:37:49 , 
+2022/07/19 15:37:49 10.10.1.3:7070
+2022/07/19 15:37:49 ]
+2022/07/19 15:37:49 Starting Gryff replica...
+2022/07/19 15:37:50 rpc.Register: method "CompleteRead" has 5 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "CompleteWrite" has 4 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "ConnectToPeers" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "ConnectToPeersNoListeners" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "DelayRPC" is not a pointer: "uint8"
+2022/07/19 15:37:50 rpc.Register: method "Finish" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "GetClientWriter" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "GetCurrentValue" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "GetReplicasByRank" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "GetStats" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "GetStoreMetadata" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "HandleOverwrite" has 4 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "HandleWrite1Overwrite" has 0 output parameters; needs exactly one
+2022/07/19 15:37:50 rpc.Register: method "NeedsWaitForExecute" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "Printf" is not a pointer: "[]interface {}"
+2022/07/19 15:37:50 rpc.Register: method "RegisterClientRPC" has 4 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "RegisterRPC" is not a pointer: "chan fastrpc.Serializable"
+2022/07/19 15:37:50 rpc.Register: method "ReplyBeacon" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "ReplyPropose" has 0 output parameters; needs exactly one
+2022/07/19 15:37:50 rpc.Register: method "ReplyProposeTS" has 0 output parameters; needs exactly one
+2022/07/19 15:37:50 rpc.Register: method "SendBeacon" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "SendMsg" has 4 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "SendMsgNoFlush" has 4 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "SendRead1" is not a pointer: "[]int32"
+2022/07/19 15:37:50 rpc.Register: reply type of method "SendRead2" is not a pointer: "[]int32"
+2022/07/19 15:37:50 rpc.Register: reply type of method "SendWrite1" is not a pointer: "[]int32"
+2022/07/19 15:37:50 rpc.Register: method "SendWrite1Timeout" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "SendWrite2" is not a pointer: "[]int32"
+2022/07/19 15:37:50 rpc.Register: method "SendWrite2ConcurrentTimeout" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "SetCurrentValue" is not a pointer: "state.Value"
+2022/07/19 15:37:50 rpc.Register: method "SetForceWrite" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "ShouldDelayNextRPC" is not a pointer: "uint8"
+2022/07/19 15:37:50 rpc.Register: method "SlowClock" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "StopAdapting" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "TagSeen" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: reply type of method "UndelayRPCs" is not a pointer: "uint8"
+2022/07/19 15:37:50 rpc.Register: method "UpdatePreferredPeerOrder" has 2 input parameters; needs exactly three
+2022/07/19 15:37:50 rpc.Register: method "WaitForClientConnections" has 1 input parameters; needs exactly three
+2022/07/19 15:37:50 Listening for RPCs on port 8070
+2022/07/19 15:37:50 Beginning to connect to peers...
+2022/07/19 15:37:50 Dialing peer 0 with addr 10.10.1.1:7070
+2022/07/19 15:37:50 Listening for peers on :7070
+2022/07/19 15:37:50 Error dialing peer 0: dial tcp 10.10.1.1:7070: connect: connection refused
+2022/07/19 15:37:51 Dialing peer 0 with addr 10.10.1.1:7070
+2022/07/19 15:37:51 Sending my id 4 to peer 0
+2022/07/19 15:37:51 Dialing peer 1 with addr 10.10.1.4:7070
+2022/07/19 15:37:51 Sending my id 4 to peer 1
+2022/07/19 15:37:51 Dialing peer 2 with addr 10.10.1.2:7070
+2022/07/19 15:37:51 Sending my id 4 to peer 2
+2022/07/19 15:37:51 Dialing peer 3 with addr 10.10.1.5:7070
+2022/07/19 15:37:51 Sending my id 4 to peer 3
+2022/07/19 15:37:51 Replica id: 4. Done connecting to peers
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35032
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35036
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35048
+2022/07/19 15:37:54 Received Ping from client 46
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35078
+2022/07/19 15:37:54 Received Ping from client 54
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35082
+2022/07/19 15:37:54 Received Ping from client 55
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35120
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35168
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35174
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35184
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35188
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35186
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35194
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35200
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35202
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35198
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35206
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35208
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35214
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35222
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35242
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35282
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35300
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35302
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35318
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35320
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35362
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35364
+2022/07/19 15:37:54 Received Ping from client 22
+2022/07/19 15:37:54 Received Ping from client 79
+2022/07/19 15:37:54 Received Ping from client 2
+2022/07/19 15:37:54 Received Ping from client 53
+2022/07/19 15:37:54 Received Ping from client 57
+2022/07/19 15:37:54 Received Ping from client 78
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35382
+2022/07/19 15:37:54 Received Ping from client 24
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35380
+2022/07/19 15:37:54 Received Ping from client 25
+2022/07/19 15:37:54 Received Ping from client 18
+2022/07/19 15:37:54 Received Ping from client 77
+2022/07/19 15:37:54 Received Ping from client 39
+2022/07/19 15:37:54 Received Ping from client 15
+2022/07/19 15:37:54 Received Ping from client 30
+2022/07/19 15:37:54 Received Ping from client 37
+2022/07/19 15:37:54 Received Ping from client 56
+2022/07/19 15:37:54 Received Ping from client 14
+2022/07/19 15:37:54 Received Ping from client 23
+2022/07/19 15:37:54 Received Ping from client 71
+2022/07/19 15:37:54 Received Ping from client 17
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35438
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35454
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35480
+2022/07/19 15:37:54 Received Ping from client 6
+2022/07/19 15:37:54 Received Ping from client 60
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35564
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35570
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35574
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35576
+2022/07/19 15:37:54 Received Ping from client 4
+2022/07/19 15:37:54 Received Ping from client 9
+2022/07/19 15:37:54 Received Ping from client 72
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35604
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35608
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35610
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35612
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35614
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35616
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35618
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35620
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35622
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35624
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35626
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35632
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35634
+2022/07/19 15:37:54 Received Ping from client 27
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35636
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35638
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35640
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35642
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35648
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35650
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35694
+2022/07/19 15:37:54 Received Ping from client 31
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35696
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35698
+2022/07/19 15:37:54 Received Ping from client 12
+2022/07/19 15:37:54 Received Ping from client 67
+2022/07/19 15:37:54 Received Ping from client 42
+2022/07/19 15:37:54 Received Ping from client 49
+2022/07/19 15:37:54 Received Ping from client 75
+2022/07/19 15:37:54 Received Ping from client 76
+2022/07/19 15:37:54 Received Ping from client 59
+2022/07/19 15:37:54 Received Ping from client 5
+2022/07/19 15:37:54 Received Ping from client 73
+2022/07/19 15:37:54 Received Ping from client 26
+2022/07/19 15:37:54 Received Ping from client 44
+2022/07/19 15:37:54 Received Ping from client 43
+2022/07/19 15:37:54 Received Ping from client 58
+2022/07/19 15:37:54 Received Ping from client 52
+2022/07/19 15:37:54 Received Ping from client 68
+2022/07/19 15:37:54 Received Ping from client 45
+2022/07/19 15:37:54 Received Ping from client 0
+2022/07/19 15:37:54 Received Ping from client 50
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35714
+2022/07/19 15:37:54 Received Ping from client 28
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35740
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35742
+2022/07/19 15:37:54 Received Ping from client 32
+2022/07/19 15:37:54 Received Ping from client 62
+2022/07/19 15:37:54 Received Ping from client 19
+2022/07/19 15:37:54 Received Ping from client 41
+2022/07/19 15:37:54 Received Ping from client 16
+2022/07/19 15:37:54 Received Ping from client 3
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35766
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35768
+2022/07/19 15:37:54 Received Ping from client 74
+2022/07/19 15:37:54 Received Ping from client 69
+2022/07/19 15:37:54 Received Ping from client 35
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35778
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35780
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35784
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35786
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35782
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35788
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35790
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35792
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35794
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35796
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35798
+2022/07/19 15:37:54 Received Ping from client 38
+2022/07/19 15:37:54 Received Ping from client 47
+2022/07/19 15:37:54 Received Ping from client 33
+2022/07/19 15:37:54 Received Ping from client 64
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35806
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35808
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35812
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35814
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35804
+2022/07/19 15:37:54 Accepted client connection 10.10.1.6:35810
+2022/07/19 15:37:54 Received Ping from client 20
+2022/07/19 15:37:54 Received Ping from client 66
+2022/07/19 15:37:54 Received Ping from client 63
+2022/07/19 15:37:54 Received Ping from client 65
+2022/07/19 15:37:54 Received Ping from client 61
+2022/07/19 15:37:54 Received Ping from client 70
+2022/07/19 15:37:54 Received Ping from client 21
+2022/07/19 15:37:54 Received Ping from client 36
+2022/07/19 15:37:54 Received Ping from client 13
+2022/07/19 15:37:54 Received Ping from client 1
+2022/07/19 15:37:54 Received Ping from client 51
+2022/07/19 15:37:54 Received Ping from client 7
+2022/07/19 15:37:54 Received Ping from client 34
+2022/07/19 15:37:54 Received Ping from client 8
+2022/07/19 15:37:54 Received Ping from client 29
+2022/07/19 15:37:54 Received Ping from client 11
+2022/07/19 15:37:54 Received Ping from client 40
+2022/07/19 15:37:54 Received Ping from client 48
+2022/07/19 15:37:54 Received Ping from client 10
+2022/07/19 15:40:54 Error reading opcode from client: read tcp 10.10.1.3:7070->10.10.1.6:35382: read: connection reset by peer
