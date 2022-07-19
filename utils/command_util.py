@@ -2,6 +2,11 @@ import os
 
 from utils.remote_util import *
 
+# runs a unix command and returns the output (that would be printed to stdout)
+def check_cmd_output(cmd):
+    output = subprocess.check_output(cmd)
+    return output.decode("utf-8").strip("\n") 
+
 
 def get_master_cmd(config, timestamp):
     exp_directory = os.path.join(config['base_remote_experiment_directory'], timestamp);

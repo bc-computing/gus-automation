@@ -32,7 +32,7 @@ def setup_delays(config, executor):
         else:
             futures.append(executor.submit(utils.remote_util.run_remote_command_sync,
                                            'sudo tc qdisc del dev %s root' % server_interface,
-                                           config['cloudlab_user'], server_url))
+                                           config['root_user'], server_url))
 
     concurrent.futures.wait(futures)
     return server_ips_to_delays

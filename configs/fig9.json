@@ -10,7 +10,8 @@
     "paris",
     "seoul"
   ],
-  "cloudlab_user": "root",
+  "root_user": "root",
+  "cloudlab_user":"dumasca", 
   "experiment_name": "test",
   "project_name": "HyflowTM-PG0",
   "host_format_str": "%s.%s.%s.utah.cloudlab.us",

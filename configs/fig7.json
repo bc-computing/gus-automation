@@ -6,6 +6,7 @@
         "oregon",
         "japan"
     ],
+    "root_user": "root",
     "cloudlab_user": "root",
     "experiment_name": "test",
     "project_name": "HyflowTM-PG0",

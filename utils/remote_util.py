@@ -16,7 +16,7 @@ def copy_local_file_to_remote(local_path, remote_url, remote_path):
 
 
 def get_machine_url(config, server_name):
-    return "%s@%s" % (config['cloudlab_user'],
+    return "%s@%s" % (config['root_user'],
                       (config['host_format_str'] % (server_name, config['experiment_name'], config['project_name'])))
 
 
