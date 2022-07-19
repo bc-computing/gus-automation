@@ -27,9 +27,6 @@ def run():
     # default is all protocols
     protocols = ["gus", "epaxos", "gryff"]
 
-    # For the purposes of Gus live demo, set confict rate to highest ()
-    update(config_file_path,"conflict_percentage", 25)
-
     # fig must just be a #
     for fig in figs:
         temp_path = results_parent_path / ("fig" + fig)

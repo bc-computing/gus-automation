@@ -42,7 +42,7 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
 Documentation coming soon
 ### Multiple Experiments
 
-Run `python3.8 run_n_experiments.py FIG_NUMBER FIG_NUMBER`
+Run `python3.8 run_n_experiments.py FIG_NUMBER FIG_NUMBER ...`
 - Example : `python3.8 run_n_experiments.py 6 7`
 - Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
 
