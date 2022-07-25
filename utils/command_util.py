@@ -4,8 +4,12 @@ from utils.remote_util import *
 
 # runs a unix command and returns the output (that would be printed to stdout)
 def check_cmd_output(cmd):
-    output = subprocess.check_output(cmd)
-    return output.decode("utf-8").strip("\n") 
+   # output = subprocess.check_output(cmd)
+    #return output.decode("utf-8").strip("\n") 
+
+    ps = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+    return ps.communicate()[0]
+
 
 
 def get_master_cmd(config, timestamp):
