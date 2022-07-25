@@ -1,6 +1,7 @@
 from utils.command_util import check_cmd_output
 import sys
 import os
+import json
 
 # moves most recent results from root to cloudlab user directory 
 
@@ -15,10 +16,12 @@ def move_results(config_file_path):
 
 
     # need to create results first
-    destination_path = "/users/" + config[cloudlab_user] + "/results/" + results
+    destination_parent_path = "/users/" + config["cloudlab_user"] + "/results/"
+    destination_path = destination_parent_path + results
 
-    source_path = config["base_control_experiment_directory"] + "/" + results 
-    os.system("cp-r " + source_path + " " + destination_path)
+    source_path = config["base_control_experiment_directory"] + "/" + results
+    os.system("mkdir " + destination_parent_path) 
+    os.system("cp -r " + source_path + " " + destination_path)
 
 
 
