@@ -17,12 +17,13 @@ def move_results(config_file_path):
 
     # need to create results first
     destination_parent_path = "/users/" + config["cloudlab_user"] + "/results/"
-    destination_path = destination_parent_path 
-
-    source_path = config["base_control_experiment_directory"] + "/" + results
-    os.system("mkdir -p" + destination_parent_path) 
+    destination_path = destination_parent_path + results
 
     if not os.path.exists(destination_path):
+
+        source_path = config["base_control_experiment_directory"] + "/" + results
+        os.system("mkdir -p" + destination_parent_path) 
+
         print("running: cp -r " + source_path + " " + destination_path)
         os.system("cp -r " + source_path + " " + destination_path)
 
