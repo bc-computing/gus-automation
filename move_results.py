@@ -6,7 +6,7 @@ import os
 
 def move_results(config_file_path):
     # Since results are by date, this gets most recent results
-    results = check_cmd_output("ls /results | sort -r | head -n 1")
+    results = check_cmd_output("ls results | sort -r | head -n 1")
     print(results)
 
     config_file = open(config_file_path)
@@ -30,4 +30,5 @@ def usage():
 if __name__:
     if len(sys.argv) != 2:
         usage()
-    move_results(sys.argv[1])
+    else:
+        move_results(sys.argv[1])

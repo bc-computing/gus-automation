@@ -20,4 +20,5 @@ def usage():
 if __name__:
     if len(sys.argv) != 2:
         usage()
-    set_config(sys.argv[1])
+    else:
+        set_config(sys.argv[1])

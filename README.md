@@ -94,8 +94,9 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 # Move results notes
 
 1. Set_config (sets cloudlab user to logname)
+- Do this at root 
 
-2. On control, move_results to local user
+2. On control, move_results from root to local user
 
 3. On local, use rsync to sync results from control machine
 - How to find  consistent ip for log in?
