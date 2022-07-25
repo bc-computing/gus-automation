@@ -22,7 +22,7 @@ def move_results(config_file_path):
     if not os.path.exists(destination_path):
 
         source_path = config["base_control_experiment_directory"] + "/" + results
-        os.system("mkdir -p" + destination_parent_path) 
+        os.system("mkdir -p" + destination_path) 
 
         print("running: cp -r " + source_path + " " + destination_path)
         os.system("cp -r " + source_path + " " + destination_path)
