@@ -21,6 +21,8 @@ def move_results(config_file_path):
 
     source_path = config["base_control_experiment_directory"] + "/" + results
     os.system("mkdir " + destination_parent_path) 
+
+    print("running: cp -r " + source_path + " " + destination_path)
     os.system("cp -r " + source_path + " " + destination_path)
 
 

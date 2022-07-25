@@ -100,3 +100,4 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 
 3. On local, use rsync to sync results from control machine
 - How to find  consistent ip for log in?
+- rsync -a remote_user@remote_host_or_ip:/opt/media/ /opt/media/
