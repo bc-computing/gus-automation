@@ -11,8 +11,9 @@ def run_remote_command(ssh, command):
     with subprocess.Popen(ssh + " '" + command + "'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE) as process:
         output = process.communicate()[0].decode("utf-8")
         print(output)
+        process.wait()
     print("command = " + command)
-    process.wait()
+    
  
 
 # Runs root command from /root/go/src/gus-automation
@@ -30,6 +31,7 @@ def main():
     command = "sudo python3 run_experiments.py " + figs_string # maybe add in absolute path: /root/go/src/gus-automation
     #command = "python3 test.py"
     run_remote_root_command(ssh, command)
+    run_remote_command(ssh, "sudo python3 run_experiment_test.py configs/fig7.json")
     print("done running")
 
 

@@ -7,6 +7,8 @@ from run_experiment import run_experiment
 from setup_network_delay import get_server_name_to_internal_ip_map
 
 def run_exper(results_extension, config_file_path):
+    
+    print("About to  run experiment")
     config_file = open(config_file_path)
     config = json.load(config_file)
 
@@ -23,7 +25,6 @@ def run_exper(results_extension, config_file_path):
 
     config_file.close()
 
-    print("Just ran experiment")
 
     
 
