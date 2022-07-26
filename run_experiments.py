@@ -31,7 +31,7 @@ def run_script():
     for fig in figs:
         temp_path = results_parent_path / ("fig" + fig)
 
-        config_file_path = "configs/" + ("fig" + fig + ".json")
+        config_file_path = parent_path / Path("configs/" + ("fig" + fig + ".json"))
 
         for protocol in protocols:
             print("\nRunning", protocol, fig, "...\n")
