@@ -23,6 +23,8 @@ def run_exper(results_extension, config_file_path):
 
     config_file.close()
 
+    print("Just ran experiment")
+
     
 
 

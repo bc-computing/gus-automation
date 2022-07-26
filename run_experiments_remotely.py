@@ -7,8 +7,13 @@ def usage():
     print("Usage: python3 run_experiments_remotely <USER@EXPERIMENT_IP_OR_ADDRESS> <fig#> <fig#> ...")
 
 def run_remote_command(ssh, command):
+
+    with subprocess.Popen(ssh + " '" + command + "'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE) as process:
+        output = process.communicate()[0].decode("utf-8")
+        print(output)
     print("command = " + command)
-    subprocess.Popen(ssh + " '" + command + "'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
+    process.wait()
+ 
 
 # Runs root command from /root/go/src/gus-automation
 def run_remote_root_command(ssh, command):
@@ -23,7 +28,7 @@ def main():
 
     figs_string = ' '.join(figs)
     command = "sudo python3 run_experiments.py " + figs_string # maybe add in absolute path: /root/go/src/gus-automation
-    # command = "touch hello.txt"
+    #command = "python3 test.py"
     run_remote_root_command(ssh, command)
     print("done running")
 
