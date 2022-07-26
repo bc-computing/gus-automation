@@ -1,5 +1,6 @@
 import subprocess
 import os
+from utils import command_util as cu
 
 
 def copy_local_directory_to_remote(local_path, remote_url, remote_path, exclude_paths=[]):
@@ -26,7 +27,7 @@ def tcsh_redirect_output_to_files(command, stdout_file, stderr_file):
 
 
 def run_remote_command_sync(command, remote_url):
-    print("Running remote command | pwd =" + os.system(pwd) )
+    print("Running remote command | pwd = " + cu.check_cmd_output("pwd") )
     print("contacting %s with command %s" % (remote_url, command))
     return subprocess.run(ssh_args(command, remote_url),
                           stdout=subprocess.PIPE, universal_newlines=True).stdout
