@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 
 def copy_local_directory_to_remote(local_path, remote_url, remote_path, exclude_paths=[]):
