@@ -27,7 +27,7 @@ def move_results(config_file_path):
             os.system("cp -r " + source_path + " " + destination_path)
 
 
-def move_results2():
+def move_results2(config_file_path):
     # Since results are by date, this gets most recent results
     results = check_cmd_output("ls results | sort -r | head -n 1")
     print(results)
