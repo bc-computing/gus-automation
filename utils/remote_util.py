@@ -25,6 +25,7 @@ def tcsh_redirect_output_to_files(command, stdout_file, stderr_file):
 
 
 def run_remote_command_sync(command, remote_url):
+    print("Running remote command | pwd =" + os.system(pwd) )
     print("contacting %s with command %s" % (remote_url, command))
     return subprocess.run(ssh_args(command, remote_url),
                           stdout=subprocess.PIPE, universal_newlines=True).stdout
