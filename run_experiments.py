@@ -11,13 +11,13 @@ from setup_network_delay_test import setup_network_delay
 def run_script():
     now_string = time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime())
 
-    parent_path = Path("/root/go/src/gus-automation/")
+   #  parent_path = Path("/root/go/src/gus-automation/")
 
-    base_config_file = open(parent_path / Path("configs/config.json"))
+    base_config_file = open(Path("configs/config.json"))
 
     base_config = json.load(base_config_file)
 
-    results_parent_path = parent_path / Path(base_config["base_control_experiment_directory"]) / now_string
+    results_parent_path = Path(base_config["base_control_experiment_directory"]) / now_string
 
 
     # Need to create parent directory before dumping data?
@@ -31,7 +31,7 @@ def run_script():
     for fig in figs:
         temp_path = results_parent_path / ("fig" + fig)
 
-        config_file_path = parent_path / Path("configs/" + ("fig" + fig + ".json"))
+        config_file_path =  Path("configs/" + ("fig" + fig + ".json"))
 
         for protocol in protocols:
             print("\nRunning", protocol, fig, "...\n")
