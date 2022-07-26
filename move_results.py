@@ -22,15 +22,33 @@ def move_results(config_file_path):
     source_path = config["base_control_experiment_directory"] + "/" + results
     os.system("mkdir -p " + destination_parent_path) 
 
-    # Having trouble here!!
+   # If the experiment results haven't been copied already, copy them
     if not os.path.exists(destination_path):
-        print(destination_path + " : does not exist yet, creating...")
-       
-
-        print("running: cp -r " + source_path + " " + destination_path)
-        os.system("cp -r " + source_path + " " + destination_path)
+            os.system("cp -r " + source_path + " " + destination_path)
 
 
+def move_results2():
+    # Since results are by date, this gets most recent results
+    results = check_cmd_output("ls results | sort -r | head -n 1")
+    print(results)
+
+    config_file = open(config_file_path)
+
+    config = json.load(config_file)
+
+    user = sys.stdin.readlines()
+    print("user = ")
+
+    # need to create results first
+    destination_parent_path = "/users/" + user + "/results/"
+    destination_path = destination_parent_path + results
+
+    source_path = config["base_control_experiment_directory"] + "/" + results
+    os.system("mkdir -p " + destination_parent_path) 
+
+   # If the experiment results haven't been copied already, copy them
+    if not os.path.exists(destination_path):
+            os.system("cp -r " + source_path + " " + destination_path)
 
 
 def usage():
@@ -41,4 +59,4 @@ if __name__:
     if len(sys.argv) != 2:
         usage()
     else:
-        move_results(sys.argv[1])
+        move_results2(sys.argv[1])
