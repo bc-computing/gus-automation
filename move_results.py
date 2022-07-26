@@ -19,8 +19,9 @@ def move_results(config_file_path):
     destination_parent_path = "/users/" + config["cloudlab_user"] + "/results/"
     destination_path = destination_parent_path + results
 
+    # Having trouble here!!
     if not os.path.exists(destination_path):
-
+        print(destination_path + " : does not exist yet, creating...")
         source_path = config["base_control_experiment_directory"] + "/" + results
         os.system("mkdir -p" + destination_path) 
 
