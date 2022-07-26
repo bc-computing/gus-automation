@@ -1,6 +1,6 @@
 import os
 import sys
-from run_experiments import run 
+
 
 def usage():
     print("Usage: python3 run_experiments_remotely <USER@EXPERIMENT_IP_OR_ADDRESS> <fig#> <fig#> ...")
