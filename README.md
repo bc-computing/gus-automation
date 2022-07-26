@@ -93,6 +93,7 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 
 # Move results notes
 
+
 1. Set_config (sets cloudlab user to logname)
 - Do this at root 
 
@@ -101,3 +102,12 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 3. On local, use rsync to sync results from control machine
 - How to find  consistent ip for log in?
 - rsync -a remote_user@remote_host_or_ip:/opt/media/ /opt/media/
+
+# Move results / running experiment Idea 2:
+
+- Run everthing from local machine
+- pass a script the ssh argument to control machine which can run the experiment 
+- then remotely copy results from control root to control user
+- then copy results back to local
+
+whoami | sudo python3 /root/go/src/gus-automation/move_results.py /root/go/src/gus-automation/configs/fig7.json
