@@ -40,13 +40,18 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
 
 #### Layered
 Documentation coming soon
-### Multiple Experiments
 
-Run `python3.8 run_n_experiments.py FIG_NUMBER FIG_NUMBER ...`
-- Example : `python3.8 run_n_experiments.py 6 7`
-- Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
+### Multiple Experiments - With Automatic Syncing
 
-- NEED TO ADD conflict rate switching for figure 6 (for each protocol, run 3 times, once for each conflict rates)
+1. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_FILE_PATH CONFIG_FILE_PATH ...`
+   - Example: ```python3 run_experiments configs/fig7.json configs/fig6.json```
+   - Pass in any number of config file paths. Currently all config file paths are under configs. Be sure to modify each config file to desired specs
+   - Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
+   - NEED TO ADD conflict rate switching for figure 6 (for each protocol, run 3 times, once for each conflict rates)
+2. **Syncing results to local machine:** On local machine, run ```python3 sync_results.py USER@CONTROL_ADDRESS CONFIG_FILE_PATH```
+   - On the cloudlab, copy the USER@ADDRESS portion of the ssh command for the control machine for USER@CONTROL_ADDRESS
+   - The config file is used to determined the path for the results directory
+3. **Plotting**
 
 
 ## Workflow
@@ -93,6 +98,7 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 
 # Move results notes
 
+
 1. Set_config (sets cloudlab user to logname)
 - Do this at root 
 
@@ -101,3 +107,22 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 3. On local, use rsync to sync results from control machine
 - How to find  consistent ip for log in?
 - rsync -a remote_user@remote_host_or_ip:/opt/media/ /opt/media/
+
+# Move results / running experiment Idea 2:
+
+- Run everthing from local machine
+- pass a script the ssh argument to control machine which can run the experiment 
+- then remotely copy results from control root to control user
+- then copy results back to local
+
+whoami | sudo python3 /root/go/src/gus-automation/move_results.py /root/go/src/gus-automation/configs/fig7.json
+
+https://superuser.com/questions/1494198/run-cd-command-as-superuser-in-linux
+
+- Currently unable to run expriment remotely. make sure to be able to run experiment normally first - check repos
+
+# Idea 3 - working
+
+1. Run Experiment from control machine
+
+2. Do syncing and moving results from local machine

@@ -16,34 +16,28 @@ def run():
     base_config_file = open("configs/config.json")
 
     base_config = json.load(base_config_file)
-
+    
     results_parent_path = Path(base_config["base_control_experiment_directory"]) / now_string
-
 
     # Need to create parent directory before dumping data?
 
-    figs = sys.argv[1:]
+    config_paths = sys.argv[1:]
     
     # default is all protocols
     protocols = ["gus", "epaxos", "gryff"]
 
     # fig must just be a #
-    for fig in figs:
+    for config_path in config_paths:
         temp_path = results_parent_path / ("fig" + fig)
-
-        config_file_path = "configs/" + ("fig" + fig + ".json")
 
         for protocol in protocols:
             print("\nRunning", protocol, fig, "...\n")
-            update(config_file_path, "replication_protocol", protocol)
+            update(config_path, "replication_protocol", protocol)
 
             results_extension = temp_path / protocol
 
-            setup_network_delay(config_file_path)
-            run_exper(results_extension, config_file_path)
-
-
-    
+            setup_network_delay(config_path)
+            run_exper(results_extension, config_path)
 
 
 # Must be run as:
