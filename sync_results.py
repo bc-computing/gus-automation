@@ -65,14 +65,14 @@ def usage():
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         usage()
+    else:
+        user_at_address = sys.argv[1]
+        config_file_path = sys.argv[2]
         
-    user_at_address = sys.argv[1]
-    config_file_path = sys.argv[2]
-    
-    temp = user_at_address.split("@")
-    user = temp[0]
-    address = temp[1]
+        temp = user_at_address.split("@")
+        user = temp[0]
+        address = temp[1]
 
-    remote_move_results(user, address, config_file_path)
-    sync_results(user_at_address)
+        remote_move_results(user, address, config_file_path)
+        sync_results(user_at_address)
 

@@ -26,7 +26,8 @@ def run():
     # default is all protocols
     protocols = ["gus", "epaxos", "gryff"]
 
-    # fig must just be a #
+    # Still must adjust for fig6 which  has a b c
+
     for config_path in config_paths:
 
         # Get final fig name:

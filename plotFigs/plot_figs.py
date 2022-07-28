@@ -2,14 +2,65 @@ from folder_to_norm_latencies import extract_norm_latencies
 from extract_latencies import extract_latencies
 from latencies_to_csv import latencies_to_csv
 from csvs_to_plot import data_size_latencies_csvs_to_plot, cdf_csvs_to_plot
-import os.path
+import os
 from pathlib import Path
+import sys
+import subprocess
+
+
+# Working on passing a folder for results
+# File path has structure: TIMESTAMP / FIG# / PROTOCOL/ CLIENT
+
+def main2(results_path):
+
+    plot_target_directory = Path("plots")
+    csv_target_directory = Path("csvs")
+
+    # list all figs in timestap
+    figs = os.listdir(results_path)
+    for fig in figs:
+        fig_path = Path(results_path) / Path(fig)
+
+        protocols = os.listdir(fig_path)
+        latencies_folder_paths = {}
+        for protocol in protocols:
+            latencies_folder_path = fig_path / Path(protocol + "/client")
+            latencies_folder_paths[protocol] = latencies_folder_path
+
+        match fig:
+            case "fig6":
+                print("Still need to implement")
+            case "fig7":
+                print("Plotting fig7...")
+                plot_fig7(plot_target_directory, csv_target_directory, latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
+            case "fig8":
+                print("Still need to implement")
+            case "fig9":
+                print("Still need to implement")
+            case "fig10":
+                print("Still need to implement")
+            case "fig11":
+                print("Still need to implement")
+            case _ :
+                print("Default reached, Case not found")
+
+
+
+def plot_fig7(plot_target_directory, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
+    gryff_fig_csvs, gus_fig_csvs, epaxos_fig_csvs = calculate_fig_7_csvs(csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder)
+    
+    cdf_csvs_to_plot(plot_target_directory, "7a", gryff_fig_csvs[0], gus_fig_csvs[0], epaxos_fig_csvs[0],
+                 is_for_reads=True)
+    cdf_csvs_to_plot(plot_target_directory, "7b", gryff_fig_csvs[2], gus_fig_csvs[2], epaxos_fig_csvs[2],
+                 is_for_reads=False)           
+    
+
 
 def main():
-    # Note: folders must be absolute file paths.
-    csv_target_directory = Path("C:/Users/cadum/GusResearch/gus-automation/plotFigs/csvs")
-    plot_target_directory = Path("C:/Users/cadum/GusResearch/gus-automation/plotFigs/plots")
-    latency_folder = Path("C:/Users/cadum/GusResearch/gus-automation/plotFigs/latencies")
+    # Note: folders must be absolute file paths. - CHECK to see if relative paths work
+    plot_target_directory = Path("C:/Users/cadum/DistributedSystemsResearch/gus-automation/plotFigs/plots")
+    csv_target_directory = Path("C:/Users/cadum/DistributedSystemsResearch/gus-automation/plotFigs/csvs")
+    latency_folder = Path("C:/Users/cadum/DistributedSystemsResearch/gus-automation/plotFigs/latencies")
 
     # Calculated automatically.
     gryff_latency_folder = os.path.join(latency_folder, "gryff")
@@ -208,5 +259,28 @@ def calculate_fig_11_csvs(csv_target_directory, gryff_11_latency_folder, gus_11_
 
     return gryff_fig_11_csvs, gus_fig_11_csvs, epaxos_fig_11_csvs
 
+# Delete and fix packaging
+def check_cmd_output(cmd):
+   # output = subprocess.check_output(cmd)
+    ps = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+    output = ps.communicate()[0]
+    return output.decode("utf-8").strip("\n") 
+
+# returns newest results. Assumes results are in ../results
+def most_recent_results():
+    results_dir = "../results/"
+    return results_dir + check_cmd_output("ls " +  results_dir + "| sort -r | head -n 1")
+
+def usage():
+    print("Usage: python3 plot_figs RESULTS_PATH")
+
 if __name__ == "__main__":
-    main()
+    match len(sys.argv):
+        case 1: 
+            main2(most_recent_results())
+        case 2:
+            main2(sys.argv[1])
+        case _:
+            usage()
+
+    

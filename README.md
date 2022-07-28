@@ -10,7 +10,7 @@ This repo consists of python code that will autonomously run the replication pro
 ## Dependencies
 ### Code
 - Go 1.15 (for replication protocol code)
-- Python 3.8 (for running experiments automatically, calculating stats, plotting data)
+- Python 3.10 (for running experiments automatically, calculating stats, plotting data)
 - Redis 6.2.2 (for a specific experiment configuration)
 ### Repositories
 - The Gus repository
@@ -43,7 +43,7 @@ Documentation coming soon
 
 ### Multiple Experiments - With Automatic Syncing
 
-1. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_FILE_PATH CONFIG_FILE_PATH ...`
+1. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_NUMBER CONFIG_NUMBER ...`
    - Example: ```python3 run_experiments configs/fig7.json configs/fig6.json```
    - Pass in any number of config file paths. Currently all config file paths are under configs. Be sure to modify each config file to desired specs
    - Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
