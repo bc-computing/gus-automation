@@ -28,7 +28,10 @@ def run():
 
     # fig must just be a #
     for config_path in config_paths:
-        temp_path = results_parent_path / ("fig" + fig)
+
+        # Get final fig name:
+        temp = config_path.split("/")
+        temp_path = temp[-1]
 
         for protocol in protocols:
             print("\nRunning", protocol, fig, "...\n")
