@@ -111,3 +111,7 @@ The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `
 - then copy results back to local
 
 whoami | sudo python3 /root/go/src/gus-automation/move_results.py /root/go/src/gus-automation/configs/fig7.json
+
+https://superuser.com/questions/1494198/run-cd-command-as-superuser-in-linux
+
+- Currently unable to run expriment remotely. make sure to be able to run experiment normally first - check repos
