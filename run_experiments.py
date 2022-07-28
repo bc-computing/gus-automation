@@ -30,8 +30,8 @@ def run():
     for config_path in config_paths:
 
         # Get final fig name:
-        temp = config_path.split("/")
-        temp_path = temp[-1]
+        temp = config_path.split("/")[-1].replace(".json", "")
+        temp_path = results_parent_path / (temp)
 
         for protocol in protocols:
             print("\nRunning", protocol, config_path, "...\n")
