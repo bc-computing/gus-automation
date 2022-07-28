@@ -34,10 +34,10 @@ def run():
         temp_path = temp[-1]
 
         for protocol in protocols:
-            print("\nRunning", protocol, fig, "...\n")
+            print("\nRunning", protocol, config_path, "...\n")
             update(config_path, "replication_protocol", protocol)
 
-            results_extension = temp_path / protocol
+            results_extension = Path(temp_path) / Path(protocol)
 
             setup_network_delay(config_path)
             run_exper(results_extension, config_path)
