@@ -1,70 +1,68 @@
 {
-  "server_names":
-  [
-  "california",
-  "virginia",
-  "ireland",
-  "oregon",
-  "japan"
-  ],
-  "root_user": "root",
-  "cloudlab_user":"dumasca", 
-  "experiment_name": "test",
-  "project_name": "HyflowTM-PG0",
-  "host_format_str": "%s.%s.%s.utah.cloudlab.us",
-  "emulate_wan_latency": true,
-  "server_ping_latencies":
-  {
-    "california": {
-      "california": 0,
-      "ireland": 151,
-      "japan": 113,
-      "oregon": 59,
-      "virginia": 72
+    "server_names": [
+        "california",
+        "virginia",
+        "ireland",
+        "oregon",
+        "japan"
+    ],
+    "root_user": "root",
+    "cloudlab_user": "dumasca",
+    "experiment_name": "test",
+    "project_name": "HyflowTM-PG0",
+    "host_format_str": "%s.%s.%s.utah.cloudlab.us",
+    "emulate_wan_latency": true,
+    "server_ping_latencies": {
+        "california": {
+            "california": 0,
+            "ireland": 151,
+            "japan": 113,
+            "oregon": 59,
+            "virginia": 72
+        },
+        "ireland": {
+            "california": 151,
+            "ireland": 0,
+            "japan": 220,
+            "oregon": 145,
+            "virginia": 88
+        },
+        "japan": {
+            "california": 113,
+            "ireland": 220,
+            "japan": 0,
+            "oregon": 121,
+            "virginia": 162
+        },
+        "oregon": {
+            "california": 59,
+            "ireland": 145,
+            "japan": 121,
+            "oregon": 0,
+            "virginia": 93
+        },
+        "virginia": {
+            "california": 72,
+            "ireland": 88,
+            "japan": 162,
+            "oregon": 93,
+            "virginia": 0
+        }
     },
-    "ireland": {
-      "california": 151,
-      "ireland": 0,
-      "japan": 220,
-      "oregon": 145,
-      "virginia": 88
-    },
-    "japan": {
-      "california": 113,
-      "ireland": 220,
-      "japan": 0,
-      "oregon": 121,
-      "virginia": 162
-    },
-    "oregon": {
-      "california": 59,
-      "ireland": 145,
-      "japan": 121,
-      "oregon": 0,
-      "virginia": 93
-    },
-    "virginia": {
-      "california": 72,
-      "ireland": 88,
-      "japan": 162,
-      "oregon": 93,
-      "virginia": 0
-    }
-  },
-  "max_bandwidth": "1gibps",
-  "gus_epaxos_control_src_directory": "/root/go/src/gus-epaxos",
-  "gryff_control_src_directory": "/root/go/src/gryff-testing",
-  "base_control_experiment_directory": "/root/go/src/gus-automation/results",
-  "base_remote_experiment_directory": "~/results",
-  "remote_bin_directory": "~/bin",
-  "redis_control_bin": "/root/redis-6.2.2/src/redis-server",
-  "scale":  false,
-  "layered": false,
-  "replication_protocol": "gus",
-  "number_of_replicas": 3,
-  "durable": false,
-  "experiment_length": 180,
-  "write_percentage": 0.055,
-  "conflict_percentage": 2,
-  "clients_per_replica": 16
+    "max_bandwidth": "1gibps",
+    "gus_epaxos_control_src_directory": "/root/go/src/gus-epaxos",
+    "gryff_control_src_directory": "/root/go/src/gryff-testing",
+    "base_control_experiment_directory": "/root/go/src/gus-automation/results",
+    "base_remote_experiment_directory": "~/results",
+    "remote_bin_directory": "~/bin",
+    "redis_control_bin": "/root/redis-6.2.2/src/redis-server",
+    "scale": false,
+    "layered": false,
+    "replication_protocol": "gus",
+    "number_of_replicas": 3,
+    "durable": false,
+    "experiment_length": 180,
+    "write_percentage": 0.055,
+    "conflict_percentage": 2,
+    "clients_per_replica": 16
 }

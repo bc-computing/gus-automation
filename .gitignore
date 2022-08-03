@@ -1,0 +1,8 @@
+# Don't track log files
+*.log
+
+# Don't track text files
+*.text
+
+# Don't track plots
+*.gpi

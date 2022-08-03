@@ -43,15 +43,19 @@ Documentation coming soon
 
 ### Multiple Experiments - With Automatic Syncing
 
-1. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_NUMBER CONFIG_NUMBER ...`
+1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
+   - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab
+   - **Set the experiment name to "test" to skip this step ("test" is the default experiment name)**
+
+2. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_NUMBER CONFIG_NUMBER ...`
    - Example: ```python3 run_experiments configs/fig7.json configs/fig6.json```
    - Pass in any number of config file paths. Currently all config file paths are under configs. Be sure to modify each config file to desired specs
    - Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
    - NEED TO ADD conflict rate switching for figure 6 (for each protocol, run 3 times, once for each conflict rates)
-2. **Syncing results to local machine:** On local machine, run ```python3 sync_results.py USER@CONTROL_ADDRESS CONFIG_FILE_PATH```
+3. **Syncing results to local machine:** On local machine, run ```python3 sync_results.py USER@CONTROL_ADDRESS CONFIG_FILE_PATH```
    - On the cloudlab, copy the USER@ADDRESS portion of the ssh command for the control machine for USER@CONTROL_ADDRESS
    - The config file is used to determined the path for the results directory
-3. **Plotting**
+4. **Plotting**
 
 
 ## Workflow
