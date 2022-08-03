@@ -51,32 +51,30 @@ def run():
 
     for config_path in config_paths:
 
-        # used to keep track of path to fig6.json rather than fig6a.json ... (which are not real)
-        actual_config_path = config_path
         # adjusts conflict rate
         if "fig6a" in config_path:
-            actual_config_path = config_path.replace("6a", "6")
-            update(actual_config_path,"conflict_percentage", 2)
+            config_path = config_path.replace("6a", "6")
+            update(config_path,"conflict_percentage", 2)
         elif "fig6b" in config_path:
-            actual_config_path = config_path.replace("6b", "6")
-            update(actual_config_path,"conflict_percentage", 10)
+            config_path = config_path.replace("6b", "6")
+            update(config_path,"conflict_percentage", 10)
         elif "fig6c" in config_path:
-            actual_config_path = config_path.replace("6c", "6")
-            update(actual_config_path,"conflict_percentage", 25)
+            config_path = config_path.replace("6c", "6")
+            update(config_path,"conflict_percentage", 25)
 
-        print("Config path = " , actual_config_path)
+        print("Config path = " , config_path)
         # Get final fig name:
-        temp = actual_config_path.split("/")[-1].replace(".json", "")
+        temp = config_path.split("/")[-1].replace(".json", "")
         temp_path = results_parent_path / (temp)
 
         for protocol in protocols:
-            print("\nRunning", protocol, actual_config_path, "...\n")
-            update(actual_config_path, "replication_protocol", protocol)
+            print("\nRunning", protocol, config_path, "...\n")
+            update(config_path, "replication_protocol", protocol)
 
             results_extension = Path(temp_path) / Path(protocol)
 
-            setup_network_delay(actual_config_path)
-            run_exper(results_extension, actual_config_path)
+            setup_network_delay(config_path)
+            run_exper(results_extension, config_path)
 
 
 # Must be run as:
