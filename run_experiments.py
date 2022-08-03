@@ -8,6 +8,24 @@ from update_json import update
 from pathlib import Path
 from setup_network_delay_test import setup_network_delay
 
+# Replaces fig6 with fig6a fig6b fig6c
+def replace_fig6(config_paths):
+
+    last_slash_index = config_paths[0].rfind("/")
+    parent_path = config_paths[0][:last_slash_index + 1]
+
+    for config_path in config_paths:
+        if "fig6.json" in config_path:
+            # remove fig6 
+            config_paths.remove(config_path)
+
+            # add fig6a fig6b fig6c
+            for x in ["a", "b", "c"]:
+                config_paths.append(parent_path + "fig6" + x + ".json")
+
+    return config_paths
+
+
 def run():
     now_string = time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime())
 
@@ -26,9 +44,20 @@ def run():
     # default is all protocols
     protocols = ["gus", "epaxos", "gryff"]
 
-    # Still must adjust for fig6 which  has a b c
+    # Adjusts for fig6
+    config_paths = replace_fig6(config_paths)
+
+    print("Here are config_paths: " , config_paths)
 
     for config_path in config_paths:
+
+        # adjusts conflict rate
+        if "fig6a" in config_path:
+            update(config_path,"conflict_percentage", 2)
+        elif "fig6b" in config_path:
+            update(config_path,"conflict_percentage", 10)
+        elif "fig6c" in config_path:
+            update(config_path,"conflict_percentage", 25)
 
         # Get final fig name:
         temp = config_path.split("/")[-1].replace(".json", "")

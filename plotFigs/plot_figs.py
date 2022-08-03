@@ -272,7 +272,7 @@ def most_recent_results():
     return results_dir + check_cmd_output("ls " +  results_dir + "| sort -r | head -n 1")
 
 def usage():
-    print("Usage: python3 plot_figs RESULTS_PATH")
+    print("Usage: python3 plot_figs.py RESULTS_PATH")
 
 if __name__ == "__main__":
     match len(sys.argv):

@@ -46,6 +46,7 @@ Documentation coming soon
 1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
    - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab
    - **Set the experiment name to "test" to skip this step ("test" is the default experiment name)**
+   - NOT WORKING YET
 
 2. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_NUMBER CONFIG_NUMBER ...`
    - Example: ```python3 run_experiments configs/fig7.json configs/fig6.json```
