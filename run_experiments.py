@@ -53,11 +53,14 @@ def run():
 
         # adjusts conflict rate
         if "fig6a" in config_path:
-            update(config_path.replace("6a", "6"),"conflict_percentage", 2)
+            config_path = config_path.replace("6a", "6")
+            update(config_path,"conflict_percentage", 2)
         elif "fig6b" in config_path:
-            update(config_path.replace("6b", "6"),"conflict_percentage", 10)
+            config_path = config_path.replace("6b", "6")
+            update(config_path,"conflict_percentage", 10)
         elif "fig6c" in config_path:
-            update(config_path.replace("6c", "6"),"conflict_percentage", 25)
+            config_path = config_path.replace("6c", "6")
+            update(config_path,"conflict_percentage", 25)
 
         # Get final fig name:
         temp = config_path.split("/")[-1].replace(".json", "")
