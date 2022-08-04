@@ -57,6 +57,7 @@ def calculate_cdf_log_for_npdata(npdata, precision):
 
 
 def generate_csv_for_cdf_plot(csv_file, cdf_data, log=False):
+    print("About to create/opena a file: ", csv_file)
     with open(csv_file, 'w+') as f:
         csvwriter = csv.writer(f)
         k = 1
