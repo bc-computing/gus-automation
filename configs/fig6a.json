@@ -11,22 +11,22 @@
     "host_format_str": "%s.%s.%s.utah.cloudlab.us",
     "emulate_wan_latency": true,
     "server_ping_latencies": {
-      "california": {
-          "california": 0,
-          "ireland": 151,
-          "virginia": 72
-      },
-      "ireland": {
-          "california": 151,
-          "ireland": 0,
-          "virginia": 88
-      },
-      "virginia": {
-          "california": 72,
-          "ireland": 88,
-          "virginia": 0
-      }
-  },
+        "california": {
+            "california": 0,
+            "ireland": 151,
+            "virginia": 72
+        },
+        "ireland": {
+            "california": 151,
+            "ireland": 0,
+            "virginia": 88
+        },
+        "virginia": {
+            "california": 72,
+            "ireland": 88,
+            "virginia": 0
+        }
+    },
     "max_bandwidth": "1gibps",
     "gus_epaxos_control_src_directory": "/root/go/src/gus-epaxos",
     "gryff_control_src_directory": "/root/go/src/gryff-testing",
