@@ -25,6 +25,7 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
 ## How to Run
 ### Setup
 1. Instantiate the cloudlab profile above.
+   - Be sure to use the Utah cluseter.
 2. Connect to the control machine via ssh.
    1. Make sure to include `-A` 
 3. Open this repo in the control machine. This repo and others can be found in `/root/go/src`. All repos are stored in root because cloudlab disk images do not save data stored in user home directories.

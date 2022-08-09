@@ -1,6 +1,5 @@
 - Communication Parameters (used for ssh communication from control machine to remote machines)
   - server_names: names of servers in cloudlab, corresponding to the server regions listed at https://www.cloudping.co/grid
-  - root_user: set to "root" to give root access to control machine when contacting other servers
   - cloudlab_user: the username of the cloudlab account connecting to the cluster
   - experiment_name: the name of the cloudlab experiment
   - project_name: the name of the cloudlab project that the experiment is run under

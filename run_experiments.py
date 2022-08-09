@@ -49,6 +49,8 @@ def run():
 
     print("Here are config_paths: " , config_paths)
 
+
+    # Need to adjust for figure 12 which just runs gus, but changes n ( =3, =5, =7, =9)
     for config_path in config_paths:
 
         # adjusts conflict rate - NEED TO FIX PATHING - fig6a not showing up
