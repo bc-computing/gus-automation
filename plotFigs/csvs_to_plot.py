@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-# for figures 6 and 7
+# for figures 6 and 7 (and 11?)
 def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_csv, is_for_reads, log=False):
 
     plot_script_file = os.path.join(plot_target_directory, '%s.gpi' % figure)
@@ -15,7 +15,7 @@ def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_c
 def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, protocols, figure, is_for_reads, log=False):
     with open(plot_script_file, 'w+') as f:
         f.write("set datafile separator ','\n")
-        f.write("set terminal pngcairo size 1500,500 enhanced font 'Helvetica,36'\n")
+        f.write("set terminal pngcairo size 1500,500 enhanced font 'Helvetica,30'\n")
 
         if '7' in figure:
             if log:
@@ -45,6 +45,7 @@ def generate_cdf_gnuplot_script(plot_script_file, plot_target_directory, csvs, p
         f.write('set style line 3 linetype 1 linecolor "blue" linewidth 6 dashtype 3\n')
 
         f.write('plot ')
+        
         for i in range(len(csvs)):
             if log:
                 f.write("'%s' using 1:(-log10(1-$2)):yticlabels(3) title '%s' ls %d with lines" % (csvs[i], protocols[i], i + 1))
@@ -88,7 +89,7 @@ def generate_write_ratio_throughput_gnuplot_script(plot_script_file, plot_target
             if i != len(csvs) - 1:
                 f.write(', \\\n')
 
-# for figure 11
+# for figure 10
 def data_size_latencies_csvs_to_plot(plot_target_directory, gus_csv, giza_csv):
     plot_script_file = os.path.join(plot_target_directory, 'data_size-latencies.gpi')
 

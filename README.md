@@ -11,6 +11,10 @@ This repo consists of python code that will autonomously run the replication pro
 ### Code
 - Go 1.15 (for replication protocol code)
 - Python 3.10 (for running experiments automatically, calculating stats, plotting data)
+   - NumPy
+      - Install with ```pip install numpy```
+   - PrettyTable
+      - Install with ```python -m pip install -U prettytable```
 - Redis 6.2.2 (for a specific experiment configuration)
 ### Repositories
 - The Gus repository
@@ -47,18 +51,33 @@ Documentation coming soon
 1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
    - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab
    - **Set the experiment name to "test" to skip this step ("test" is the default experiment name)**
-   - NOT WORKING YET
+   - Maybe working?
 
-2. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_NUMBER CONFIG_NUMBER ...`
+2. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_PATH CONFIG_PATH ...`
    - Example: ```python3 run_experiments configs/fig7.json configs/fig6.json```
    - Pass in any number of config file paths. Currently all config file paths are under configs. Be sure to modify each config file to desired specs
    - Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
-   - NEED TO ADD conflict rate switching for figure 6 (for each protocol, run 3 times, once for each conflict rates)
+   - Need to add support for fig12
 3. **Syncing results to local machine:** On local machine, run ```python3 sync_results.py USER@CONTROL_ADDRESS CONFIG_FILE_PATH```
    - On the cloudlab, copy the USER@ADDRESS portion of the ssh command for the control machine for USER@CONTROL_ADDRESS
    - The config file is used to determined the path for the results directory
-4. **Plotting**
-
+4. **Plotting:** On local machine, cd to ``plotFigs/`` and run ```python3 plot_figs.py``` to plot the most recent expriment results.
+   - Optionally run: ```python3 plot_figs.py [EXPERIMENT_RESULTS_PATH]``` to plot any results.
+5. **Client Metrics**: Optionally, print out (or write to file) specified mean and percentiles of experimental results with: ```python3 client_metrics.py PERCENTILE PERCENTILE ...```
+   - **Full description of options:** run ```python3 client_metrics [--clear] LOWER_BOUND_OR_SINGLE_PERCENTILE [UPPER_BOUND_OR_SECOND_PERCENTILE] [NTH PERCENTILE]... [-i, --interval=INTERVAL_LENGTH]\n[--path=results_data_PATH] [--fig=FIG_NAME] [--protocol=PROTOCOL] [--table] [--noprint] [--txt] [--json]```
+      - --clear: clears all json and txt files in metrics before writing to any new files
+      - --interval=INTERVAL_LENTGTH: set interval of percentiles calculated between upper and lowerbound
+         - -i: equivalent to --interval==1
+      - --fig:FIG_NAME: include only FIG_NAME
+         - can be listed multple times
+      - --protocol=PROTOCOL: only include protocol
+         - can be listed multiple times
+      - --table: prints metrics in table format
+      - --noprint: no printing  
+      - --txt: saves metrics to text file under metrics
+      - --json: saves metrics to json file under metrics
+      - Many discrete percentile values can be passed. All but max and min are ignored when interval flag is set. 
+      - If UPPER_BOUND is undefined and --interval is set, then UPPER_BOUND=100 .
 
 ## Workflow
 ### Single Experiment

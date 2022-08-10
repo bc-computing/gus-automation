@@ -49,6 +49,7 @@ def main2(results_path):
                 print("Still need to implement")
             case "fig11":
                 print("Plotting fig11...")
+                print("latencies_folder_paths[gryff] = ", latencies_folder_paths["gryff"])
                 plot_fig11(plot_target_directory, csv_target_directory, latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
             case _ :
                 print("Default reached, Case not found")
@@ -72,12 +73,16 @@ def plot_fig6(plot_target_directory, csv_target_directory, figure_name, gryff_la
     cdf_csvs_to_plot(plot_target_directory, figure_name, read_csvs["gryff"], read_csvs["gus"], read_csvs["epaxos"],is_for_reads=True )
     cdf_csvs_to_plot(plot_target_directory, figure_name + "-write", write_csvs["gryff"], write_csvs["gus"], write_csvs["epaxos"],is_for_reads=False )
 
-
-def plot_fig11(plot_target_directory, csv_target_directory, figure_name, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
-    _ , write_csvs, _, _ = calculate_csvs2(figure_name, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder)
+# Plots log scale writes only
+def plot_fig11(plot_target_directory, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
+    print("gus_latency_folder: ", gus_latency_folder)
+    _ , _, _, write_log_csvs = calculate_csvs2("11", csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder)
 
     # Writes 
-    cdf_csvs_to_plot(plot_target_directory, figure_name, write_csvs["gryff"], write_csvs["gus"], write_csvs["epaxos"],is_for_reads=False )
+    print("gus: ", write_log_csvs["gus"])
+    print("epaxos: ", write_log_csvs["epaxos"])
+    print("gryff: ", write_log_csvs["gryff"])
+    cdf_csvs_to_plot(plot_target_directory, "11-write-log", write_log_csvs["gryff"], write_log_csvs["gus"], write_log_csvs["epaxos"], is_for_reads=False, log=True )
 
 
 def main():
@@ -152,7 +157,7 @@ def main():
     #
     # write_ratio_throughput_csvs_to_plot(plot_target_directory, gryff_write_ratio_throughput_csv, gus_write_ratio_throughput_csv, epaxos_write_ratio_throughput_csv)
 
-    # fig data size latencies
+    # fig data size latencies - fig 10
     data_size_latencies_csv_folder = "/Users/zhouaea/Desktop/plotFigs/data_size-latencies"
     gus_data_size_latencies_csv = os.path.join(data_size_latencies_csv_folder, "gus-data_size-latencies.csv")
     giza_data_size_latencies_csv = os.path.join(data_size_latencies_csv_folder, "giza-data_size-latencies.csv")
@@ -201,7 +206,7 @@ def calculate_csvs2(figure_name, csv_target_directory, gryff_latency_folder, gus
 
     # write
     for protocol, latency in write_latencies.items():
-        norm_cdf_csv, norm_log_cdf =  latencies_to_csv(csv_target_directory, latency, protocol, figure_name + "-write")
+        norm_cdf_csv, norm_log_cdf_csv =  latencies_to_csv(csv_target_directory, latency, protocol, figure_name + "-write")
         write_csvs[protocol] = norm_cdf_csv 
         write_log_csvs[protocol] = norm_log_cdf_csv
 
