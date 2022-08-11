@@ -49,6 +49,8 @@ def run():
 
     print("Here are config_paths: " , config_paths)
 
+    # Fig 9 plotting is combined gus and giza only
+    # Fig 8 is for each protocol, change throughput 
 
     # Need to adjust for figure 12 which just runs gus, but changes n ( =3, =5, =7, =9)
     for config_path in config_paths:
@@ -64,14 +66,30 @@ def run():
         print("Config path = " , config_path)
 
         # Get final fig name:
-        temp = config_path.split("/")[-1].replace(".json", "")
-        temp_path = results_parent_path / (temp)
+        trimmed_fig = config_path.split("/")[-1].replace(".json", "")
+        temp_path = results_parent_path / (trimmed_fig)
 
         for protocol in protocols:
             print("\nRunning", protocol, config_path, "...\n")
             update(config_path, "replication_protocol", protocol)
 
             results_extension = Path(temp_path) / Path(protocol)
+
+
+            # NOT SURE WHY - Gryff not working for fig8
+            # For fig 8, for each protocol, change throughput 
+            if "fig8" in trimmed_fig:
+
+                write_percentages = [.1, .3, .5, .7, .9]
+                for wr in write_percentages: 
+                    update(config_path, "write_percentage", wr)
+
+                    # For fig8, now results file structure is: TIMESTAMP/FIG8/PROTOCOL-WRITE_PERCENTAGE/CLIENT/...
+                    results_extension_fig8 = results_extension  + (str(wr))
+
+                    setup_network_delay(config_path)
+                    run_exper(results_extension_fig8, config_path)
+
 
             setup_network_delay(config_path)
             run_exper(results_extension, config_path)

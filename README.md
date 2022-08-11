@@ -47,6 +47,7 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
 Documentation coming soon
 
 ### Multiple Experiments - With Automatic Syncing
+TODO: gryff not working with fig8
 
 1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
    - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab

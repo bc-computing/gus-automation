@@ -1,6 +1,9 @@
+# ADD copyright
+
 #!/usr/local/bin/python3
 
-# Command line script to return percentiles of experiment results_data results_data
+# Command line script to return percentiles and mean for (gus, gryff, and epaxos) experiment results data
+# Author: Cole Dumas, August 2022
 
 import json
 import numpy as np
@@ -16,11 +19,13 @@ from prettytable import PrettyTable
 metrics_dir = "metrics"
 
 
-
 def get_metrics(options):
     results_data = build_results_data(options)
     metrics = results_data_to_metrics(options, results_data)
-    output_metrics(options, metrics)
+    if "onlytputs" in options:
+        output_max_tput_only(metrics)
+    else:
+        output_metrics(options, metrics)
 
 
 # returns dictionary of options (with values) interpreted from input args
@@ -51,7 +56,8 @@ def read_input(args):
             options["noprint"] = True
         elif arg.startswith("--clear"):
             options["clear"] = True
-
+        elif arg.startswith("--onlytputs"):
+            options["onlytputs"] = True
         # figs and protocols are options that form lists
         elif arg.startswith("--fig"):
             options["fig"].append(arg.split("=")[-1]) # error check later to make sure this fig is actually there
@@ -101,7 +107,7 @@ def fill_in_options(options):
     
 
     # if only 1 protocol passed (and interval flag specified) then set upperbound to 100
-    if len(options["percentiles"]) == 1:
+    if len(options["percentiles"]) == 1 and "intervals" in options:
         options["percentiles"].append(100)
 
     return options
@@ -121,6 +127,7 @@ def build_results_data(options):
             for protocol in protocols:
                 results_data[fig][protocol] = {}
 
+                # for Fig8 protocol is really "PROTOCOL-WRITE_PERCENTAGE"
                 dir_path = path + "/" + protocol + "/client"
 
                 files = os.listdir(dir_path)
@@ -169,6 +176,9 @@ def get_stats(options, file_contents):
 
     return stats
 
+
+
+# Fix how tputs are calculated
 
 def results_data_to_metrics(options, results_data):
     metrics = results_data.copy()
@@ -223,7 +233,17 @@ def output_metrics(options, metrics):
     if "table" not in options and "noprint" not in options:   # only print regular if not printing table
         metrics_json = json.dumps(metrics, indent = 4) 
         print(metrics_json)
-        
+
+
+def output_max_tput_only( metrics):
+    trimmed_metrics = {}
+    for fig, fig_val in metrics.items():
+        trimmed_metrics[fig] = {}
+        for protocol, protocol_val in fig_val.items():
+            trimmed_metrics[fig][protocol] = metrics[fig][protocol]["tput"]["p100.0"]
+
+    print(json.dumps(trimmed_metrics))
+
 
 # Utility / Small Helpers
 
