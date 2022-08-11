@@ -13,16 +13,8 @@ import pprint
 from prettytable import PrettyTable
 
 
-metrics_dir = "client_metrics"
+metrics_dir = "metrics"
 
-if __name__ == '__main__':
-    options = fill_in_options(read_input(sys.argv))
-
-    # operate on clear flag (if it's there)
-    if "clear" in options:
-        clear_metrics_dir()
-
-    get_metrics(options)
 
 
 def get_metrics(options):
@@ -241,7 +233,7 @@ def clear_metrics_dir():
 
 
 def usage():
-    print("\nUsage: python3 client_metrics [--clear] LOWER_BOUND_OR_SINGLE_PERCENTILE [UPPER_BOUND_OR_SECOND_PERCENTILE] [NTH PERCENTILE]... [-i, --interval=INTERVAL_LENGTH]\n[--path=results_data_PATH] [--fig=FIG_NAME] [--protocol=PROTOCOL] [--table] [--noprint] [--txt] [--json]")
+    print("\nUsage: python3 client_metrics [--clear] LOWER_BOUND_OR_SINGLE_PERCENTILE [UPPER_BOUND_OR_SECOND_PERCENTILE] [NTH PERCENTILE]... [-i, --interval=INTERVAL_LENGTH]\n[--path=RESULST_DATA_PATH] [--fig=FIG_NAME] [--protocol=PROTOCOL] [--table] [--noprint] [--txt] [--json]")
     print("\n--clear: clears all json and txt files in metrics before writing to any new files\n\n--interval=INTERVAL_LENTGTH: set interval of percentiles calculated between upper and lowerbound\n\t-i: equivalent to --interval==1\n\n--fig:FIG_NAME: include only FIG_NAME\n\tcan be listed multple times\n\n--protocol=PROTOCOL: only include protocol\n\tcan be listed multiple times\n\n--table: prints metrics in table format\n\n--noprint: no printing  \n\n--txt: saves metrics to text file under client_metrics/\n\n--json: saves metrics to json file under client_metrics/")
     print("\n Many discrete percentile values can be passed. All but max and min are ignored when interval flag is set. \n**If UPPER_BOUND is undefined and --interval is set, then UPPER_BOUND=100\n")
 
@@ -260,3 +252,12 @@ def is_float(x):
     except ValueError:
         return False
 
+
+if __name__ == '__main__':
+    options = fill_in_options(read_input(sys.argv))
+
+    # operate on clear flag (if it's there)
+    if "clear" in options:
+        clear_metrics_dir()
+
+    get_metrics(options)

@@ -14,17 +14,17 @@
         "california": {
             "california": 0,
             "ireland": 151,
-            "japan": 113
+            "virginia": 72
+        },
+        "virginia": {
+            "california": 72,
+            "ireland": 88,
+            "virginia": 0
         },
         "ireland": {
             "california": 151,
             "ireland": 0,
-            "japan": 220
-        },
-        "japan": {
-            "california": 113,
-            "ireland": 220,
-            "japan": 0
+            "virginia": 88
         }
     },
     "max_bandwidth": "1gibps",
