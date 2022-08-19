@@ -1,8 +1,47 @@
 import os
 import subprocess
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
 
-# for figures 6 and 7 (and 11?)
+
+# Defining lines and colors
+colors = {"gryff":"green", "gus":"orange", "epaxos":"blue"}
+linestyles = {"gryff":"dashdot", "gus":"solid", "epaxos":"dotted"}
+labels = {"gryff":"Gryff", "gus":"Gus", "epaxos":"EPaxos"} # properly stylized
+
+# New in development version with matplotlib
 def cdf_csvs_to_plot(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_csv, is_for_reads, log=False):
+
+    # Reformat function header to just pass csvs dictionary 
+    csvs = {"gus": gus_csv, "gryff":gryff_csv, "epaxos":epaxos_csv}
+
+    # Each data object is a np array. 1st column is x data (latency), 2nd column is y data (percentile). label is the protocol
+    data = {label: np.genfromtxt(csv, delimiter=',') for label, csv in csvs.items()}
+    
+    fig, ax = plt.subplots()
+
+    # d is data (singular)
+    for protocol, d in data.items():
+        if log == True: # Log y axis plotting
+            ax.semilogy(d[:,0], d[:,1], color=colors[protocol], linestyle=linestyles[protocol], label=labels[protocol])
+        else: # Regular plotting
+            ax.plot(d[:,0], d[:,1], color=colors[protocol], linestyle=linestyles[protocol], label=labels[protocol]) 
+    
+    # Adding labels
+    ax.set_xlabel('Latency (ms)')
+
+    if is_for_reads == True:
+        ax.set_ylabel('Fraction of Reads')
+    else:
+        ax.set_ylabel('Fraction of Writes')
+    
+    ax.legend()
+
+    fig.savefig(plot_target_directory / Path(figure + ".png") )
+
+# for figures 6 and 7 (and 11?) - OLD WORKING VERSION WITH GNUPLOT
+def cdf_csvs_to_plot_old(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_csv, is_for_reads, log=False):
 
     plot_script_file = os.path.join(plot_target_directory, '%s.gpi' % figure)
 

@@ -41,15 +41,14 @@ def run():
 
     config_paths = sys.argv[1:]
     
-    # default is all protocols
-    protocols = ["gus", "epaxos", "gryff"]
-
     # Adjusts for fig6
     config_paths = replace_fig6(config_paths)
 
     print("Here are config_paths: " , config_paths)
 
-    # Fig 9 plotting is combined gus and giza only
+   
+
+
     # Fig 8 is for each protocol, change throughput 
 
     # Need to adjust for figure 12 which just runs gus, but changes n ( =3, =5, =7, =9)
@@ -62,6 +61,13 @@ def run():
             update(config_path,"conflict_percentage", 10)
         elif "fig6c" in config_path:
             update(config_path,"conflict_percentage", 25)
+
+        # default is all protocols
+        protocols = ["gus", "epaxos", "gryff"]
+        # Fig 9 plotting is combined gus and giza only
+        if "fig9" in config_path:
+            protocols = ["gus", "epaxos"]
+
 
         print("Config path = " , config_path)
 

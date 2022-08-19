@@ -15,6 +15,8 @@ This repo consists of python code that will autonomously run the replication pro
       - Install with ```pip install numpy```
    - PrettyTable
       - Install with ```python -m pip install -U prettytable```
+   - Matplotlib
+      - Install with ```pip install matplotlib```
 - Redis 6.2.2 (for a specific experiment configuration)
 ### Repositories
 - The Gus repository
@@ -52,7 +54,6 @@ TODO: gryff not working with fig8
 1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
    - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab
    - **Set the experiment name to "test" to skip this step ("test" is the default experiment name)**
-   - Maybe working?
 
 2. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_PATH CONFIG_PATH ...`
    - Example: ```python3 run_experiments configs/fig7.json configs/fig6.json```
