@@ -91,14 +91,14 @@ def run():
                     update(config_path, "write_percentage", wr)
 
                     # For fig8, now results file structure is: TIMESTAMP/FIG8/PROTOCOL-WRITE_PERCENTAGE/CLIENT/...
-                    results_extension_fig8 = results_extension  + (str(wr))
+                    results_extension_fig8 = Path(str(results_extension)  + "-" +(str(wr)))
 
                     setup_network_delay(config_path)
                     run_exper(results_extension_fig8, config_path)
 
-
-            setup_network_delay(config_path)
-            run_exper(results_extension, config_path)
+            else:
+                setup_network_delay(config_path)
+                run_exper(results_extension, config_path)
 
 
 # Must be run as:

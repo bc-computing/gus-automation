@@ -1,11 +1,13 @@
 from folder_to_norm_latencies import extract_norm_latencies
 from extract_latencies import extract_latencies
 from latencies_to_csv import latencies_to_csv
-from csvs_to_plot import data_size_latencies_csvs_to_plot, cdf_csvs_to_plot
+from csvs_to_plot import data_size_latencies_csvs_to_plot, cdf_csvs_to_plot, tput_wp_plot
 import os
 from pathlib import Path
 import sys
 import subprocess
+import json
+import numpy as np
 
 
 # Working on passing a folder for results
@@ -61,18 +63,18 @@ def plot_fig7(plot_target_directory, csv_target_directory, gryff_latency_folder,
     read_csvs, write_csvs, _, _ = calculate_csvs_cdf("7", csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder)
 
     # Reads
-    cdf_csvs_to_plot(plot_target_directory, "7", read_csvs["gryff"], read_csvs["gus"], read_csvs["epaxos"], is_for_reads=True)
+    cdf_csvs_to_plot(plot_target_directory, "7", read_csvs, is_for_reads=True)
 
     # Writes
-    cdf_csvs_to_plot(plot_target_directory, "7" + "-write", write_csvs["gryff"], write_csvs["gus"], write_csvs["epaxos"], is_for_reads=False)    
+    cdf_csvs_to_plot(plot_target_directory, "7" + "-write", write_csvs, is_for_reads=False)    
 
 
 def plot_fig6(plot_target_directory, csv_target_directory, figure_name, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
   
     read_csvs, write_csvs, _, _ = calculate_csvs_cdf(figure_name, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder)
    
-    cdf_csvs_to_plot(plot_target_directory, figure_name, read_csvs["gryff"], read_csvs["gus"], read_csvs["epaxos"],is_for_reads=True )
-    cdf_csvs_to_plot(plot_target_directory, figure_name + "-write", write_csvs["gryff"], write_csvs["gus"], write_csvs["epaxos"],is_for_reads=False )
+    cdf_csvs_to_plot(plot_target_directory, figure_name, read_csvs,is_for_reads=True )
+    cdf_csvs_to_plot(plot_target_directory, figure_name + "-write", write_csvs, is_for_reads=False )
 
 # Plots log scale writes only
 def plot_fig11(plot_target_directory, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
@@ -80,20 +82,19 @@ def plot_fig11(plot_target_directory, csv_target_directory, gryff_latency_folder
     _ , _, _, write_log_csvs = calculate_csvs_cdf("11", csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder)
 
     # Writes 
-    print("gus: ", write_log_csvs["gus"])
-    print("epaxos: ", write_log_csvs["epaxos"])
-    print("gryff: ", write_log_csvs["gryff"])
-    cdf_csvs_to_plot(plot_target_directory, "11-write-log", write_log_csvs["gryff"], write_log_csvs["gus"], write_log_csvs["epaxos"], is_for_reads=False, log=True )
+    cdf_csvs_to_plot(plot_target_directory, "11-write-log", write_log_csvs, is_for_reads=False, log=True )
 
 
 def plot_fig8(plot_target_directory, results_path, csv_target_directory, latencies_folder_paths):
     # For fig8, now results file structure is: TIMESTAMP/FIG8/PROTOCOL-WRITE_PERCENTAGE/CLIENT/....    
     # latencies_folder_paths = TIMESTAMP/FIG8/PROTOCOL/
 
-    csvs = calculate_csvs_tput_wp(figure_name, results_path, csv_target_directory, latencies_folder_paths)
+    # throughputs is a dictionary of throughputs (lookup via throughputs[protocol][wp])
+    throughputs = calculate_tput_wp("8", results_path, csv_target_directory, latencies_folder_paths)
+    tput_wp_plot(plot_target_directory, "8", throughputs)
 
-    # plot CSVS - maybe change to matplotlib LEFT OFF HERE
 
+# Need to cut out CSVS too like with fig8
 # Returns a tuple of tuple of csv paths.
 # This is used for figs 6 , 7 and 11
 def calculate_csvs_cdf(figure_name, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
@@ -103,6 +104,9 @@ def calculate_csvs_cdf(figure_name, csv_target_directory, gryff_latency_folder, 
 
     write_latencies = {}
     read_latencies = {}
+
+    write_log_latencies = {}
+    read_log_latencies = {}
 
     for protocol, folder in folders.items(): 
         # Create dictionary of write latencies (one key-value pair per protocol)
@@ -136,43 +140,29 @@ def calculate_csvs_cdf(figure_name, csv_target_directory, gryff_latency_folder, 
 
     return read_csvs, write_csvs, read_log_csvs, write_log_csvs
 
-
-# calculates csvs for thoughput vs write percentage (fig8)
-def calculate_csvs_tput_wp(figure_name, results_path, csv_target_directory, latencies_folder_paths):
+# New idea: Don't write to CSV files, just make Numpy arrays and plot directly
+# calculates thoughput vs write percentage (fig8)
+def calculate_tput_wp(figure_name, results_path, csv_target_directory, latencies_folder_paths):
     # ex: gryff_latency_dict contains subfolders with write percentage 
-
-    # should give a dictionary of p100 throughputs with PROTOCOL-WP as key (outer key of fig8)
+    # should give a dictionary of p100 throughputs (I think this is "maximum attainable througput" as referenced in the NSDI23_GUS paper) with PROTOCOL-WP as key (outer key of fig8)
     raw_throughputs = json.loads(check_cmd_output("python3 ../client_metrics.py 100 --onlytputs --path=" + results_path))["fig" + figure_name]
 
     # 2D dictionary indexed like: throughputs[PROTOCOL][WRITE_PERCENTAGE]
     throughputs = {}
 
-    for protocol_wp, tput in raw_throughputs:
+    for protocol_wp, tput in raw_throughputs.items():
 
         temp = protocol_wp.split("-")
         protocol = temp[0]
         wp = temp[1]
 
-        throughputs[protocol] = {}
-        throughputs[protocol][wp] = tput
+        if protocol not in throughputs:
+            throughputs[protocol] = np.empty([0,2], dtype=float)
+        throughputs[protocol] = np.append( throughputs[protocol], [[float(wp), float(tput)]], axis=0) # throughputs[protocl] is a 2D numpy array with the strucutre [write-percentage, tput] on each row
 
-    # Need to make csvs of tputs against wp for each protocol
 
-    csvs = {}
-
-    for protocol , wps in throughputs.items():
-        # Make csv
-        csv_file = os.path.join(csv_target_directory, protocol, '%s-%s.csv' % (protocol, figure))
-
-        csvs[protocol] = csv_file
-        # append to the file which has format: "wp tput" on each line
-        with open(csv_file, "a") as myfile:
-            for wp, tput in wps.items():
-                 myfile.write(str(wp) + "," + str(tput))
-
-    # return paths to csv directories
-    return csvs
-        
+    return throughputs
+    
     
 
 # Delete and fix packaging

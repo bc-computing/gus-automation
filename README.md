@@ -28,6 +28,14 @@ All of the dependencies mentioned above are preinstalled in the control machine 
 
 NOTE: While we are in the process of improving our code, the preinstalled repos may not contain the latest versions. Make sure to git pull inside each repo after instantiating the profile.
 
+## TODO
+- Finish working on ```run_experiments.py``` 
+   - This is is the updated way of running experiments (easier) and can run any number of configurations
+   - Gryff not working with fig8 even with proper amount of servers (3)
+   - Need to automate fig12 (if possible) as this changes number of nodes
+      - May not be possible to automate as different cloudlab profiles are needed for each setup
+   - Need to finish plotting, see README.md of ``plotFigs/``
+
 ## How to Run
 ### Setup
 1. Instantiate the cloudlab profile above.
@@ -38,18 +46,9 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
    1. `sudo su`
    2. `cd ~/go/src/gus-automation`
 
-### Single Experiment
-#### Standard
-1. Modify `config.json` to choose the settings for the experiment that will be run. The file `config_instrunction.md` provides information on each field of the config for your convenience. 
-   1. Hint: It is likely that you will have to modify the default communication parameters to get the experiment to work.
-2. Run `python3.8 setup_network_delay_test.py config.json` to create/remove artificial delay between servers. Delay settings are persistent.
-3. Run `python3.8 run_experiment_test.py config.json` to run the experiment.
 
-#### Layered
-Documentation coming soon
+### Multiple Experiments - With Automatic Syncing - This is the ideal way of running experiments
 
-### Multiple Experiments - With Automatic Syncing
-TODO: gryff not working with fig8
 
 1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
    - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab
@@ -80,6 +79,17 @@ TODO: gryff not working with fig8
       - --json: saves metrics to json file under metrics
       - Many discrete percentile values can be passed. All but max and min are ignored when interval flag is set. 
       - If UPPER_BOUND is undefined and --interval is set, then UPPER_BOUND=100 .
+
+
+### Single Experiment
+#### Standard
+1. Modify `config.json` to choose the settings for the experiment that will be run. The file `config_instrunction.md` provides information on each field of the config for your convenience. 
+   1. Hint: It is likely that you will have to modify the default communication parameters to get the experiment to work.
+2. Run `python3.8 setup_network_delay_test.py config.json` to create/remove artificial delay between servers. Delay settings are persistent.
+3. Run `python3.8 run_experiment_test.py config.json` to run the experiment.
+
+#### Layered
+Documentation coming soon
 
 ## Workflow
 ### Single Experiment
@@ -123,33 +133,3 @@ These primary python files call helper functions contained in the utils folder.
 The auxiliary test files `setup_network_delay_test.py`, `setup_nodes_test.py`, `run_experiment_test.py` invoke the functions in their respective files, `run_experiment_test.py` also calls some functions from `setup_node.py`.
 
 
-# Move results notes
-
-
-1. Set_config (sets cloudlab user to logname)
-- Do this at root 
-
-2. On control, move_results from root to local user
-
-3. On local, use rsync to sync results from control machine
-- How to find  consistent ip for log in?
-- rsync -a remote_user@remote_host_or_ip:/opt/media/ /opt/media/
-
-# Move results / running experiment Idea 2:
-
-- Run everthing from local machine
-- pass a script the ssh argument to control machine which can run the experiment 
-- then remotely copy results from control root to control user
-- then copy results back to local
-
-whoami | sudo python3 /root/go/src/gus-automation/move_results.py /root/go/src/gus-automation/configs/fig7.json
-
-https://superuser.com/questions/1494198/run-cd-command-as-superuser-in-linux
-
-- Currently unable to run expriment remotely. make sure to be able to run experiment normally first - check repos
-
-# Idea 3 - working
-
-1. Run Experiment from control machine
-
-2. Do syncing and moving results from local machine

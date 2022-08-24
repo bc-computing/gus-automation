@@ -8,8 +8,20 @@
 
 ## Dependencies
 ### Code
-- Python 3.8 (for running experiments automatically, calculating stats, plotting data)
+- Python 3.10 (for running experiments automatically, calculating stats, plotting data)
 - gnuplot
+- matplotlib
+
+
+## TODO
+- Need to finish converting plotting code from gnuplot to matplotlib
+- Need to adjust scaling for log latencies (fig 11) such that yticks (.9, .99 and .999) are evenly spaced
+- Need to finish code version such that latency files are directly converted into numpy arrays of the data instead of being written to csv files first
+   - This would be a cleaner implementation
+   - Already completed for fig 8
+- Need to do plotting code for figs9, 10, 12
+
+
 
 ## Background
 In order to understand the plotting code, one must understand what data is outputted by an experiment.
@@ -105,18 +117,16 @@ The way we organized experiment data is as follows:
 ### folders_to_norm_latencies.py
 The function `extract_norm_latencies()` will do the latency aggregation mentioned above.
 
+
 ### latencies_to_csv.py
 Given a python list of latencies, the function `latencies_to_csv()` will calculate latency percentiles from 1 to 99 and put them in a csv, returning the path to the newly created csv file. It will also make a second csv with log scaled percentiles.
+   - NOTE: This section is beging changed (and already has been changed for fig8) so that latencies are calculated and stored in numpy arrays and then immediately plotted and instead of written to csv files as an intermediate step
 
 ### csvs_to_plot.py
 Each figure has a specific function in this file that will take the necessary csv files and plot the data using gnuplot like it appears in the paper.
 
 ## How to Run
-1. If any experiments need to be updated, place the client folder in the relevant folder location and rename it.
-2. Uncomment the sections relative to the figures you want to plot in the `main()` function of `plot_figs.py`.
-   1. *Note*: For some reason the code for plotting figures 8 and 10 were not saved into the repo, so those will have to be reimplemented later.
-3. Change folder locations in the code if needed. For figures 6-7, change the first 3 variables in the main function. For the other figures, go to their section and change the folder location.
-4. Run `python3.8 plot_figs.py`
-5. Results will be in the `plots` target directory.
+1. Run `python3 plot_figs.py`
+2. Results will be in the `plots` target directory.
 ___
 TODO: one thing I realized after writing this doc is that the latency percentiles calculated via `client_metrics.py` did not normalize latencies like the code in `plot_figs.py`. We'll need to fix this.

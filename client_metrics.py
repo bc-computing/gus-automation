@@ -103,8 +103,7 @@ def fill_in_options(options):
     if len(options["figs"]) == 0:
         options["figs"] = os.listdir(options["path"])
     if len(options["protocols"]) == 0:
-        options["protocols"] = ["gus", "epaxos", "gryff"] # default (may have to change)
-    
+        options["protocols"] = os.listdir(options["path"] + "/" + options["figs"][0]) # sets protocols to all of the protocols listed under the first fig
 
     # if only 1 protocol passed (and interval flag specified) then set upperbound to 100
     if len(options["percentiles"]) == 1 and "intervals" in options:
@@ -235,7 +234,7 @@ def output_metrics(options, metrics):
         print(metrics_json)
 
 
-def output_max_tput_only( metrics):
+def output_max_tput_only(metrics):
     trimmed_metrics = {}
     for fig, fig_val in metrics.items():
         trimmed_metrics[fig] = {}
