@@ -1,9 +1,8 @@
-# ADD copyright
-
 #!/usr/local/bin/python3
 
 # Command line script to return percentiles and mean for (gus, gryff, and epaxos) experiment results data
 # Author: Cole Dumas, August 2022
+# Free to use, as is
 
 import json
 import numpy as np

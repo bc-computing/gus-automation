@@ -45,10 +45,12 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
 3. Open this repo in the control machine. This repo and others can be found in `/root/go/src`. All repos are stored in root because cloudlab disk images do not save data stored in user home directories.
    1. `sudo su`
    2. `cd ~/go/src/gus-automation`
+4. Make sure ``gus-automation`` is up to date.
+   - Run ``git pull``
+   - If this doesn't work, run ```git reset --hard LATEST_COMMIT``` where LASTEST_COMMIT is the latest commit to the repo on github to update code
 
 
-### Multiple Experiments - With Automatic Syncing - This is the ideal way of running experiments
-
+### Multiple Experiments - With Automatic Syncing - This is the NEW ideal way of running experiments
 
 1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
    - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab
@@ -81,12 +83,12 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
       - If UPPER_BOUND is undefined and --interval is set, then UPPER_BOUND=100 .
 
 
-### Single Experiment
+### Single Experiment - OLD Way of running experiments
 #### Standard
 1. Modify `config.json` to choose the settings for the experiment that will be run. The file `config_instrunction.md` provides information on each field of the config for your convenience. 
    1. Hint: It is likely that you will have to modify the default communication parameters to get the experiment to work.
-2. Run `python3.8 setup_network_delay_test.py config.json` to create/remove artificial delay between servers. Delay settings are persistent.
-3. Run `python3.8 run_experiment_test.py config.json` to run the experiment.
+2. Run `python3 setup_network_delay_test.py config.json` to create/remove artificial delay between servers. Delay settings are persistent.
+3. Run `python3 run_experiment_test.py config.json` to run the experiment.
 
 #### Layered
 Documentation coming soon

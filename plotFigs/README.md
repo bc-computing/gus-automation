@@ -20,7 +20,7 @@
    - This would be a cleaner implementation
    - Already completed for fig 8
 - Need to do plotting code for figs9, 10, 12
-
+- NOTE much of the info below in this readme is for the old way of plotting
 
 
 ## Background
