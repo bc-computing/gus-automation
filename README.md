@@ -24,7 +24,7 @@ This repo consists of python code that will autonomously run the replication pro
   - Note: Both repositories are derived from the EPaxos repository, but have different communication between clients and servers, so it is easier to have two seperate repos.
 - The redis repository (for layered experiments)
 
-All of the dependencies mentioned above are preinstalled in the control machine in this [cloudlab profile](https://www.cloudlab.us/p/fff5448808f3ecb656874213ea663bd448544a7e). The server and client machines only have the code dependencies installed.
+All of the dependencies mentioned above are preinstalled in the control machine in this [cloudlab profile](https://www.cloudlab.us/p/e8d6e4c44ca475f33c04a9a3f52b3583a49bcbb5). The server and client machines only have the code dependencies installed.
 
 NOTE: While we are in the process of improving our code, the preinstalled repos may not contain the latest versions. Make sure to git pull inside each repo after instantiating the profile.
 
