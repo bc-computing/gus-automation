@@ -20,7 +20,7 @@ linestyles = {"gryff":"dashdot", "gus":"solid", "epaxos":"dotted"}
 labels = {"gryff":"Gryff", "gus":"Gus", "epaxos":"EPaxos"} # properly stylized
 
 # New in development version with matplotlib
-def cdf_csvs_to_plot(plot_target_directory, figure, data, is_for_reads, log=False):
+def cdf_csvs_to_plot(plot_target_directory, figure, csvs, is_for_reads, log=False):
 
     # Reformat function header to just pass csvs dictionary 
     # csvs = {"gus": gus_csv, "gryff":gryff_csv, "epaxos":epaxos_csv}

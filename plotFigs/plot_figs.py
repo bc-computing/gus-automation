@@ -1,7 +1,7 @@
 from folder_to_norm_latencies import extract_norm_latencies
 from extract_latencies import extract_latencies
 from latencies_to_csv import latencies_to_csv
-from csvs_to_plot import data_size_latencies_csvs_to_plot, cdf_csvs_to_plot, tput_wp_plot
+from csvs_to_plot import cdf_csvs_to_plot, tput_wp_plot
 import os
 from pathlib import Path
 import sys
@@ -164,7 +164,6 @@ def calculate_tput_wp(figure_name, results_path, csv_target_directory, latencies
     return throughputs
     
     
-
 # Delete and fix packaging
 def check_cmd_output(cmd):
    # output = subprocess.check_output(cmd)
