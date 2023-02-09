@@ -9,7 +9,7 @@ This repo consists of python code that will autonomously run the replication pro
 - Package Design
 
 ## Research Poster
-- ![Research Poster](Gus\ ACC\ Poster.png)
+![Research Poster](Gus_ACC_Poster.png)
 
 ## Dependencies
 ### Code
