@@ -2,10 +2,14 @@
 This repo consists of python code that will autonomously run the replication protocol experiments cited in our paper and plot them. See `config_instruction.md` for information on available configs. 
 
 ## Table of Contents
+- Research Poster
 - Dependencies
 - How to Run
 - Workflow
 - Package Design
+
+## Research Poster
+- ![Research Poster](Gus\ ACC\ Poster.png)
 
 ## Dependencies
 ### Code
