@@ -1,4 +1,4 @@
-from run_experiment_test import run_exper
+from run_experiment import run_experiment
 import os
 import subprocess
 import sys
@@ -46,9 +46,6 @@ def run():
 
     print("Here are config_paths: " , config_paths)
 
-   
-
-
     # Fig 8 is for each protocol, change throughput 
 
     # Need to adjust for figure 12 which just runs gus, but changes n ( =3, =5, =7, =9)
@@ -81,7 +78,6 @@ def run():
 
             results_extension = Path(temp_path) / Path(protocol)
 
-
             # NOT SURE WHY - Gryff not working for fig8
             # For fig 8, for each protocol, change throughput 
             if "fig8" in trimmed_fig:
@@ -94,11 +90,11 @@ def run():
                     results_extension_fig8 = Path(str(results_extension)  + "-" +(str(wr)))
 
                     setup_network_delay(config_path)
-                    run_exper(results_extension_fig8, config_path)
+                    run_experiment(results_extension_fig8, config_path)
 
             else:
                 setup_network_delay(config_path)
-                run_exper(results_extension, config_path)
+                run_experiment(results_extension, config_path)
 
 
 # Must be run as:

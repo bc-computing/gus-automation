@@ -22,6 +22,8 @@ labels = {"gryff":"Gryff", "gus":"Gus", "epaxos":"EPaxos"} # properly stylized
 # New in development version with matplotlib
 def cdf_csvs_to_plot(plot_target_directory, figure, csvs, is_for_reads, log=False):
 
+
+     
     # Reformat function header to just pass csvs dictionary 
     # csvs = {"gus": gus_csv, "gryff":gryff_csv, "epaxos":epaxos_csv}
     print("csvs = " , csvs)
@@ -86,6 +88,8 @@ def tput_wp_plot(plot_target_directory, figure, throughputs):
 
     fig.savefig(plot_target_directory / Path(figure + ".png") , bbox_inches="tight")
 
+
+# OUTDATED , REMOVE??
 # for figures 6 and 7 (and 11?) - OLD WORKING VERSION WITH GNUPLOT
 def cdf_csvs_to_plot_old(plot_target_directory, figure, gryff_csv, gus_csv, epaxos_csv, is_for_reads, log=False):
 

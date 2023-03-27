@@ -92,7 +92,7 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
 1. Modify `config.json` to choose the settings for the experiment that will be run. The file `config_instrunction.md` provides information on each field of the config for your convenience. 
    1. Hint: It is likely that you will have to modify the default communication parameters to get the experiment to work.
 2. Run `python3 setup_network_delay_test.py config.json` to create/remove artificial delay between servers. Delay settings are persistent.
-3. Run `python3 run_experiment_test.py config.json` to run the experiment.
+3. Run `python3 run_experiment.py config.json` to run the experiment.
 
 #### Layered
 Documentation coming soon
