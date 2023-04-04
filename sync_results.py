@@ -44,7 +44,7 @@ def remote_move_results(user, address, config_file_path):
     cmd = "[ -d " + destination_path + " ] && echo 'True'"
     direc_exists = run_remote_root_command(ssh, cmd)
 
-   # If the experiment results haven't been copied already, copy them
+    # If the experiment results haven't been copied already, copy them
     if direc_exists != "True":
         print("Directory has not been copied to user@control yet. About to copy...")
         run_remote_root_command(ssh, "cp -r " + source_path + " " + destination_path)

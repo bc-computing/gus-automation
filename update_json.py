@@ -20,13 +20,3 @@ def update(file_path, key, new_value):
     # file.write(simplej)
 
     file.close()
-
-
-# def main():
-#     file_path = "configs/fig" + sys.argv[1] + ".json" 
-#     print(file_path)
-#     update(file_path, "replication_protocol", sys.argv[2])
-
-
-
-# main()

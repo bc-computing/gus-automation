@@ -61,10 +61,10 @@ NOTE: While we are in the process of improving our code, the preinstalled repos 
    - **Set the experiment name to "test" to skip this step ("test" is the default experiment name)**
 
 2. **Running the experiment:** On root@control machine, run `python3 run_experiments.py CONFIG_PATH CONFIG_PATH ...`
-   - Example: ```python3 run_experiments configs/fig7.json configs/fig6.json```
+   - Example: ```python3 run_experiments configs/fig6.json configs/fig5.json```
    - Pass in any number of config file paths. Currently all config file paths are under configs. Be sure to modify each config file to desired specs
    - Node delay setup, and experiments (for all 3 protocols) will be run. Results will be in `results` 
-   - Need to add support for fig12
+   - Need to add support for fig11
 3. **Syncing results to local machine:** On local machine, run ```python3 sync_results.py USER@CONTROL_ADDRESS CONFIG_FILE_PATH```
    - On the cloudlab, copy the USER@ADDRESS portion of the ssh command for the control machine for USER@CONTROL_ADDRESS
    - The config file is used to determined the path for the results directory
@@ -125,8 +125,6 @@ From the control machine, ssh to each server and client machine. Then
 
 Note: I am deferring the automatic calculation of stats and plotting for later. 
 
-### Multiple Experiments
-TODO
 
 ## Package Design
 There are 3 primary python files: `setup_network_delay.py`, `setup_nodes.py`, `run_experiment.py`. These contain functions that are the core of the automation code. 
