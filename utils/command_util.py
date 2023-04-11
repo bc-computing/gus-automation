@@ -10,8 +10,6 @@ def check_cmd_output(cmd):
     return output.decode("utf-8").strip("\n") 
 
 
-
-
 def get_master_cmd(config, timestamp):
     exp_directory = os.path.join(config['base_remote_experiment_directory'], timestamp);
     if config['replication_protocol'] == "gryff":
@@ -103,14 +101,14 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
 
     master_addr = server_names_to_ips[config['server_names'][0]]
 
-    if config['layered']:
+    if config['layered'] or config['EC']:
         client_command = ' '.join([str(x) for x in [
             path_to_client_bin,
             '-maddr=%s' % master_addr,
             '-writes=%f' % config['write_percentage'],
             '-c=%d' % config['conflict_percentage'],
             '-T=1', # Number of clients is hardcoded to 1 for layered experiments
-            '-size=4000000', # size is hardcoded to 4MB
+            '-isze=%f' % config['size'], # size is 4MB by default for layered and EC but in some figs (9) it 
             '-redis=%d' % config['number_of_replicas']
         ]])
     else:

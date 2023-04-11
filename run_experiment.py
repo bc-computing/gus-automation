@@ -1,4 +1,3 @@
-# DEPRECIATRED - Merging with paretn run_exp
 
 import concurrent
 import os
@@ -12,11 +11,13 @@ from setup_network_delay import setup_delays, get_server_name_to_internal_ip_map
 from setup_nodes import setup_nodes
 
 
-###############################################
+################################################
 
 ### PUBLIC FUNCTION AND SCRIPT CALL HANDLER
 
-# this is the primary function to be called
+# this is the primary function to be called if running a single experiment 
+# However, users will typically use run_experiments.py instead since that 
+# also handles node setup 
 def run_experiment(results_extension, config_file_path):
     config_file = open(config_file_path)
     config = json.load(config_file)
@@ -230,6 +231,5 @@ def collect_exp_data(config, timestamp, executor):
 
 
 def calculate_exp_data(config, path_to_client_data):
-    # TODO
     client_cdf_analysis_script = os.path.join(config['gus_epaxos_control_src_directory'], "client_metrics.py")
     subprocess.call(["python3.8", client_cdf_analysis_script], cwd=path_to_client_data)

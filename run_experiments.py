@@ -31,21 +31,6 @@ def replace_fig5(config_paths):
 
     return config_paths
 
-# fig8 is really fig8n7 and fig8n9, likewise for fig11
-def replace_figX(config_paths):
-    last_slash_index = config_paths[0].rfind("/")
-    parent_path = config_paths[0][:last_slash_index + 1]
-
-    for config_path in config_paths:
-        if "fig8.json" in config_path or "fig11" in config_path:
-            # remove figX 
-            config_paths.remove(config_path)
-
-            # add figXn7 figXn9
-            for x in ["n7", "n9"]:
-                config_paths.append(parent_path + "fig8" + x + ".json")
-
-    return config_paths
 
 def run():
     now_string = time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime())
@@ -62,9 +47,6 @@ def run():
     
     # Adjusts for fig5
     config_paths = replace_fig5(config_paths)
-
-    # adjust fig8 and fig11 
-    config_paths = replace_figX(config_paths)
 
     print("Here are config_paths: " , config_paths)
 
@@ -84,20 +66,13 @@ def run():
 
         # default is all protocols
         protocols = ["gus", "epaxos", "gryff"]
-        # Fig 9 plotting is combined gus (and giza) only
-        if "fig9" in config_path:
-            protocols = ["gus"]
+        # Figs 8 and 9 plotting is combined gus and giza only
+        if "fig9" in config_path or "fig8" in config_path:
+            protocols = ["gus", "giza"]
 
         # Fig 11 and 8 is just gus
-        if "fig11" in config_path or "fig8" in config_path:
+        if "fig11" in config_path:
             protocols = ["gus"]
-    
-        # update number of replicas used
-        if "n" in config_path:
-            # get number of replicas
-            fig , n = config_path.split("n")
-
-            update(config_path, "number_of_replicas", n)
           
         print("Config path = " , config_path)
 
@@ -119,11 +94,54 @@ def run():
                 for wr in write_percentages: 
                     update(config_path, "write_percentage", wr)
 
-                    # For fig7, now results file structure is: TIMESTAMP/FIG8/PROTOCOL-WRITE_PERCENTAGE/CLIENT/...
+                    # For fig7, now results file structure is: TIMESTAMP/FIG7/PROTOCOL-WRITE_PERCENTAGE/CLIENT/...
                     results_extension_fig7 = Path(str(results_extension)  + "-" +(str(wr)))
 
                     setup_network_delay(config_path)
                     run_experiment(results_extension_fig7, config_path)
+
+            
+            # This is the Cloudlab experiment that should really be run with 3 and 5 replicas
+            elif "fig8n5.json" in config_path:
+
+                num_replicas = [3,5]
+
+                for n in num_replicas:
+                    update(config_path, "number_of_replicas", n)
+
+                    # For fig 8, now results file stricture is: TIMESTAMP/FIG8/PROTOCOL-NUM_REPLICAS/CLIENT/...
+                    results_extension_fig8 = Path(str(results_extension)  + "-" +(str(n)))
+
+                    setup_network_delay(config_path)
+                    run_experiment(results_extension_fig8, config_path)
+            
+            # For fig8 and fig11 This is the Cloudlab experiment that should really be run with 7 and 9 replicas
+            elif "fig8" in config_path or "fig11" in config_path:
+                num_replicas = [7,9]
+
+                for n in num_replicas:
+                    update(config_path, "number_of_replicas", n)
+
+                    # For fig 8 or fig 11, now results file stricture is: TIMESTAMP/FIG#/PROTOCOL-NUM_REPLICAS/CLIENT/...
+                    results_extension_add = Path(str(results_extension)  + "-" +(str(n)))
+
+                    setup_network_delay(config_path)
+                    run_experiment(results_extension_add, config_path)
+            
+            # for fig9, data size is altered between trials
+            elif "fig9" in config_path:
+                sizes = [4000, 40000, 400000, 4000000] # size of data packets in MB
+
+                for size in sizes:
+                    update(config_path, "size", size)
+
+                    # For fig9, now results file structure is TIMESTAMP/FIG9/PROTOCL-size/Client ...
+                    results_extension_add = Path(str(results_extension)  + "-" +(str(size)))
+
+                    setup_network_delay(config_path)
+                    run_experiment(results_extension_add, config_path)
+            
+                
 
             else:
                 setup_network_delay(config_path)

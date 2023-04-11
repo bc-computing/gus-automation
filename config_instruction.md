@@ -27,3 +27,4 @@
   - write_percentage: Floating point number between 0 and 1
   - conflict_percentage: Integer between 0 and 100. 
   - clients_per_replica: only works for non-layered experiments, layered will always use 1 client for all replicas 
+  - size: size of packet (in Bytes), default is 4,000,000 (4MB)

@@ -42,5 +42,6 @@
     "experiment_length": 180,
     "write_percentage": 0.1,
     "conflict_percentage": 10,
-    "clients_per_replica": 100
+    "clients_per_replica": 100,
+    "size": 4000000
 }
