@@ -47,17 +47,17 @@ def main2(results_path):
                 print("Plotting fig7...")
                 plot_fig7(plot_target_directory, results_path, csv_target_directory, latencies_folder_paths)
             case "fig8":
-                print("separete from automated plotting. Use layered/plot.py")
+                print("separate from automated plotting. Latencies were originanlly manually extracted. Use layered/plot.py")
             case "fig9":
-                print("Still need to ")
+                print("Plot was produced manually through extracting latencies from each sub experiment, finding percentiles and plotting")
             case "fig10":
                 print("Plotting fig10...")
                 plot_fig10(plot_target_directory, csv_target_directory, latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
             case "fig11":
                 # Old fig12 and fig12 n=5
-                print("Seperate from automated plotting. Use scale/scale_plot.py") 
+                print("Seperate from automated plotting. Use scale/scale_plot.py. See README for details") 
             case _ :
-                print("Default reached, Case not found")
+                print("Default reached, Plotting Case not found")
 
 
 def plot_fig6(plot_target_directory, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
@@ -102,6 +102,7 @@ def plot_fig7(plot_target_directory, results_path, csv_target_directory, latenci
 # This is used for figs 5 , 6 and 10
 def calculate_csvs_cdf(figure_name, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
 
+    print("quick print")
     protocols = ["gryff", "gus", "epaxos"]
     folders = {"gryff": gryff_latency_folder, "gus": gus_latency_folder, "epaxos": epaxos_latency_folder}
 

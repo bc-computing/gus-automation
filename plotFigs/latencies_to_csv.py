@@ -8,19 +8,8 @@ def latencies_to_csv(csv_target_directory, latencies, protocol, figure):
     # print("converting latencies to cdfs")
     cdf_data, cdf_log_data = latencies_to_cdfs(latencies)
 
-    # if protocol == "epaxos":
-    #     print(protocol, figure, "cdf_data")
-    #     print(cdf_data)
-    #     exit()
-
-    # print("first five rows for cdf data and first five rows for cdf log data")
-    # print(cdf_data[:5], cdf_log_data[:5])
-
     cdf_csv_file = os.path.join(csv_target_directory, protocol, '%s-%s.csv' % (protocol, figure))
     cdf_log_csv_file = os.path.join(csv_target_directory, protocol, '%s-%s-log.csv' % (protocol, figure))
-    # print("cdf file is called %s and log cdf file is called %s" % (cdf_csv_file, cdf_log_csv_file))
-    #
-    # print("converting cdfs to csvs")
     generate_csv_for_cdf_plot(cdf_csv_file, cdf_data)
     generate_csv_for_cdf_plot(cdf_log_csv_file, cdf_log_data, log=True)
     return cdf_csv_file, cdf_log_csv_file

@@ -6,3 +6,7 @@
 
 # Don't track plots
 *.gpi
+*.png
+
+# Don't track csvs
+*.csv

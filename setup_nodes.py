@@ -37,6 +37,8 @@ def switch_branches(config):
         destination_branch = "main"
     elif config['number_of_replicas'] == 5:
         destination_branch = "n=5"
+    elif config['EC'] == True:
+        destination_branch = "EC"
     else:
         print("ERROR: supported number of replicas for gus, gryff, and epaxos is only 3 or 5")
         exit(1)
