@@ -1,12 +1,10 @@
 # Gus Experiment Automation
-This repo consists of python code that will autonomously run the replication protocol experiments cited in our paper and plot them. See `config_instruction.md` for information on available configs. 
+This repo consists of python code that will autonomously run the replication protocol experiments cited in our paper ("Distributed Multi-writer Multi-reader Atomic Register with Optimistically Fast Read and Write") and plot them. See `config_instruction.md` for information on available configs. 
 
 ## Table of Contents
 - Research Poster
 - Dependencies
 - How to Run
-- Workflow
-- Package Design
 
 ## Research Poster
 ![Research Poster](Gus_ACC_Poster.png)
@@ -37,14 +35,19 @@ This repo consists of python code that will autonomously run the replication pro
 All of the dependencies mentioned above are preinstalled in the control machine in each Cloudlab profile. The server and client machines only have the code dependencies installed.
 
 
-## Overview of experiments
+## Overview of Recreating Experimental Results
+
+- Figures **5, 6, 7, and 10** are produced by running sub-experiments that each run one a singluar Cloudlab experiment instance. These figures are reproduced the most easily using all of the automation code by following the steps described below.
+- Figure **11** requires two different Cloudlab experiments (further details below). The standard plotting method (```plotFigs/plot_figs.py```) does not work here. Instead, experimental results data must be manually copied from ```results/``` into the appropriate subdirectories in ```scale/``` then plots are produced using ```scale/scale_plot.py```. This figure illustrates Gus's performance at different scales (number of replicas) and therefore requires multiple Cloudlab profiles with the most appropriate number of machines allocated. In the figure, the Gus latency percentile results are compared to Tempo results which were previously collected. 
+- Figure **8** is similar to figure **11** in that the standard plotting script is not used. However, experimental data must be manually transformed into latency percentiles and put into csv files before being plotted using ```layered/layered_plot.py```
+- Figure **9** is produced using the "Erasure Coding" branch of gus-epaxos. Like figure **8**, latency percentiles must be manually extracted. This experiment has only been run manually using the techniques described in [Gus Instruction](https://docs.google.com/document/d/1bBhqG5kOR-Mb7F-6V45uBTvd_6b4Jqi-4ZnEMTKayRM/edit?usp=sharing). Results were plotted manually for this paper, NOT using the steps below.
 
 
 ## How to Run
 ### Setup
 1. Instantiate the correct cloudlab profile.
    - For nearly all experiments, a cloudlab profile with 5 replicas is sufficient [this default profile](https://www.cloudlab.us/p/e8d6e4c44ca475f33c04a9a3f52b3583a49bcbb5) unless trying to recreate the results for n=7 or n=9 replicas in **figure 11**
-   - Recreating the results seen in **figure 11** requires running multiple experiments across 2 different cloudlab experiment instances: one with 5 (default) replicas and one with 9 replicas. If attempting to run the sub-experiments with on the 9 replicas experiment instance, please use [this expanded profile](INSERT)
+   - Recreating the results seen in figures **8** or **11** requiresrunning multiple experiments across 2 different cloudlab experiment instances: one with 5 (default) replicas and one with 9 replicas. If attempting to run the sub-experiments with on the 9 replicas experiment instance, please use [this expanded profile](INSERT)
    - **For all profiles:** Be sure to use the Utah cluseter.
       - The experiments may be run on other cluseters, but you will need in the config files you intend to use you must alter the "host_format_str" field (change 'utah' to the appropriate cluster).
 2. Connect to the control machine via ssh.
@@ -57,7 +60,7 @@ All of the dependencies mentioned above are preinstalled in the control machine 
    - If this doesn't work, run ```git reset --hard LATEST_COMMIT``` where LASTEST_COMMIT is the latest commit to the repo on github to update code
 
 
-### Multiple Experiments - With Automatic Syncing - This is the NEW ideal way of running experiments
+### Running Multiple Experiments - With Automatic Results Syncing
 
 1. **Setup config file(s):** On root@control machine, run `python3 set_experiment_name.py EXPERIMENT_NAME` 
    - `EXPERIMENT_NAME` is the experiment name defined when setting up the experiment on cloudlab
@@ -75,7 +78,8 @@ All of the dependencies mentioned above are preinstalled in the control machine 
    - Optionally run: ```python3 plot_figs.py [EXPERIMENT_RESULTS_PATH]``` to plot any results.
    - **For figure 8**, Please use ```python3 plotFigs/layered/layered_plot.py```. Latencies were manually extracted from results for the purpose of this paper. Please see ```replication- ... .csv``` files for sample results for both gus and giza.
    - **ALTERNATIVELY, for figure 11**, copy the gus client results from the 3 sub experiments (n=5, n=7, n=9) into the corresponding folders in ```plotFigs/scale/clients/```. These results are run on two different profiles and therefore will be under multiple timestamp directories in your results folder (n=5 in one; n=7 and n=9 in the other). Once the results are in the correct folder, run ```cd scale/ ``` and then ```python3 scale_plot/```.
-5. **Client Metrics**: Optionally, print out (or write to file) specified mean and percentiles of experimental results with: ```python3 client_metrics.py PERCENTILE PERCENTILE ...```
+   - **Important**: Automatic plotting for figure 9 has not been implemented. After the figure9 experiment was run, latenciy percentiles were extracted and plotted manually to produce the plot seen in the paper.
+5. **(Optional) Client Metrics**: Print out (or write to file) specified mean and percentiles of experimental results with: ```python3 client_metrics.py PERCENTILE PERCENTILE ...```
    - **Full description of options:** run ```python3 client_metrics [--clear] LOWER_BOUND_OR_SINGLE_PERCENTILE [UPPER_BOUND_OR_SECOND_PERCENTILE] [NTH PERCENTILE]... [-i, --interval=INTERVAL_LENGTH] [--path=results_data_PATH] [--fig=FIG_NAME] [--protocol=PROTOCOL] [--table] [--noprint] [--txt] [--json]```
       - --clear: clears all json and txt files in metrics before writing to any new files
       - --interval=INTERVAL_LENTGTH: set interval of percentiles calculated between upper and lowerbound

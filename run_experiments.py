@@ -26,49 +26,17 @@ def replace_fig5(config_paths):
 
     return config_paths
 
-# fig11 is really fig11n7 and fig11n9
-def replace_fig11(config_paths):
-    last_slash_index = config_paths[0].rfind("/")
-    parent_path = config_paths[0][:last_slash_index + 1]
-
-    for config_path in config_paths:
-        if "fig11.json" in config_path:
-            # remove fig5 
-            config_paths.remove(config_path)
-
-            # add fig5a fig5b fig5c
-            for x in ["n7", "n9"]:
-                config_paths.append(parent_path + "fig5" + x + ".json")
-
-    return config_paths
-
-# fig11 is really fig11n7 and fig11n9
-def replace_fig11(config_paths):
-    last_slash_index = config_paths[0].rfind("/")
-    parent_path = config_paths[0][:last_slash_index + 1]
-
-    for config_path in config_paths:
-        if "fig11.json" in config_path:
-            # remove fig5 
-            config_paths.remove(config_path)
-
-            # add fig5a fig5b fig5c
-            for x in ["n7", "n9"]:
-                config_paths.append(parent_path + "fig11" + x + ".json")
-
-    return config_paths
-
-# fig8 is really fig8n7 and fig8n9
+# fig8 is really fig8n7 and fig8n9, likewise for fig11
 def replace_figX(config_paths):
     last_slash_index = config_paths[0].rfind("/")
     parent_path = config_paths[0][:last_slash_index + 1]
 
     for config_path in config_paths:
         if "fig8.json" in config_path or "fig11" in config_path:
-            # remove fig5 
+            # remove figX 
             config_paths.remove(config_path)
 
-            # add fig5a fig5b fig5c
+            # add figXn7 figXn9
             for x in ["n7", "n9"]:
                 config_paths.append(parent_path + "fig8" + x + ".json")
 
@@ -116,9 +84,8 @@ def run():
             protocols = ["gus"]
 
         # Fig 11 and 8 is just gus
-        if "fig11" in config_path:
+        if "fig11" in config_path or "fig8" in config_path:
             protocols = ["gus"]
-
     
         # update number of replicas used
         if "n" in config_path:
@@ -158,10 +125,6 @@ def run():
                 run_experiment(results_extension, config_path)
 
         
-
-
-
-
 # Must be run as:
 # python run_n_experiments <config#> <config#> ...
 if __name__ == "__main__":

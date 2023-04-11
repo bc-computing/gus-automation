@@ -9,8 +9,6 @@ def set_config(config_file_path):
     cloudlab_user = check_cmd_output("logname")
 
     update(config_file_path, "cloudlab_user", cloudlab_user)
-
-
     #ls | sort -r | head -n 1
 
 def usage():

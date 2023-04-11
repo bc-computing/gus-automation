@@ -13,8 +13,6 @@ def setup_network_delay(config_file_path):
 
     config_file.close() 
 
-# Automation Does not work - experiments are ending early
-
 if __name__=="__main__":
     if len(sys.argv) != 2:
         sys.stderr.write('Usage: python3 %s <config_file>\n' % sys.argv[0])

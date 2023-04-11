@@ -43,8 +43,6 @@ def run_experiment(results_extension, config_file_path):
     config_file.close()
 
     
-
-
 # This function can be called as a script to run one single experiment
 # python run_experiment_test <config_file>
 if __name__ == "__main__":

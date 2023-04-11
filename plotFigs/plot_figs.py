@@ -10,11 +10,10 @@ import json
 import numpy as np
 
 
-# Working on passing a folder for results
 # File path has structure: TIMESTAMP / FIG# / PROTOCOL/ CLIENT
 
 # Make sure to run when current wording directory is plot_figs/
-def main2(results_path):
+def main(results_path):
 
     plot_target_directory = Path("plots")
     csv_target_directory = Path("csvs")
@@ -47,7 +46,7 @@ def main2(results_path):
                 print("Plotting fig7...")
                 plot_fig7(plot_target_directory, results_path, csv_target_directory, latencies_folder_paths)
             case "fig8":
-                print("separate from automated plotting. Latencies were originanlly manually extracted. Use layered/plot.py")
+                print("Separate from automated plotting. Latencies were originanlly manually extracted. Use layered/plot.py")
             case "fig9":
                 print("Plot was produced manually through extracting latencies from each sub experiment, finding percentiles and plotting")
             case "fig10":
@@ -86,8 +85,6 @@ def plot_fig10(plot_target_directory, csv_target_directory, gryff_latency_folder
     # Writes 
     cdf_csvs_to_plot(plot_target_directory, "10-write-log", write_log_csvs, is_for_reads=False, log=True )
 
-
-# fig7 was really fig9 and is now fig7
 def plot_fig7(plot_target_directory, results_path, csv_target_directory, latencies_folder_paths):
     # For fig7, now results file structure is: TIMESTAMP/FIG7/PROTOCOL-WRITE_PERCENTAGE/CLIENT/....    
     # latencies_folder_paths = TIMESTAMP/FIG7/PROTOCOL/
@@ -96,8 +93,6 @@ def plot_fig7(plot_target_directory, results_path, csv_target_directory, latenci
     throughputs = calculate_tput_wp("7", results_path, csv_target_directory, latencies_folder_paths)
     tput_wp_plot(plot_target_directory, "7", throughputs)
 
-
-# Need to cut out CSVS too like with fig7
 # Returns a tuple of tuple of csv paths.
 # This is used for figs 5 , 6 and 10
 def calculate_csvs_cdf(figure_name, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
@@ -144,7 +139,6 @@ def calculate_csvs_cdf(figure_name, csv_target_directory, gryff_latency_folder, 
 
     return read_csvs, write_csvs, read_log_csvs, write_log_csvs
 
-# # New idea: Don't write to CSV files, just make Numpy arrays and plot directly
 # # calculates thoughput vs write percentage (fig7)
 def calculate_tput_wp(figure_name, results_path, csv_target_directory, latencies_folder_paths):
     # ex: gryff_latency_dict contains subfolders with write percentage 
@@ -188,9 +182,9 @@ def usage():
 if __name__ == "__main__":
     match len(sys.argv):
         case 1: 
-            main2(most_recent_results())
+            main(most_recent_results())
         case 2:
-            main2(sys.argv[1])
+            main(sys.argv[1])
         case _:
             usage()
 
