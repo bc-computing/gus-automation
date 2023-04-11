@@ -3,10 +3,13 @@ import sys
 
 import utils.remote_util
 
+
+## Code to setup artificial delays between each of the servers to simulate geographic distance
+
+
 # You may see the error message "RTNETLINK answers: No such file or directory" while this script is running. This
 # occurs because we always try to delete any existing tc profiles before configuring our own. If there is no preexisting
 # tc profile, then the message will appear, which is fine and will not affect the results of the scripts.
-
 def setup_delays(config, executor):
     # This function trades off performance for simplicity. each helper function takes a copy of the config
     # dictionary rather than passing the necessary config fields in manually.

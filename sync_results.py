@@ -51,7 +51,7 @@ def remote_move_results(user, address, config_file_path):
 
 
 
-# Synscs results from user@control to local machine
+# Syncs results from user@control to local machine
 def sync_results(user_at_address):
     print("Syncing results from " + user_at_address + " to local machine..." )
     os.system("mkdir -p results")

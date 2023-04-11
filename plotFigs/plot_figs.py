@@ -10,8 +10,12 @@ import json
 import numpy as np
 
 
-# File path has structure: TIMESTAMP / FIG# / PROTOCOL/ CLIENT
 
+########## PRIMARY PLOTTING CODE ############
+# This Code plots figures 5,6,7, and 10 and gives directions how to produce other figures
+
+
+# File path has structure: TIMESTAMP / FIG# / PROTOCOL/ CLIENT
 # Make sure to run when current wording directory is plot_figs/
 def main(results_path):
 

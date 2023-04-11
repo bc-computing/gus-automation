@@ -2,6 +2,7 @@ from update_json import update
 import os
 import sys
 
+# Goes into config files and adjusts Cloudlab experiment name
 def set_experiment_name(name):
     # Assumes all config files are in config dir
     configs = os.listdir("configs")

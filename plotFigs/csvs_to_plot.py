@@ -8,11 +8,7 @@ from matplotlib import scale as mscale
 from matplotlib import transforms as mtransforms
 from matplotlib.ticker import FixedLocator, FuncFormatter
 
-# Remove whitespace before "0" on x axis
-# Compress y axis by 2x
-
-# Look into thi
-# https://github.com/matplotlib/matplotlib/blob/v3.5.3/lib/matplotlib/scale.py#L243-L257
+### Helper functions for plotting ### 
 
 # Defining lines and colors
 colors = {"gryff":"green", "gus":"orange", "epaxos":"blue"}

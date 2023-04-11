@@ -9,6 +9,11 @@ from pathlib import Path
 from setup_network_delay_test import setup_network_delay
 from set_config import set_config
 
+######### Main Script for running the experiments.  #################
+# This will call all of the other scripts/function that setup nodes, 
+# add latency and adjust configs.
+####################################################################
+
 # Replaces fig5 with fig5a fig5b fig5c
 def replace_fig5(config_paths):
 

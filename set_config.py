@@ -4,6 +4,7 @@ import subprocess
 from update_json import update
 from utils.command_util import check_cmd_output
 
+# Sets configfile name to Cloudlab username of whoever is running things
 def set_config(config_file_path):
     # Get logname (this will be cloudlab_user)
     cloudlab_user = check_cmd_output("logname")
