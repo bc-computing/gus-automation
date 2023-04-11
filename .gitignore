@@ -8,5 +8,3 @@
 *.gpi
 *.png
 
-# Don't track csvs
-*.csv

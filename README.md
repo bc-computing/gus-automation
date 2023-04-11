@@ -45,17 +45,20 @@ All of the dependencies mentioned above are preinstalled in the control machine 
 
 ## How to Run
 ### Setup
-1. Instantiate the correct cloudlab profile.
+1. Make sure your Cloudlab profile is setup.
+   - Make sure you set up ssh access so that you can ssh into a remote Cloudlab machine from your computer.
+2. Instantiate the correct cloudlab profile.
+   - For easiest use, do not change any parameters, and name the experiment "test"
    - For nearly all experiments, a cloudlab profile with 5 replicas is sufficient [this default profile](https://www.cloudlab.us/p/e8d6e4c44ca475f33c04a9a3f52b3583a49bcbb5) unless trying to recreate the results for n=7 or n=9 replicas in **figure 11**
    - Recreating the results seen in figures **8** or **11** requiresrunning multiple experiments across 2 different cloudlab experiment instances: one with 5 (default) replicas and one with 9 replicas. If attempting to run the sub-experiments with on the 9 replicas experiment instance, please use [this expanded profile](INSERT)
    - **For all profiles:** Be sure to use the Utah cluseter.
       - The experiments may be run on other cluseters, but you will need in the config files you intend to use you must alter the "host_format_str" field (change 'utah' to the appropriate cluster).
-2. Connect to the control machine via ssh.
+3. Connect to the control machine via ssh.
    1. Make sure to include `-A` 
-3. Open this repo in the control machine. This repo and others can be found in `/root/go/src`. All repos are stored in root because cloudlab disk images do not save data stored in user home directories.
+4. Open this repo in the control machine. This repo and others can be found in `/root/go/src`. All repos are stored in root because cloudlab disk images do not save data stored in user home directories.
    1. `sudo su`
    2. `cd ~/go/src/gus-automation`
-4. Make sure ``gus-automation`` is up to date.
+5. Make sure ``gus-automation`` is up to date.
    - Run ``git pull``
    - If this doesn't work, run ```git reset --hard LATEST_COMMIT``` where LASTEST_COMMIT is the latest commit to the repo on github to update code
 
