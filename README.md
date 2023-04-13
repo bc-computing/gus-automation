@@ -29,7 +29,7 @@ This repo consists of python code that will autonomously run the replication pro
   - Note: Both repositories are derived from the EPaxos repository, but have different communication between clients and servers, so it is easier to have two seperate repos.
 - The redis repository (for layered experiments)
 - The Giza repository
-   - This is an adjacent codebase and is not directly used by any of the automation scripts. Any results used in figures produced by this codebase should be reprocuded using the code in [this](https://github.com/pantherman594/Giza) repo.
+   - This is an adjacent protocol which exists on the “fastpaxos” branch of gus-epaxos. Note: this implementation only sports non conflicting operations.
 
 
 All of the dependencies mentioned above are preinstalled in the control machine in each Cloudlab profile. The server and client machines only have the code dependencies installed.
