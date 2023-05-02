@@ -5,7 +5,7 @@
         "ireland"
     ],
     "root_user": "root",
-    "cloudlab_user": "dumasca",
+    "cloudlab_user": "bcandy",
     "experiment_name": "test",
     "project_name": "HyflowTM-PG0",
     "host_format_str": "%s.%s.%s.utah.cloudlab.us",
