@@ -4,7 +4,7 @@
         "virginia",
         "ireland",
         "oregon",
-        "tokyo"
+        "japan"
     ],
     "root_user": "root",
     "cloudlab_user": "dumasca",
@@ -16,35 +16,35 @@
         "california": {
             "california": 0,
             "oregon": 59,
-            "tokyo": 113,
+            "japan": 113,
             "virginia": 72,
             "ireland": 151
         },
         "oregon": {
             "california": 59,
             "oregon": 0,
-            "tokyo": 121,
+            "japan": 121,
             "virginia": 93,
             "ireland": 145
         },
-        "tokyo": {
+        "japan": {
             "california": 113,
             "oregon": 121,
-            "tokyo": 0,
+            "japan": 0,
             "virginia": 162,
             "ireland": 220
         },
         "virginia": {
             "california": 72,
             "oregon": 93,
-            "tokyo": 162,
+            "japan": 162,
             "virginia": 0,
             "ireland": 88
         },
         "ireland": {
             "california": 151,
             "oregon": 145,
-            "tokyo": 220,
+            "japan": 220,
             "virginia": 88,
             "ireland": 0
         }

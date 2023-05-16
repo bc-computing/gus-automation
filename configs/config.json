@@ -58,6 +58,7 @@
     "redis_control_bin": "/root/redis-6.2.2/src/redis-server",
     "scale": false,
     "layered": false,
+    "EC": false,
     "replication_protocol": "gus",
     "number_of_replicas": 3,
     "durable": false,
