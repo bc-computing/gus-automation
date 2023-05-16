@@ -1,4 +1,5 @@
 {
+    "exp_name": "latency_cdf_n3_2pct",
     "server_names": [
         "california",
         "virginia",
