@@ -50,7 +50,7 @@ All of the dependencies mentioned above are preinstalled in the control machine 
    - Make sure you set up ssh access so that you can ssh into a remote Cloudlab machine from your computer.
 2. Instantiate the correct Cloudlab profile.
    - For easiest use, do not change any parameters, and name the experiment "test"
-   - For nearly all experiments, a Cloudlab profile with 5 replicas is sufficient [this default profile](https://www.cloudlab.us/p/e8d6e4c44ca475f33c04a9a3f52b3583a49bcbb5) unless trying to recreate the results for n=7 or n=9 replicas in **Figure 11**
+   - For nearly all experiments, a Cloudlab profile with 5 replicas is sufficient [this default profile](https://www.cloudlab.us/p/e8d6e4c44ca475f33c04a9a3f52b3583a49bcbb5) unless trying to recreate the results for n=7 or n=9 replicas in **Figure 10**
    - Recreating the results seen in Figures **7** or **10** requires running multiple experiments across 2 different Cloudlab experiment instances: one with 5 (default) replicas and one with 9 replicas. If attempting to run the sub-experiments on the 9 replicas experiment instance, please use [this expanded profile](INSERT)
    - **For all profiles:** Be sure to use the Utah cluster.
       - The experiments may be run on other clusters, but you will need in the config files you intend to use you must alter the "host_format_str" field (change 'utah' to the appropriate cluster).
