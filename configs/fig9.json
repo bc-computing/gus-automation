@@ -44,5 +44,5 @@
     "write_percentage": 0.055,
     "conflict_percentage": 0,
     "clients_per_replica": 16,
-    "size": 4000000
+    "size": 4000
 }

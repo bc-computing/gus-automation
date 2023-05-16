@@ -1,4 +1,5 @@
 {
+    "exp_name":"throughput_vs_write_ratio",
     "server_names": [
         "california",
         "virginia",
