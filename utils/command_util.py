@@ -108,7 +108,7 @@ def get_client_cmd(config, timestamp, server_names_to_ips):
             '-writes=%f' % config['write_percentage'],
             '-c=%d' % config['conflict_percentage'],
             '-T=1', # Number of clients is hardcoded to 1 for layered experiments
-            '-size=%f' % config['size'], # size is 4MB by default for layered and EC but in some figs (9) it 
+            '-size=%d' % config['size'], # size is 4MB by default for layered and EC but in some figs (9) it 
             '-redis=%d' % config['number_of_replicas']
         ]])
     else:
