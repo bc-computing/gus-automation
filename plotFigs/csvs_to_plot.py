@@ -54,7 +54,7 @@ def cdf_csvs_to_plot(plot_target_directory, figure, csvs, is_for_reads, log=Fals
     fig.savefig(plot_target_directory / Path(figure + ".png") , bbox_inches="tight")
 
 
-# Used for figure 8 - new version of plotting with matplotlib
+# Used for figure 6 - new version of plotting with matplotlib
 # throughputs is a dictionary indexed via: thoughputs[protocol][wp]
 def tput_wp_plot(plot_target_directory, figure, throughputs):
 

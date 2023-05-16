@@ -1,11 +1,9 @@
 {
-    "exp_name":"latency_cdf_n5",
+    "exp_name":"throughput_vs_write_ratio",
     "server_names": [
         "california",
         "virginia",
-        "ireland",
-        "oregon",
-        "japan"
+        "ireland"
     ],
     "root_user": "root",
     "cloudlab_user": "dumasca",
@@ -17,37 +15,17 @@
         "california": {
             "california": 0,
             "ireland": 151,
-            "japan": 113,
-            "oregon": 59,
             "virginia": 72
-        },
-        "ireland": {
-            "california": 151,
-            "ireland": 0,
-            "japan": 220,
-            "oregon": 145,
-            "virginia": 88
-        },
-        "japan": {
-            "california": 113,
-            "ireland": 220,
-            "japan": 0,
-            "oregon": 121,
-            "virginia": 162
-        },
-        "oregon": {
-            "california": 59,
-            "ireland": 145,
-            "japan": 121,
-            "oregon": 0,
-            "virginia": 93
         },
         "virginia": {
             "california": 72,
             "ireland": 88,
-            "japan": 162,
-            "oregon": 93,
             "virginia": 0
+        },
+        "ireland": {
+            "california": 151,
+            "ireland": 0,
+            "virginia": 88
         }
     },
     "max_bandwidth": "1gibps",
@@ -61,11 +39,11 @@
     "layered": false,
     "EC": false,
     "replication_protocol": "gus",
-    "number_of_replicas": 5,
+    "number_of_replicas": 3,
     "durable": false,
     "experiment_length": 180,
-    "write_percentage": 0.505,
-    "conflict_percentage": 25,
-    "clients_per_replica": 16,
+    "write_percentage": 0.1,
+    "conflict_percentage": 10,
+    "clients_per_replica": 100,
     "size": 4000000
 }
