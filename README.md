@@ -79,7 +79,7 @@ All of the dependencies mentioned above are preinstalled in the control machine 
 3. **Syncing results to local machine:** On local machine, run ```python3 sync_results.py USER@CONTROL_ADDRESS CONFIG_FILE_PATH```
    - On Cloudlab, copy the USER@ADDRESS portion of the ssh command for the control machine for USER@CONTROL_ADDRESS
    - The config file is used to determined the path for the results directory
-4. **Plotting:** On local machine, cd to ``plotFigs/`` and run ```python3 plot_figs.py``` to plot the most recent experiment results. Plots appear in ```plots/``` directory
+4. **Plotting:** On local machine, cd to ``plotFigs/`` and run ```python3 plot_figs.py``` to plot the most recent experiment results. Plots appear in ```plots/``` directory. You may also skip the above step and plot directly on the Cloudlab machine, however, viewing the generated plot images may be more difficult.
    - Optionally run: ```python3 plot_figs.py [EXPERIMENT_RESULTS_PATH]``` to plot any results.
    - **For Figure 7**, Please use ```python3 plotFigs/layered/layered_plot.py```. Latencies were manually extracted from results for the purpose of this paper. Please see ```replication- ... .csv``` files for sample results for both Gus and Giza.
    - **ALTERNATIVELY, for Figure 10**, copy the gus client results from the 3 sub experiments (n=5, n=7, n=9) into the corresponding folders in ```plotFigs/scale/clients/```. Once the results are in the correct folder, run ```cd scale/ ``` and then ```python3 scale_plot/```.
