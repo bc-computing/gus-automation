@@ -33,34 +33,34 @@ def main(results_path):
             latencies_folder_path = fig_path / Path(protocol + "/client")
             latencies_folder_paths[protocol] = latencies_folder_path
 
-        match fig:
-            case "fig4a":
-                print("Plotting fig4a...")
-                plot_fig4(plot_target_directory, csv_target_directory, "4a", latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
-            case "fig4b":
-                print("Plotting fig4b...")
-                plot_fig4(plot_target_directory, csv_target_directory, "4b", latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
-            case "fig4c":
-                print("Plotting fig4c...")
-                plot_fig4(plot_target_directory, csv_target_directory, "4c", latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
-            case "fig5":
-                print("Plotting fig5...")
-                plot_fig5(plot_target_directory, csv_target_directory, latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
-            case "fig6":
-                print("Plotting fig6...")
-                plot_fig6(plot_target_directory, results_path, csv_target_directory, latencies_folder_paths)
-            case "fig7":
-                print("Separate from automated plotting. Latencies were originanlly manually extracted. Use layered/plot.py")
-            case "fig8":
-                print("Plot was produced manually through extracting latencies from each sub experiment, finding percentiles and plotting")
-            case "fig9":
-                print("Plotting fig9...")
-                plot_fig9(plot_target_directory, csv_target_directory, latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
-            case "fig11":
-                # Old fig12 and fig12 n=5
-                print("Seperate from automated plotting. Use scale/scale_plot.py. See README for details") 
-            case _ :
-                print("Default reached, Plotting Case not found")
+
+        if fig == "fig4a":
+            print("Plotting fig4a...")
+            plot_fig4(plot_target_directory, csv_target_directory, "4a", latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
+        elif fig == "fig4b":
+            print("Plotting fig4b...")
+            plot_fig4(plot_target_directory, csv_target_directory, "4b", latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
+        elif fig ==  "fig4c":
+            print("Plotting fig4c...")
+            plot_fig4(plot_target_directory, csv_target_directory, "4c", latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
+        elif fig == "fig5":
+            print("Plotting fig5...")
+            plot_fig5(plot_target_directory, csv_target_directory, latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
+        elif fig == "fig6":
+            print("Plotting fig6...")
+            plot_fig6(plot_target_directory, results_path, csv_target_directory, latencies_folder_paths)
+        elif fig == "fig7":
+            print("Separate from automated plotting. Latencies were originanlly manually extracted. Use layered/plot.py")
+        elif fig ==  "fig8":
+            print("Plot was produced manually through extracting latencies from each sub experiment, finding percentiles and plotting")
+        elif fig ==  "fig9":
+            print("Plotting fig9...")
+            plot_fig9(plot_target_directory, csv_target_directory, latencies_folder_paths["gryff"], latencies_folder_paths["gus"], latencies_folder_paths["epaxos"])
+        elif fig ==  "fig11":
+            # Old fig12 and fig12 n=5
+            print("Seperate from automated plotting. Use scale/scale_plot.py. See README for details") 
+        else:
+            print("Default reached, Plotting Case not found")
 
 
 def plot_fig5(plot_target_directory, csv_target_directory, gryff_latency_folder, gus_latency_folder, epaxos_latency_folder):
@@ -184,12 +184,12 @@ def usage():
     print("Usage: python3 plot_figs.py RESULTS_PATH")
 
 if __name__ == "__main__":
-    match len(sys.argv):
-        case 1: 
-            main(most_recent_results())
-        case 2:
-            main(sys.argv[1])
-        case _:
-            usage()
+    l = len(sys.argv)
+    if l == 1:
+        main(most_recent_results())
+    elif l == 2:
+        main(sys.argv[1])
+    else :
+        usage()
 
     
