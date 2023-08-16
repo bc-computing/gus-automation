@@ -14,20 +14,20 @@ from set_config import set_config
 # add latency and adjust configs.
 ####################################################################
 
-# Replaces fig5 with fig5a fig5b fig5c
-def replace_fig5(config_paths):
+# Replaces fig4 with fig4a fig4b fig4c
+def replace_fig4(config_paths):
 
     last_slash_index = config_paths[0].rfind("/")
     parent_path = config_paths[0][:last_slash_index + 1]
 
     for config_path in config_paths:
-        if "fig5.json" in config_path:
-            # remove fig5 
+        if "fig4.json" in config_path:
+            # remove fig4 
             config_paths.remove(config_path)
 
-            # add fig5a fig5b fig5c
+            # add fig4a fig4b fig4c
             for x in ["a", "b", "c"]:
-                config_paths.append(parent_path + "fig5" + x + ".json")
+                config_paths.append(parent_path + "fig4" + x + ".json")
 
     return config_paths
 
@@ -45,8 +45,8 @@ def run():
 
     config_paths = sys.argv[1:]
     
-    # Adjusts for fig5
-    config_paths = replace_fig5(config_paths)
+    # Adjusts for fig4
+    config_paths = replace_fig4(config_paths)
 
     print("Here are config_paths: " , config_paths)
 
@@ -56,12 +56,12 @@ def run():
         # adjust user name
         set_config(config_path)
 
-        # adjusts conflict rate - NEED TO FIX PATHING - fig5a not showing up
-        if "fig5a" in config_path:
+        # adjusts conflict rate - NEED TO FIX PATHING - fig4a not showing up
+        if "fig4a" in config_path:
             update(config_path,"conflict_percentage", 2)
-        elif "fig5b" in config_path:
+        elif "fig4b" in config_path:
             update(config_path,"conflict_percentage", 10)
-        elif "fig5c" in config_path:
+        elif "fig4c" in config_path:
             update(config_path,"conflict_percentage", 25)
 
         # default is all protocols
