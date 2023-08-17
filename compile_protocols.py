@@ -17,5 +17,5 @@ if __name__ == '__main__':
     ]
 
     for protocol_dir in protocol_dirs:
-        print(f"Compiling in {BASE_PATH +'/' + protocol_dir}")
+        print(f"Compiling in {'/' + protocol_dir}")
         os.system(f"sh {protocol_dir  + '/compile.sh'}")
