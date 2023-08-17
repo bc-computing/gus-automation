@@ -63,6 +63,8 @@ All of the dependencies mentioned above are preinstalled in the control machine 
 5. Make sure ``gus-automation`` is up to date.
    - Run ``git pull``
    - If this doesn't work, run ```git reset --hard LATEST_COMMIT``` where LASTEST_COMMIT is the latest commit to the repo on github to update code
+6. Recompile protocol code to ensure it's Updated
+   - Run ``python3 compile_protocols.py``
 
 
 ### Running Multiple Experiments - With Automatic Results Syncing
