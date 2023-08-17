@@ -9,7 +9,7 @@ CONFIG_PATH = 'configs/config.json'
 
 if __name__ == '__main__':
 
-    config_file = open(config_file_path)
+    config_file = open(CONFIG_PATH)
     config = json.load(config_file)
 
     protocol_dirs = [
